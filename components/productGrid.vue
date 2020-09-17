@@ -1,0 +1,215 @@
+<template>
+  <div>
+    <!-- Product grid for scrollable products -->
+    <div v-if="slides" class="mx-2">
+      <div v-show="heads" style="display: flex;">
+        <span class="font-weight-bold" style="flex-grow: 1; font-size: 14px">
+          <b>{{ header }}</b>
+        </span>
+        <span
+          style="font-size: 15px; text-decoration: underline"
+          class="ZameriaLightRed--text"
+          @click="sendRoute(header)"
+        >See More</span>
+      </div>
+      <div class="slide-products mt-3">
+        <div v-for="i in 8" :key="i" class="mr-2" style="display: inline-block">
+          <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}"> <v-img class="grid-img-slide" aspect-ratio="1"></v-img> </nuxt-link>
+          <div>
+            <div v-if="wished">
+              <v-icon
+                v-if="wished"
+                size="medium"
+                @click="addToWishList"
+                color="ZameriaRed"
+              >mdi-heart-multiple</v-icon>
+              <br />
+            </div>
+            <div v-else>
+              <v-icon size="medium" @click="addToWishList" color="grey">mdi-heart-multiple-outline</v-icon>
+              <br />
+            </div>
+
+            <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
+              <p id="wrap-text-3-above">Reebok Nano Blue Original Sneakers</p>
+            </div>
+            <div v-else class="mb-0 pb-0 font-weight-light">
+              <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
+            </div>
+            <span style="font-size: 15px">
+              <b>N5,000</b>
+            </span>
+            <div class="font-weight-light" style="font-size: 14px">
+              <span class="pr-1">
+                <del>N8,500</del>
+              </span>
+              <span class="ZameriaLightRed--text">60%off</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-else class="productGrid mx-2">
+      <div v-show="heads" style="display: flex">
+        <span class="text-uppercase" style="flex-grow: 1; font-size: 14px">
+          <b>{{ header }}</b>
+        </span>
+        <span
+          style="font-size: 15px; text-decoration: underline"
+          class="ZameriaLightRed--text"
+          @click="sendRoute(header)"
+        >See More</span>
+      </div>
+      <v-row v-for="n in rows" :key="n" dense>
+        <v-col class="mt-3" v-for="i in grid" :key="i" :sm="cols" :md="cols" :lg="cols">
+          <v-img class="grid-img" :height="height" aspect-ratio="1"></v-img>
+          <div>
+            <div v-if="wished">
+              <v-icon
+                v-if="wished"
+                size="medium"
+                @click="addToWishList"
+                color="ZameriaRed"
+              >mdi-heart-multiple</v-icon>
+              <br />
+            </div>
+            <div v-else>
+              <v-icon size="medium" @click="addToWishList" color="grey">mdi-heart-multiple-outline</v-icon>
+              <br />
+            </div>
+
+            <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
+              <p id="wrap-text-3-above">Reebok Nano Blue Original Sneakers</p>
+            </div>
+            <div v-else class="mb-0 pb-0 font-weight-light">
+              <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
+            </div>
+            <span style="font-size: 15px">
+              <b>N5,000</b>
+            </span>
+            <div class="font-weight-light" style="font-size: 14px">
+              <span class="pr-1">
+                <del>N8,500</del>
+              </span>
+              <span class="ZameriaLightRed--text">60%off</span>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  // name: "product-grid",
+  props: ["header", "products", "image", "row", "col", "head", "slide"],
+  data() {
+    return {
+      grid: 1,
+      wished: false
+    };
+  },
+  computed: {
+    rows: function() {
+      let r = Number(this.row);
+      return r;
+    },
+    heads: function() {
+      if (this.head === "false") {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    slides: function() {
+      if (this.slide === "true") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    cols: function() {
+      let col = Number(this.col);
+      this.grid = col;
+      switch (col) {
+        case 1:
+          return 12;
+        case 2:
+          return 6;
+        case 3:
+          return 4;
+      }
+    },
+    height: function() {
+      switch (this.grid) {
+        case 2:
+          return 220;
+        case 3:
+          return 150;
+      }
+    }
+  },
+  methods: {
+    addToWishList() {
+      this.wished = !this.wished;
+    },
+    sendRoute(header) {
+      this.$store.commit("actionss/setSearch", header);
+      this.$router.push(`/search/${header}`);
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+@import "~/scss/custom.scss";
+
+.grid-img-slide {
+  border: 1px solid $ZameriaAsh;
+  height: 163.66px;
+  width: 116.95px;
+  // height: 150px;
+}
+
+// .grid-img-slide {
+//   border: 1px solid $ZameriaAsh;
+//   height: 163.66px;
+//   width: 116.95px;
+//   // height: 150px;
+// }
+
+#wrap-text-3-above {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  white-space: nowrap;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.wrap-text {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  white-space: nowrap;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.slide-products {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.slide-products::-webkit-scrollbar {
+  display: none;
+}
+</style>

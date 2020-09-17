@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Zameria Bold';
+    src: local('Zameria Bold'), url(../fonts/OpenSans-Bold.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'Zameria Bold Italic';
+    src: local('Zameria Bold Italic'), url(../fonts/OpenSans-BoldItalic.ttf) format('truetype')
+}
+
+
+@font-face {
+    font-family: 'Zameria Regular';
+    src: local('Zameria Regular'), url(../fonts/OpenSans-Regular.ttf) format('truetype')
+}
+
+div, span, p, h1, h2, h3, h4, h5, h6, button, ::placeholder, label{
+    font-family: "Zameria Regular"
+}
+
+#link{
+    text-decoration: none;
+    color: white;
+}
+
+.small-text{
+    font-size: 14px;
+}

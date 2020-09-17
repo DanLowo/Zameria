@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Women's Fashion",
+        "image": "woman.png",
+        "url": "Women's-Fashion"
+    },
+    {
+        "title": "Men's Fashion",
+        "image": "man.png",
+        "url": "Men's-Fashion"
+    },
+    {
+        "title": "Girl's Fashion",
+        "image": "Girl.png",
+        "url": "Girl's-Fashion"
+    },
+    {
+        "title": "Boy's Fashion",
+        "image": "Boy.png",
+        "url": "Boy's-Fashion"
+    },
+    {
+        "title": "Toddler Girl",
+        "image": "Toddler-girl.png",
+        "url": "Toddler-Girl"
+    },
+    {
+        "title": "Toddler Boy",
+        "image": "Toddler-boy.png",
+        "url": "Toddler-Boy"
+    },
+    {
+        "title": "Baby Girl",
+        "image": "Baby-girl.png",
+        "url": "Baby-Girl"
+    },
+    {
+        "title": "Baby Boy",
+        "image": "baby-boy.png",
+        "url": "Baby-Boy"
+    }
+]

@@ -1,0 +1,32 @@
+{
+  "name": "zameria",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --max-old-space-size=4096907 node_modules/nuxt/bin/nuxt.js",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "yarn lint:js"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "mammoth": "^1.4.11",
+    "nuxt": "^2.13.0",
+    "raw-loader": "^4.0.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/eslint-config": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-nuxt": "^1.0.0"
+  }
+}

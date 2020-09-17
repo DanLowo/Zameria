@@ -1,0 +1,150 @@
+
+// Zamerisa default colors
+
+$ZameriaRed: #FF0000;
+$ZameriaLightRed: #FF554D;
+$ZameriaOrange: #FF870C;
+$ZameriaBrown: #DAB777;
+$ZameriaGrey: #282828;
+$ZameriaAsh: #E2E2E2;
+
+
+
+// Zameria Custom Input Field With The Dark Background
+.zameria-dark-form{
+  background-color: $ZameriaAsh;
+  width: 100%;
+  margin-bottom: 17px;
+  margin-top: 4px;
+  padding: 4px;
+  padding-left: 8px;
+}
+.zameria-dark-form:focus{
+  outline: none
+}
+
+
+
+// Zameria Custom Field For Light Theme
+.zameria-light-form{
+  // background-color: grey;
+  width: 100%;
+  margin-bottom: 17px;
+  margin-top: 4px;
+  border: 0.5px solid $ZameriaGrey;
+  padding: 7px;
+  padding-left: 8px;
+}
+.zameria-light-form::placeholder{
+  color: $ZameriaAsh;
+  font-family: "Zameria Regular";
+  font-size: 16px;
+  font-weight: 300;
+}
+.zameria-light-form:focus{
+  outline: none
+}
+
+.input-icon{
+  position: absolute;
+  right: 12%;
+  padding-top: 36px;
+  // bottom: 30px;
+}
+
+
+
+
+.auth-header {
+  // height: 90px;
+  padding-top: 20px;
+  padding-bottom: 3px;
+  box-shadow: 1px 1px 1px 1px $ZameriaAsh;
+}
+
+input:focus{
+  outline: none;
+  padding-left: 8px;
+}
+
+.nuxt-link{
+  text-decoration: none;
+  color: black;
+ }
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.close-icon{
+  position: absolute;
+  right: 12px;
+  font-size: 20px;
+  top: 4px;
+  color: $ZameriaGrey;
+}
+
+
+// .number .v-input__control .v-input__slot .v-text-field__slot .v-label{
+//   margin-left: 15px;
+// }
+
+.v-application--is-ltr > .v-text-field__prefix{
+  color: #978e8ed0;
+}
+
+.theme--light.v-label{
+  color: #978e8ed0;
+}
+
+.v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label{
+  color: black;
+}
+
+#cus-nav-bar{
+  box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
+}
+
+.v-app-bar__nav-icon .v-btn__content .v-icon {
+    font-size: 30px;
+  }
+
+.v-btn__content{
+  font-weight: 700;
+}
+  
+  .v-toolbar__content{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .bor {
+    // border-bottom: 1px solid rgb(224, 221, 221);
+    box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
+  }
+
+
+  .custom-search-btn {
+    border: 1px solid grey;
+    padding: 10px;
+    width: 83vw;
+    height: 44px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  .custom-btn {
+    border: 1px solid grey;
+    padding: 2px;
+    width: 65%;
+    height: 37px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  ::placeholder {
+    color: gery;
+    padding-left: 7px;
+    font-size: 13px;
+  }

@@ -1,0 +1,629 @@
+{
+    "Women": [
+        {
+            "title": "Clothing",
+            "subCategories": [
+                {
+                    "title": "Tees & Shirts",
+                    "url": ""
+                },
+                {
+                    "title": "Coats",
+                    "url": ""
+                },
+                {
+                    "title": "Dresses",
+                    "url": ""
+                },
+                {
+                    "title": "Jacks",
+                    "url": ""
+                },
+                {
+                    "title": "Jeans",
+                    "url": ""
+                },
+                {
+                    "title": "Shorts",
+                    "url": ""
+                },
+                {
+                    "title": "Skirts",
+                    "url": ""
+                },
+                {
+                    "title": "Suits",
+                    "url": ""
+                },
+                {
+                    "title": "Sport Wear",
+                    "url": ""
+                },
+                {
+                    "title": "Leggins",
+                    "url": ""
+                },
+                {
+                    "title": "Maternity",
+                    "url": ""
+                },
+                {
+                    "title": "Beachwear/Swimwear",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Shoes",
+            "subCategories": [
+                {
+                    "title": "Heels",
+                    "url": ""
+                },
+                {
+                    "title": "Boots",
+                    "url": ""
+                },
+                {
+                    "title": "Flats",
+                    "url": ""
+                },
+                {
+                    "title": "Casual Shoes",
+                    "url": ""
+                },
+                {
+                    "title": "Sports Shoes",
+                    "url": ""
+                },
+                {
+                    "title": "Sandals & Slippers",
+                    "url": ""
+                },
+                {
+                    "title": "Shoes Care & Accessories",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Bags & Wallets",
+            "subCategories": [
+                {
+                    "title": "Hand Bags",
+                    "url": ""
+                },
+                {
+                    "title": "Wallets & Clutches",
+                    "url": ""
+                },
+                {
+                    "title": "Backpacks",
+                    "url": ""
+                },
+                {
+                    "title": "Sling Bags",
+                    "url": ""
+                },
+                {
+                    "title": "Duffle Bags",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Jewelry",
+            "subCategories": [
+                {
+                    "title": "Rings",
+                    "url": ""
+                },
+                {
+                    "title": "Earrings",
+                    "url": ""
+                },
+                {
+                    "title": "Bangles & Bracelets",
+                    "url": ""
+                },
+                {
+                    "title": "Necklace & Pendants",
+                    "url": ""
+                },
+                {
+                    "title": "Jewelry Sets",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Lingerie & Nightwear",
+            "subCategories": [
+                {
+                    "title": "Bras",
+                    "url": ""
+                },
+                {
+                    "title": "Corsets",
+                    "url": ""
+                },
+                {
+                    "title": "Shorts",
+                    "url": ""
+                },
+                {
+                    "title": "Panties",
+                    "url": ""
+                },
+                {
+                    "title": "Night Suits / Pajamas",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Accessories",
+            "subCategories": [
+                {
+                    "title": "Hair",
+                    "url": ""
+                },
+                {
+                    "title": "Hats",
+                    "url": ""
+                },
+                {
+                    "title": "Scarves",
+                    "url": ""
+                },
+                {
+                    "title": "Belts",
+                    "url": ""
+                },
+                {
+                    "title": "Sunglasses",
+                    "url": ""
+                },
+                {
+                    "title": "Watches",
+                    "url": ""
+                },
+                {
+                    "title": "Contact Lens",
+                    "url": ""
+                },
+                {
+                    "title": "Hair Accessories",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Maternity"
+        }
+    ],
+
+    "Men": [
+        {
+            "title": "Clothing",
+            "url": "Men's-Fashion/clothing",
+            "subCategories": [
+                {
+                    "title": "T-Shirts & Polos",
+                    "url": ""
+                },
+                {
+                    "title": "Trousers",
+                    "url": ""
+                },
+                {
+                    "title": "Jeans",
+                    "url": ""
+                },
+                {
+                    "title": "Suits",
+                    "url": ""
+                },
+                {
+                    "title": "Shorts",
+                    "url": ""
+                },
+                {
+                    "title": "Blazers",
+                    "url": ""
+                },
+                {
+                    "title": "Sweaters",
+                    "url": ""
+                },
+                {
+                    "title": "Jackets & Coats",
+                    "url": ""
+                },
+                {
+                    "title": "Inner Wear",
+                    "url": ""
+                },
+                {
+                    "title": "Pajamas",
+                    "url": ""
+                },
+                {
+                    "title": "Beachwear/Swimwear",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Shoes",
+            "subCategories": [
+                {
+                    "title": "Formal Shoes",
+                    "url": ""
+                },
+                {
+                    "title": "Casual Shoes",
+                    "url": ""
+                },
+                {
+                    "title": "Sports Shoes",
+                    "url": ""
+                },
+                {
+                    "title": "Boots",
+                    "url": ""
+                },
+                {
+                    "title": "Sandals & Slippers",
+                    "url": ""
+                },
+                {
+                    "title": "Shoes Care & Accessories",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Bags & Wallets",
+            "subCategories": [
+                {
+                    "title": "Hand Bags",
+                    "url": ""
+                },
+                {
+                    "title": "Wallets",
+                    "url": ""
+                },
+                {
+                    "title": "Backpacks",
+                    "url": ""
+                },
+                {
+                    "title": "Duffle Bags",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Jewelry",
+            "subCategories": [
+                {
+                    "title": "Rings",
+                    "url": ""
+                },
+                {
+                    "title": "Earrings",
+                    "url": ""
+                },
+                {
+                    "title": "Bracelets",
+                    "url": ""
+                },
+                {
+                    "title": "Necklace",
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "title": "Accessories",
+            "subCategories": [
+                {
+                    "title": "Belts",
+                    "url": ""
+                },
+                {
+                    "title": "Ties",
+                    "url": ""
+                },
+                {
+                    "title": "Hats & Caps",
+                    "url": ""
+                },
+                {
+                    "title": "Suspenders",
+                    "url": ""
+                },
+                {
+                    "title": "Cufflinks",
+                    "url": ""
+                },
+                {
+                    "title": "Watches",
+                    "url": ""
+                },
+                {
+                    "title": "Socks",
+                    "url": ""
+                },
+                {
+                    "title": "Sunglasses",
+                    "url": ""
+                },
+                {
+                    "title": "Handkerchiefs",
+                    "url": ""
+                },
+                {
+                    "title": "Sport Accessories",
+                    "url": ""
+                }
+            ]
+        }
+    ],
+
+    "Girls": [
+        {
+            "title": "Tops",
+            "url": "Girl's-Fashions/pajamas"
+        },
+        {
+            "title": "Bottoms",
+            "url": "Girl's-Fashions/sets"
+        },
+        {
+            "title": "Dresses",
+            "url": "Girl's-Fashions/tops"
+        },
+        {
+            "title": "Sets",
+            "url": "Girl's-Fashions/shoes"
+        },
+        {
+            "title": "Jackets",
+            "url": "Girl's-Fashions/swimmers"
+        },
+        {
+            "title": "Footwear",
+            "url": "Girl's-Fashions/sweater&hoodies"
+        },
+        {
+            "title": "Accessories",
+            "url": "Girl's-Fashions/shorts&skirts"
+        },
+        {
+            "title": "Pajamas",
+            "url": "Girl's-Fashions/jackets&outwear"
+        },
+        {
+            "title": "Innerwear",
+            "url": "Girl's-Fashions/leggins&pants"
+        },
+        {
+            "title": "Swimwear",
+            "url": "Girl's-Fashions/dresses&socks"
+        },
+        {
+            "title": "Bags",
+            "url": "Girl's-Fashions/underwear&socks"
+        }
+    ],
+
+    "Boys": [
+        {
+            "title": "Tops",
+            "url": "Girl's-Fashions/pajamas"
+        },
+        {
+            "title": "Bottoms",
+            "url": "Girl's-Fashions/sets"
+        },
+        {
+            "title": "Sets",
+            "url": "Girl's-Fashions/shoes"
+        },
+        {
+            "title": "Jackets",
+            "url": "Girl's-Fashions/swimmers"
+        },
+        {
+            "title": "Footwear",
+            "url": "Girl's-Fashions/sweater&hoodies"
+        },
+        {
+            "title": "Accessories",
+            "url": "Girl's-Fashions/shorts&skirts"
+        },
+        {
+            "title": "Pajamas",
+            "url": "Girl's-Fashions/jackets&outwear"
+        },
+        {
+            "title": "Innerwear",
+            "url": "Girl's-Fashions/leggins&pants"
+        },
+        {
+            "title": "Swimwear",
+            "url": "Girl's-Fashions/dresses&socks"
+        },
+        {
+            "title": "Bags",
+            "url": "Girl's-Fashions/underwear&socks"
+        }
+    ],
+
+
+    "Toddler": [
+        {
+            "title": "Tops",
+            "url": "Girl's-Fashions/pajamas"
+        },
+        {
+            "title": "Bottoms",
+            "url": "Girl's-Fashions/sets"
+        },
+        {
+            "title": "Dresses",
+            "url": "Girl's-Fashions/tops"
+        },
+        {
+            "title": "Sets",
+            "url": "Girl's-Fashions/shoes"
+        },
+        {
+            "title": "Body Suits",
+            "url": "Girl's-Fashions/shoes"
+        },
+        {
+            "title": "Jackets",
+            "url": "Girl's-Fashions/swimmers"
+        },
+        {
+            "title": "Footwear",
+            "url": "Girl's-Fashions/sweater&hoodies"
+        },
+        {
+            "title": "Accessories",
+            "url": "Girl's-Fashions/shorts&skirts"
+        },
+        {
+            "title": "Pajamas",
+            "url": "Girl's-Fashions/jackets&outwear"
+        },
+        {
+            "title": "Innerwear",
+            "url": "Girl's-Fashions/leggins&pants"
+        },
+        {
+            "title": "Swimwear",
+            "url": "Girl's-Fashions/dresses&socks"
+        },
+        {
+            "title": "Bags",
+            "url": "Girl's-Fashions/underwear&socks"
+        }
+    ],
+
+    "Baby": [
+        {
+            "title": "Tops",
+            "url": "Girl's-Fashions/pajamas"
+        },
+        {
+            "title": "Bottoms",
+            "url": "Girl's-Fashions/sets"
+        },
+        {
+            "title": "Dresses",
+            "url": "Girl's-Fashions/tops"
+        },
+        {
+            "title": "Sets",
+            "url": "Girl's-Fashions/shoes"
+        },
+        {
+            "title": "Body Suits",
+            "url": "Girl's-Fashions/shoes"
+        },
+        {
+            "title": "Jackets",
+            "url": "Girl's-Fashions/swimmers"
+        },
+        {
+            "title": "Footwear",
+            "url": "Girl's-Fashions/sweater&hoodies"
+        },
+        {
+            "title": "Accessories",
+            "url": "Girl's-Fashions/shorts&skirts"
+        },
+        {
+            "title": "Pajamas",
+            "url": "Girl's-Fashions/jackets&outwear"
+        },
+        {
+            "title": "Innerwear",
+            "url": "Girl's-Fashions/leggins&pants"
+        },
+        {
+            "title": "Swimwear",
+            "url": "Girl's-Fashions/dresses&socks"
+        }
+    ],
+   
+    "New Arrivals" : [
+        {
+            "title": "Women",
+            "image": "woman.png",
+            "url": "Women's-Fashion"
+        },
+        {
+            "title": "Men",
+            "image": "man.png",
+            "url": "Men's-Fashion"
+        },
+        {
+            "title": "Girls",
+            "image": "Girl.png",
+            "url": "Girl's-Fashion"
+        },
+        {
+            "title": "Boys",
+            "image": "Boy.png",
+            "url": "Boy's-Fashion"
+        },
+        {
+            "title": "Toddler",
+            "image": "Toddler-girl.png",
+            "url": "Toddler-Girl"
+        },
+        {
+            "title": "Baby",
+            "image": "Baby-girl.png",
+            "url": "Baby-Girl"
+        }
+    ],
+
+    "Sale" : [
+        {
+            "title": "Women",
+            "image": "woman.png",
+            "url": "Women's-Fashion"
+        },
+        {
+            "title": "Men",
+            "image": "man.png",
+            "url": "Men's-Fashion"
+        },
+        {
+            "title": "Girls",
+            "image": "Girl.png",
+            "url": "Girl's-Fashion"
+        },
+        {
+            "title": "Boys",
+            "image": "Boy.png",
+            "url": "Boy's-Fashion"
+        },
+        {
+            "title": "Toddler",
+            "image": "Toddler-girl.png",
+            "url": "Toddler-Girl"
+        },
+        {
+            "title": "Baby",
+            "image": "Baby-girl.png",
+            "url": "Baby-Girl"
+        }
+    ]
+}
