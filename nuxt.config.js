@@ -37,10 +37,6 @@ export default {
           "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       },
       { rel: "stylesheet", href: "/app.css" }
-      // {
-      //   rel: "stylesheet",
-      //   href: "https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
-      // }
     ]
   },
 
