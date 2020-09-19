@@ -24,7 +24,7 @@
       </v-card>
     </div>
     <div align="right" class="mb-2">
-      <v-btn color="ZameriaAsh" to="/account/newaddress" fab class="fab-icon">
+      <v-btn color="ZameriaAsh" to="/account/create-address" fab class="fab-icon">
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </div>
