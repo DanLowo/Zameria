@@ -32,7 +32,8 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import StateJson from "@/assets/docs/states.json";
+import LgaJson from "@/assets/docs/lgas.json";
 
 export default {
   data() {
