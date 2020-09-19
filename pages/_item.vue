@@ -20,14 +20,14 @@
         <del class="grey--text">N20,000</del>
         <span class="ZameriaRed--text font-weight-bold">Save 50%</span>
       </p>
-      <p style="font-size: 14px">
-        Est. Delivery
+      <p style="font-size: 12px">
+        Est. Delivery :
         <span class="font-weight-bold">Wed, Nov 4 - Wed, Dec 9</span>
       </p>
 
       <div class="choice mb-5">
         <div class="color">
-          <p class="normal-p mb-1">Color:</p>
+          <p class="normal-p mb-1">Color: <span class="ml-1" style="font-size: 12px" v-for="i in colors" :key="i" > {{i}}, </span> </p>
           <div
             style="display: inline"
             v-for="color in colors"
@@ -201,7 +201,7 @@ export default {
   data() {
     return {
       sizes: ["S", "M", "L"],
-      colors: ["black", "grey", "Blue"],
+      colors: ["black", "grey", "blue"],
       selectedSize: "",
       selectedColor: "",
       orderNumber: 1,

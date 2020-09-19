@@ -33,8 +33,8 @@
             <span class="summary-value green--text">N12,000</span>
           </div>
           <div style="display: flex" class="mt-3">
-            <span class="summary-title">Grand Total</span>
-            <span class="summary-value">N12,000</span>
+            <span class="summary-title"> <b> Grand Total </b> </span>
+            <span class="summary-value"> <b> N12,000 </b> </span>
           </div>
         </div>
       </div>
@@ -70,9 +70,9 @@
         <v-divider class="mt-4" style="width: 100vw"></v-divider>
       </div>
 
-      <v-bottom-navigation fixed class="white--text" height="45">
-        <v-btn block height="45" color="ZameriaRed" class="white--text">
-          <span class="white--text" style="font-size: 14px">Continue</span>
+      <v-bottom-navigation fixed class="white--text" height="49">
+        <v-btn block height="49" color="ZameriaRed" class="white--text">
+          <span class="white--text text-uppercase" style="font-size: 14px">Continue</span>
         </v-btn>
       </v-bottom-navigation>
 

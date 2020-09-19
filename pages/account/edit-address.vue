@@ -36,6 +36,7 @@ import StateJson from "@/assets/docs/states.json";
 import LgaJson from "@/assets/docs/lgas.json";
 
 export default {
+  layout: 'nonavbar',
   data() {
     return {
       firstName: "",
@@ -62,13 +63,13 @@ export default {
     }
   },
 
-  async asyncData({ $axios, store }) {
+  async fetch() {
     let stateArr = [];
     StateJson.map(state => {
       stateArr.push(state.name);
     });
     this.states = stateArr;
-  }
+  },
 };
 </script>
 

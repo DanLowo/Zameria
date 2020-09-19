@@ -33,6 +33,7 @@
 
 <script>
 export default {
+  layout: 'nonavbar',
   data() {
     return {
       address: "4, adio street new garage Gbagada Gbagada-New Garage, Lagos",
