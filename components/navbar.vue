@@ -6,12 +6,12 @@
         <v-app-bar flat color="white">
           <v-app-bar-nav-icon class="black--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
-          <nuxt-link class="mr-4" to="/">
+          <nuxt-link class="mr-3" to="/">
             <v-img :src="require('@/assets/images/logo.png')" width="150"></v-img>
           </nuxt-link>
           <v-spacer></v-spacer>
           <nuxt-link to="/cart" style="text-decoration: none">
-            <v-icon color="black" style="font-size: 30px">mdi-shopping-outline</v-icon>
+            <v-icon color="black" class="mr-1" style="font-size: 30px">mdi-cart-outline</v-icon>
           </nuxt-link>
         </v-app-bar>
 
@@ -127,7 +127,7 @@
               <v-list-item @click="ok" to="/account/address-book">
                 <v-list-item-title>Address Book</v-list-item-title>
               </v-list-item>
-              <v-list-item @click="ok">
+              <v-list-item @click="ok" to="/orders">
                 <v-list-item-title>My Orders</v-list-item-title>
               </v-list-item>
               <v-list-item @click="ok" to="/agreements/contact-us">

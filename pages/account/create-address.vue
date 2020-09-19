@@ -42,35 +42,30 @@ export default {
       address: "",
       additionalInformation: "",
       state: "",
-      city: ""
+      city: "",
+      states: [],
+      cities: []
     };
-  },
-
-  computed: {
-    ...mapState("actionss", ["states", "cities"])
   },
 
   watch: {
     state: async function(newValue) {
-      let data = await this.$axios.get(
-        `https://locationsng-api.herokuapp.com/api/v1/states/${this.state}/details`
-      );
-      let details = data.data.lgas;
-      this.$store.commit("actionss/setCities", details);
+      let state = this.state
+      let cities = []
+      LgaJson.map(lgas => {
+        if(lgas.state === state)
+        cities = lgas['lgas']
+      })
+      this.cities = cities;
     }
   },
 
   async asyncData({ $axios, store }) {
-    store.commit("actionss/setCities", []);
-    let data = await $axios.get(
-      "https://locationsng-api.herokuapp.com/api/v1/states"
-    );
-    let states = data.data;
     let stateArr = [];
-    states.map(state => {
+    StateJson.map(state => {
       stateArr.push(state.name);
     });
-    store.commit("actionss/setStates", stateArr);
+    this.states = stateArr;
   }
 };
 </script>

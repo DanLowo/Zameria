@@ -2,11 +2,16 @@
   <div class="stores" style="margin-bottom:120px">
     <main-navbar></main-navbar>
     <div class="mt-2">
-      <v-img class="store-banner"></v-img>
+      <v-img
+        class="store-banner"
+        src="https://mbabiolaandco.com.ng/wp-content/uploads/2018/12/Welcome.jpg"
+      ></v-img>
     </div>
 
     <div class="mt-3 mx-2 mt-10 go">
-      <p style="font-size: 16px">{{storeName}}</p>
+      <p style="font-size: 13px" class="text-uppercase" >
+        <b>{{storeName}}</b>
+      </p>
     </div>
     <AllProducts class="mx-2" products="400" row="20" col="2" head="false"></AllProducts>
   </div>
@@ -40,6 +45,6 @@ export default {
 }
 
 .go {
-  margin-bottom: -28px;
+  margin-bottom: -20px;
 }
 </style>

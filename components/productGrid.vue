@@ -40,7 +40,7 @@
               <b>N5,000</b>
             </span>
             <div class="font-weight-light" style="font-size: 14px">
-              <span class="pr-1">
+              <span class="pr-1 grey--text">
                 <del>N8,500</del>
               </span>
               <span class="ZameriaLightRed--text">60%off</span>
@@ -186,7 +186,7 @@ export default {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   white-space: nowrap;
-  width: 100px;
+  width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 14px;

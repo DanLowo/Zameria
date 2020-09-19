@@ -39,7 +39,7 @@
                   color="ZameriaAsh"
                   :placeholder="orderNumber"
                 ></v-select>
-              </span> -->
+              </span>-->
             </div>
           </div>
         </v-col>
@@ -48,7 +48,7 @@
       <div style="display: flex" class="blue--text mx-2">
         <span style="flex-grow: 1;" class="mr-0 pr-0">
           <v-btn text style="font-size: 9px" class="ml-0 pl-0 blue--text">
-            <b>Move to Wishlist</b>
+            <b>Move to Cart</b>
           </v-btn>
         </span>
         <span>
@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name: "cart",
+  name: "orders",
   data() {
     return {
       orderNumber: "1",

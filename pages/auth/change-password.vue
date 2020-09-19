@@ -54,6 +54,7 @@
 
 <script>
 export default {
+  layout: 'nofooter',
   data() {
     return {
       currentPassword: "",

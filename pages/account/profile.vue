@@ -1,6 +1,5 @@
 <template>
   <div class="profile">
-    <Navbar></Navbar>
     <h5 class="py-3 px-3 mt-1 ZameriaAsh font-weight-light" align="center">
       <nuxt-link to="/faqs#Returns & Refund" class="ZameriaGrey--text">Return & Refund Policies</nuxt-link>
     </h5>
@@ -24,12 +23,9 @@
 </template>
 
 <script>
-import Navbar from "@/components/navbar";
 
 export default {
-  components: {
-    Navbar
-  },
+  layout:'nofooter',
 
   data() {
     return{

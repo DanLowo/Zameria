@@ -22,7 +22,7 @@
             </div>
 
             <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
-              <p id="wrap-text-3-above">Reebok Nano Blue Original Sneakers</p>
+              <p id="wrap-text-3-above-2">Reebok Nano Blue Original Sneakers</p>
             </div>
             <div v-else class="mb-0 pb-0 font-weight-light">
               <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
@@ -181,4 +181,18 @@ export default {
 .grid-img{
   border: 1px solid #e2e2e2;
 }
+
+#wrap-text-3-above-2 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  white-space: nowrap;
+  width: 165px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+
 </style>

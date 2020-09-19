@@ -6,17 +6,18 @@
     </div>
     <div class="my-2 mx-3 mt-5">
       <h3>Adidas Men's Front Original Trefoil Street Graphic Front Pocket</h3>
-      <p
-        class="mt-1 mr-2 mb-2"
-        style="font-size: 14px"
-      >QUICK & FREE SHIPPING and FREE RETURNS, 100% AUTHENTIC</p>
-      <h2 class="price-and-shipping">
+      <p class="mt-1 mr-2 mb-2" style="font-size: 14px">FAST SHIPPING & DELIVERY and EASY RETURNS</p>
+      <span style="font-size: 13px">
+        <b>Seller:</b>
+        <nuxt-link to="/store/Toffytesam" style="text-decoration: none;">{{'Toffytesam'}}</nuxt-link>
+      </span>
+      <h2 class="price-and-shipping mt-2">
         N12,000
         <!-- <sub style="font-size: 13px" class="font-weight-regular">+N500 shipping</sub> -->
       </h2>
       <p style="font-size: 14px" class="discount mt-1">
         List price
-        <del>N20,000</del>
+        <del class="grey--text">N20,000</del>
         <span class="ZameriaRed--text font-weight-bold">Save 50%</span>
       </p>
       <p style="font-size: 14px">
@@ -33,7 +34,11 @@
             :key="color"
             @click="selectedColor = color"
           >
-            <span class="color-box-container" v-if="selectedColor === color" style="margin-right: 10px">
+            <span
+              class="color-box-container"
+              v-if="selectedColor === color"
+              style="margin-right: 10px"
+            >
               <span class="color-box" :style="{backgroundColor : color }"></span>
             </span>
             <span v-else style="margin-right: 10px">
@@ -87,8 +92,9 @@
           class="select-field"
           outlined
           :items="['Nigeria']"
+          disabled
           color="ZameriaAsh"
-          placeholder="Country"
+          placeholder="Nigeria"
         ></v-select>
         <v-select
           style="margin-top: -10px"
@@ -114,11 +120,14 @@
         <div style="display: flex" class="mr-3 mt-1">
           <span style="flex-grow: 1; display: inline">
             <v-btn
+              style="font-size: 11px"
               small
               text
-              color="ZameriaRed"
+              color="ZameriaBlue"
               class="mt-0 mx-0 pa-0 text-capitalize small-text"
-            >Check</v-btn>
+            >
+              <span>Check Shipping Fee:</span>
+            </v-btn>
           </span>
           <span class="small-text mt-1"></span>
         </div>
@@ -165,7 +174,7 @@
       <main-product-grid
         class="mt-8"
         head="true"
-        header="Recommend Products"
+        header="Recommended Products"
         slide="true"
         image="watch.jpg"
       ></main-product-grid>
@@ -174,19 +183,17 @@
 </template>
 
 <script>
+import StateJson from "@/assets/docs/states.json";
+import LgaJson from "@/assets/docs/lgas.json";
+
 export default {
   async asyncData({ params }) {
     let name = params.item.replace(/-/g, " ");
   },
 
   async fetch() {
-    this.$store.commit("actionss/setCities", []);
-    let data = await this.$axios.get(
-      "https://locationsng-api.herokuapp.com/api/v1/states"
-    );
-    let statess = data.data;
     let stateArr = [];
-    statess.map(state => {
+    StateJson.map(state => {
       stateArr.push(state.name);
     });
     this.states = stateArr;
@@ -228,11 +235,12 @@ export default {
       }
     },
     state: async function(newValue) {
-      let data = await this.$axios.get(
-        `https://locationsng-api.herokuapp.com/api/v1/states/${this.state}/details`
-      );
-      let details = data.data.lgas;
-      this.cities = details;
+      let state = this.state;
+      let cities = [];
+      LgaJson.map(lgas => {
+        if (lgas.state === state) cities = lgas["lgas"];
+      });
+      this.cities = cities;
     }
   }
 };
