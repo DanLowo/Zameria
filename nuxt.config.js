@@ -30,7 +30,7 @@ export default {
       }
     ],
     script: [
-      {
+       {
         src: "https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"
       }
     ],
