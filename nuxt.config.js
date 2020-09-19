@@ -31,7 +31,7 @@ export default {
     ],
     script: [
        {
-        src: "https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"
+        src: "https://res.cloudinary.com/danlowo/raw/upload/v1600327487/vuetify_ktciwo.js"
       }
     ],
     link: [
@@ -44,11 +44,11 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css"
+          "https://res.cloudinary.com/danlowo/raw/upload/v1600327121/muiicons.min_f7wpzb.css"
       },
       {
         rel: "stylesheet",
-        href: "https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+        href: "https://res.cloudinary.com/danlowo/raw/upload/v1600327101/vuetifycss.min_ir5h6p.css"
       },
 
       { rel: "stylesheet", href: "/app.css" }
