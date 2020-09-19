@@ -6,7 +6,7 @@
       interval="4000"
       :show-arrows="false"
       hide-delimiters
-      height="118"
+      height="135"
       v-model="carouselPosition"
     >
       <v-carousel-item v-for="(stores, k) in storess" :key="k">
