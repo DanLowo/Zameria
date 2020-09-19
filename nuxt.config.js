@@ -29,11 +29,11 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    script: [
-       {
-        src: "https://res.cloudinary.com/danlowo/raw/upload/v1600327487/vuetify_ktciwo.js"
-      }
-    ],
+    // script: [
+    //    {
+    //     src: "https://res.cloudinary.com/danlowo/raw/upload/v1600327487/vuetify_ktciwo.js"
+    //   }
+    // ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
@@ -41,15 +41,15 @@ export default {
         href:
           "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       },
-      {
-        rel: "stylesheet",
-        href:
-          "https://res.cloudinary.com/danlowo/raw/upload/v1600327121/muiicons.min_f7wpzb.css"
-      },
-      {
-        rel: "stylesheet",
-        href: "https://res.cloudinary.com/danlowo/raw/upload/v1600327101/vuetifycss.min_ir5h6p.css"
-      },
+      // {
+      //   rel: "stylesheet",
+      //   href:
+      //     "https://res.cloudinary.com/danlowo/raw/upload/v1600327121/muiicons.min_f7wpzb.css"
+      // },
+      // {
+      //   rel: "stylesheet",
+      //   href: "https://res.cloudinary.com/danlowo/raw/upload/v1600327101/vuetifycss.min_ir5h6p.css"
+      // },
 
       { rel: "stylesheet", href: "/app.css" }
     ]
