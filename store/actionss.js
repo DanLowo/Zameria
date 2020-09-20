@@ -10,7 +10,8 @@ export const state = () => ({
   contactUs: "",
   states: [],
   cities: [],
-  faqsList: []
+  faqsList: [],
+  reviewModal: false
 });
 
 export const mutations = {
@@ -23,8 +24,8 @@ export const mutations = {
   setCities(state, data) {
     state.cities = data;
   },
-  setFaqs(state, data){
-    state.faqsList = data
+  setFaqs(state, data) {
+    state.faqsList = data;
   },
   setSearch(state, data) {
     state.searchText = data;
@@ -40,5 +41,8 @@ export const mutations = {
   },
   setContactUs(state, data) {
     state.contactUs = data;
+  },
+  setReviewModal(state, data) {
+    state.reviewModal = !state.reviewModal;
   }
 };

@@ -47,18 +47,24 @@
       <v-divider class="mx-2"></v-divider>
       <div style="display: flex" class="blue--text mx-2">
         <span style="flex-grow: 1;" class="mr-0 pr-0">
-          <v-btn text style="font-size: 9px" class="ml-0 pl-0 blue--text">
-            <b>Move to Cart</b>
+          <v-btn text style="font-size: 9px" class="ml-0 pl-0 blue--text" @click="reviewModal">
+            <b>Review order</b>
           </v-btn>
         </span>
         <span>
           <v-btn text style="font-size: 9px; " class="mr-0 pr-0 blue--text">
             <v-icon small>mdi-close</v-icon>
-            <b>Remove</b>
+            <b>Return order</b>
           </v-btn>
         </span>
       </div>
       <v-divider></v-divider>
+
+      <div class="review">
+        <v-dialog persistent v-model="$store.state.actionss.reviewModal">
+          <main-review-modal></main-review-modal>
+        </v-dialog>
+      </div>
     </v-card>
   </div>
 </template>
@@ -79,6 +85,11 @@ export default {
       } else {
         this.disable = false;
       }
+    }
+  },
+  methods: {
+    reviewModal() {
+      this.$store.commit("actionss/setReviewModal", "set");
     }
   }
 };

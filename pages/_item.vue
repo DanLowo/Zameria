@@ -2,6 +2,11 @@
   <div class="item" style="margin-bottom: 120px">
     <main-navbar></main-navbar>
     <div class="mt-2">
+      <div class="wishlist-icon">
+        <v-btn icon color="white" @click="colorIcon = 'red' ">
+          <v-icon size="30" :color="colorIcon">mdi-heart-multiple</v-icon>
+        </v-btn>
+      </div>
       <main-carousel circle="false"></main-carousel>
     </div>
     <div class="my-2 mx-3 mt-5">
@@ -27,7 +32,10 @@
 
       <div class="choice mb-5">
         <div class="color">
-          <p class="normal-p mb-1">Color: <span class="ml-1" style="font-size: 12px" v-for="i in colors" :key="i" > {{i}}, </span> </p>
+          <p class="normal-p mb-1">
+            Color:
+            <span class="ml-1" style="font-size: 12px" v-for="i in colors" :key="i">{{i}},</span>
+          </p>
           <div
             style="display: inline"
             v-for="color in colors"
@@ -205,6 +213,7 @@ export default {
       selectedSize: "",
       selectedColor: "",
       orderNumber: 1,
+      colorIcon: "white",
       disable: true,
       states: [],
       cities: [],
@@ -290,6 +299,14 @@ export default {
   line-height: 33px;
   margin-right: 12px;
   font-weight: 800;
+}
+
+.wishlist-icon {
+  position: absolute;
+  right: 15px;
+  top: 140px;
+  color: white;
+  z-index: 999;
 }
 
 .size-box-selected {
