@@ -1,17 +1,14 @@
-
 // Zamerisa default colors
 
-$ZameriaRed: #FF0000;
-$ZameriaLightRed: #FF554D;
-$ZameriaOrange: #FF870C;
-$ZameriaBrown: #DAB777;
+$ZameriaRed: #ff0000;
+$ZameriaLightRed: #ff554d;
+$ZameriaOrange: #ff870c;
+$ZameriaBrown: #dab777;
 $ZameriaGrey: #282828;
-$ZameriaAsh: #E2E2E2;
-
-
+$ZameriaAsh: #e2e2e2;
 
 // Zameria Custom Input Field With The Dark Background
-.zameria-dark-form{
+.zameria-dark-form {
   background-color: $ZameriaAsh;
   width: 100%;
   margin-bottom: 17px;
@@ -19,14 +16,12 @@ $ZameriaAsh: #E2E2E2;
   padding: 4px;
   padding-left: 8px;
 }
-.zameria-dark-form:focus{
-  outline: none
+.zameria-dark-form:focus {
+  outline: none;
 }
 
-
-
 // Zameria Custom Field For Light Theme
-.zameria-light-form{
+.zameria-light-form {
   // background-color: grey;
   width: 100%;
   margin-bottom: 17px;
@@ -35,25 +30,22 @@ $ZameriaAsh: #E2E2E2;
   padding: 7px;
   padding-left: 8px;
 }
-.zameria-light-form::placeholder{
+.zameria-light-form::placeholder {
   color: $ZameriaAsh;
   font-family: "Zameria Regular";
   font-size: 16px;
   font-weight: 300;
 }
-.zameria-light-form:focus{
-  outline: none
+.zameria-light-form:focus {
+  outline: none;
 }
 
-.input-icon{
+.input-icon {
   position: absolute;
   right: 12%;
   padding-top: 36px;
   // bottom: 30px;
 }
-
-
-
 
 .auth-header {
   // height: 90px;
@@ -62,22 +54,22 @@ $ZameriaAsh: #E2E2E2;
   box-shadow: 1px 1px 1px 1px $ZameriaAsh;
 }
 
-input:focus{
+input:focus {
   outline: none;
   padding-left: 8px;
 }
 
-.nuxt-link{
+.nuxt-link {
   text-decoration: none;
   color: black;
- }
-
-body{
-    margin: 0px;
-    padding: 0px;
 }
 
-.close-icon{
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.close-icon {
   position: absolute;
   right: 12px;
   font-size: 20px;
@@ -85,66 +77,73 @@ body{
   color: $ZameriaGrey;
 }
 
-
 // .number .v-input__control .v-input__slot .v-text-field__slot .v-label{
 //   margin-left: 15px;
 // }
 
-.v-application--is-ltr > .v-text-field__prefix{
+.v-application--is-ltr > .v-text-field__prefix {
   color: #978e8ed0;
 }
 
-.theme--light.v-label{
+.theme--light.v-label {
   color: #978e8ed0;
 }
 
-.v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label{
+.v-input--selection-controls .v-input__slot > .v-label,
+.v-input--selection-controls .v-radio > .v-label {
   color: black;
 }
 
-#cus-nav-bar{
+#cus-nav-bar {
   box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
 }
 
 .v-app-bar__nav-icon .v-btn__content .v-icon {
-    font-size: 30px;
-  }
+  font-size: 30px;
+}
 
-.v-btn__content{
+.v-btn__content {
   font-weight: 700;
 }
-  
-  .v-toolbar__content{
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  
-  .bor {
-    // border-bottom: 1px solid rgb(224, 221, 221);
-    box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
-  }
 
+.v-toolbar__content {
+  padding-left: 8px;
+  padding-right: 8px;
+}
 
-  .custom-search-btn {
-    border: 1px solid grey;
-    padding: 10px;
-    width: 83vw;
-    height: 44px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  
-  .custom-btn {
-    border: 1px solid grey;
-    padding: 2px;
-    width: 65%;
-    height: 37px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
+.bor {
+  // border-bottom: 1px solid rgb(224, 221, 221);
+  box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
+}
 
-  ::placeholder {
-    color: gery;
-    padding-left: 7px;
-    font-size: 13px;
-  }
+.custom-search-btn {
+  border: 1px solid grey;
+  padding: 10px;
+  width: 100%;
+  height: 44px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#search-btn {
+  position: absolute;
+  top: 56px;
+  height: 44px;
+  right: 8px;
+  z-index: 999;
+}
+
+.custom-btn {
+  border: 1px solid grey;
+  padding: 2px;
+  width: 65%;
+  height: 37px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+::placeholder {
+  color: gery;
+  padding-left: 7px;
+  font-size: 13px;
+}

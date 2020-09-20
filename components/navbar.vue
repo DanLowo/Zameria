@@ -11,12 +11,12 @@
           </nuxt-link>
           <v-spacer></v-spacer>
           <nuxt-link to="/cart" style="text-decoration: none">
-            <v-icon color="black" class="mr-1" style="font-size: 30px">mdi-cart-outline</v-icon>
+            <v-icon color="black" style="font-size: 30px">mdi-cart-outline</v-icon>
           </nuxt-link>
         </v-app-bar>
 
         <!-- Search input field -->
-        <div class="px-0 pb-4" align="center">
+        <div class="px-0 pb-4 mx-2" align="center">
           <form method="POST" @submit.prevent="search">
             <input
               type="text"
@@ -28,11 +28,10 @@
             />
             <v-btn
               type="submit"
-              small
               depressed
               tile
               class="red white--text"
-              style="margin-left: -6px; height: 44px; margin-bottom: 3px"
+              id="search-btn"
             >
               <v-icon>mdi-magnify</v-icon>
             </v-btn>
