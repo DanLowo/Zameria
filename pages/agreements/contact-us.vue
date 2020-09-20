@@ -30,7 +30,13 @@ export default {
   font-size: 14px;
 }
 
+.contact-us strong{
+  font-weight: 100;
+}
+
 .contact-us h3{
+  font-size: 17px;
+  font-weight: 500;
   margin-bottom: 10px;
   margin-top: 30px;
 }
