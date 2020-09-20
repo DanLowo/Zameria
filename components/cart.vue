@@ -26,10 +26,10 @@
               <span>Size: 36.6 EU</span>
             </div>
             <div class="quantity mt-5 mb-5" style="font-size: 14px">
-              <span>Quantity</span>
-              <!-- <span>
+              <span>Quantity:</span>
+              <span>
                 <v-select
-                  style="max-width: 80px; display: inline-block; border-radius: 0px"
+                  style="max-width: 80px; display: inline-block; border-radius: 0px;"
                   dense
                   height="30"
                   class="mb-0 pb-0 ml-3"
@@ -39,7 +39,7 @@
                   color="ZameriaAsh"
                   :placeholder="orderNumber"
                 ></v-select>
-              </span> -->
+              </span>
             </div>
           </div>
         </v-col>
@@ -85,4 +85,18 @@ export default {
 </script>
 
 <style>
+.quantity fieldset {
+  height: 35px;
+}
+
+.quantity .v-select__slot {
+  height: 27px;
+}
+
+.quantity .v-input__icon {
+  margin-top: -5px;
+}
+.quantity .v-input__icon--append{
+  margin-top: -5px;
+}
 </style>

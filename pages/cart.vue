@@ -76,14 +76,6 @@
         </v-btn>
       </v-bottom-navigation>
 
-      <!-- <div class="mt-8 px-2">
-        <div style="display: flex">
-          <h4 style="flex-grow: 1">Total</h4>
-          <span class="font-weight-bold"># 36,890</span>
-        </div>
-        <p style="font-size: 12px" class="mb-2 mt-2" align="right">Delivery fee not included yet</p>
-        <v-btn block height="40" depressed color="ZameriaRed" dark>CHECKOUT</v-btn>
-      </div>-->
     </div>
 
     <div v-else class="mb-14">
