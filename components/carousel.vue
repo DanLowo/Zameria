@@ -49,4 +49,10 @@ export default {
 </script>
 
 <style>
+
+.carousel-circles{
+  margin-top: -5px;
+  margin-bottom: -3px
+}
+
 </style>

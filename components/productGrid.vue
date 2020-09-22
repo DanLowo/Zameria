@@ -7,10 +7,10 @@
           <b>{{ header }}</b>
         </span>
         <span
-          style="font-size: 15px; text-decoration: underline"
+          style="font-size: 14px; text-decoration: none"
           class="ZameriaLightRed--text"
           @click="sendRoute(header)"
-        >See More</span>
+        ><b>See More</b></span>
       </div>
       <div class="slide-products mt-3">
         <div v-for="i in 8" :key="i" class="mr-2" style="display: inline-block">
@@ -43,7 +43,7 @@
               <span class="pr-1 grey--text">
                 <del>N8,500</del>
               </span>
-              <span class="ZameriaLightRed--text">60%off</span>
+              <span class="ZameriaLightRed--text" style="font-size: 13px">60%off</span>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
           <b>{{ header }}</b>
         </span>
         <span
-          style="font-size: 15px; text-decoration: underline"
+          style="font-size: 14px; text-decoration: nonene"
           class="ZameriaLightRed--text"
           @click="sendRoute(header)"
         >See More</span>
@@ -80,7 +80,7 @@
             </div>
 
             <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
-              <p id="wrap-text-3-above">Reebok Nano Blue Original Sneakers</p>
+              <p id="wrap-text-3-above-2">Reebok Nano Blue Original Sneakers</p>
             </div>
             <div v-else class="mb-0 pb-0 font-weight-light">
               <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
@@ -92,7 +92,7 @@
               <span class="pr-1">
                 <del>N8,500</del>
               </span>
-              <span class="ZameriaLightRed--text">60%off</span>
+              <span class="ZameriaLightRed--text" style="font-size: 13px">60%off</span>
             </div>
           </div>
         </v-col>
@@ -187,6 +187,18 @@ export default {
   margin-inline-end: 0px;
   white-space: nowrap;
   width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+#wrap-text-3-above-2 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  white-space: nowrap;
+  width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 14px;

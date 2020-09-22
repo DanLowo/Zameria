@@ -46,7 +46,7 @@
           id="confirmPassword"
         />
 
-        <v-btn class="mt-2 text-capitalize" height="40" type="submit" dark depressed color="ZameriaRed" block>Change Password</v-btn>
+        <v-btn tile class="mt-2" height="43" type="submit" dark depressed color="ZameriaRed" block>Change Password</v-btn>
       </form>
     </div>
   </div>
@@ -54,7 +54,7 @@
 
 <script>
 export default {
-  layout: 'nofooter',
+  layout: 'nonavbar',
   data() {
     return {
       currentPassword: "",

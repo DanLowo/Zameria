@@ -4,7 +4,7 @@
       style="border: 1px solid #E2E2E2"
       src="https://www.thepragmaticparent.com/wp-content/uploads/mom-and-daughter-with-dandelions.jpg"
       alt="32"
-      height="300"
+      height="390"
     ></v-img>
     <div class="mx-2 mt-3" align="center">
       <h4>Women's Self-Care: Yoga & Recovery</h4>

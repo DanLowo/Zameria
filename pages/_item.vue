@@ -3,8 +3,8 @@
     <main-navbar></main-navbar>
     <div class="mt-2">
       <div class="wishlist-icon">
-        <v-btn icon color="white" @click="colorIcon = 'red' ">
-          <v-icon size="30" :color="colorIcon">mdi-heart-multiple</v-icon>
+        <v-btn color="white" @click="colorIcon = 'red' " fab small>
+          <v-icon size="30" :color="colorIcon">mdi-heart-outline</v-icon>
         </v-btn>
       </div>
       <main-carousel circle="false"></main-carousel>
@@ -172,6 +172,10 @@
           <v-expansion-panel-content v-if="item.header === 'Product reviews' ">
             <main-comments></main-comments>
           </v-expansion-panel-content>
+          <v-expansion-panel-content v-if="item.header === 'Shipping and return policies' ">
+            <p class="mb-2 mt-0"> <nuxt-link to="/faqs#Shipping & Delivery" style="text-decoration: none"> Shipping & Delivery</nuxt-link> </p>
+            <p class="mt-0 mb-0"> <nuxt-link to="/faqs#Returns & Refund" style="text-decoration: none"> Return and Refund</nuxt-link> </p>
+          </v-expansion-panel-content>
           <v-expansion-panel-content v-else>{{item.content}}</v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -213,7 +217,7 @@ export default {
       selectedSize: "",
       selectedColor: "",
       orderNumber: 1,
-      colorIcon: "white",
+      colorIcon: "black",
       disable: true,
       states: [],
       cities: [],

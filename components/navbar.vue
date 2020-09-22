@@ -42,7 +42,7 @@
 
     <!-- Main Navigation Slide -->
     <div class="navigation idden-md-and-up">
-      <v-navigation-drawer app v-model="drawer" width="288">
+      <v-navigation-drawer app v-model="drawer" width="87vw">
         <div>
           <div v-if="navHeader === 'SHOP BY DEPARTMENT' ">
             <h1 class="py-4 pl-3 ZameriaAsh" style="font-size: 18px">{{navHeader}}</h1>
@@ -128,15 +128,6 @@
               </v-list-item>
               <v-list-item @click="ok" to="/orders">
                 <v-list-item-title>My Orders</v-list-item-title>
-              </v-list-item>
-              <v-list-item @click="ok" to="/agreements/contact-us">
-                <v-list-item-title>Help & Contact</v-list-item-title>
-              </v-list-item>
-              <v-list-item @click="ok" to="/faqs">
-                <v-list-item-title>FAQs</v-list-item-title>
-              </v-list-item>
-              <v-list-item @click="ok">
-                <v-list-item-title>Sell an item</v-list-item-title>
               </v-list-item>
               <v-list-item @click="ok" to="/auth/change-password">
                 <v-list-item-title>Change Password</v-list-item-title>

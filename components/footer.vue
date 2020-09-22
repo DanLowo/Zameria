@@ -44,7 +44,7 @@
           <nuxt-link to="/agreements/terms-of-use" class="white--text">Terms of use</nuxt-link>
         </span>
         <span class="mr-3" style="font-size: 11px">
-          <nuxt-link to="/agreements/contact-us" class="white--text">Contact us</nuxt-link>
+          <nuxt-link to="/contact-us" class="white--text">Contact us</nuxt-link>
         </span>
         <span class="mr-3" style="font-size: 11px">
           <nuxt-link to="/agreements/privacy-policy" class="white--text">Privacy Policy</nuxt-link>
