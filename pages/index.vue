@@ -1,6 +1,5 @@
 <template>
   <div class="home" style="margin-bottom: 85px">
-    <main-subheader></main-subheader>
     <Navbar />
     <div class="mt-3 bar"></div>
     <div class="carousel-section">
@@ -25,7 +24,7 @@
       </v-row>
     </div>
 
-    <div class="image-section mx-2 mt-2">
+    <div class="image-section mt-2">
       <v-img
         style="border: 1px solid #E2E2E2"
         src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"

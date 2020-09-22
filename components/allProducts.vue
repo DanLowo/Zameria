@@ -34,7 +34,7 @@
               <span class="pr-1">
                 <del>N8,500</del>
               </span>
-              <span class="ZameriaLightRed--text">60%off</span>
+              <span class="ZameriaLightRed--text" style="font-size: 13px">60%off</span>
             </div>
           </div>
         </v-col>

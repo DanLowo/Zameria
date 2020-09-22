@@ -3,7 +3,7 @@
     <div style="flex-grow: 1">
       <v-menu offset-y>
         <template v-slot:activator="{on, attrs}">
-          <v-btn dense text color="white" tile v-on="on" v-bind="attrs">
+          <v-btn dense text color="white" tile v-on="on" v-bind="attrs" class="mx-1 px-0" style="font-size: 11px">
             Customer Service
             <v-icon>mdi-chevron-down</v-icon>
           </v-btn>
@@ -24,7 +24,7 @@
       </v-menu>
     </div>
     <div class="mt-1 mr-3">
-        <a href="tel:+23458987450" style="color: white; text-decoration: none"> <b>(+234) 58-987-450</b>  </a>
+        <a href="tel:+23458987450" style="color: white; text-decoration: none; font-size: 13px"> <b>(+234) 58-987-450</b>  </a>
     </div>
   </div>
 </template>
@@ -38,5 +38,6 @@ export default {};
     background-color: black;
     color: white;
     display: flex;
+    height: 36px;
 }
 </style>

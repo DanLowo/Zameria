@@ -225,7 +225,7 @@ export default {
       city: "",
       accordion: [
         {
-          header: "Item details",
+          header: "Product details",
           content: "About item"
         },
         {
@@ -308,7 +308,7 @@ export default {
 .wishlist-icon {
   position: absolute;
   right: 15px;
-  top: 140px;
+  top: 170px;
   color: white;
   z-index: 999;
 }

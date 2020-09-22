@@ -3,18 +3,22 @@
     <!-- Product grid for scrollable products -->
     <div v-if="slides" class="mx-2">
       <div v-show="heads" style="display: flex;">
-        <span class="font-weight-bold" style="flex-grow: 1; font-size: 14px">
+        <span class="font-weight-bold text-uppercase" style="flex-grow: 1; font-size: 14px">
           <b>{{ header }}</b>
         </span>
         <span
           style="font-size: 14px; text-decoration: none"
           class="ZameriaLightRed--text"
           @click="sendRoute(header)"
-        ><b>See More</b></span>
+        >
+          <b>See More</b>
+        </span>
       </div>
       <div class="slide-products mt-3">
         <div v-for="i in 8" :key="i" class="mr-2" style="display: inline-block">
-          <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}"> <v-img class="grid-img-slide" aspect-ratio="1"></v-img> </nuxt-link>
+          <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}">
+            <v-img class="grid-img-slide" aspect-ratio="1"></v-img>
+          </nuxt-link>
           <div>
             <div v-if="wished">
               <v-icon
@@ -57,13 +61,20 @@
         </span>
         <span
           style="font-size: 14px; text-decoration: nonene"
-          class="ZameriaLightRed--text"
+          class="ZameriaLightRed--text font-weight-bold"
           @click="sendRoute(header)"
         >See More</span>
       </div>
       <v-row v-for="n in rows" :key="n" dense>
         <v-col class="mt-3" v-for="i in grid" :key="i" :sm="cols" :md="cols" :lg="cols">
-          <v-img class="grid-img" :height="height" aspect-ratio="1"></v-img>
+          <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}">
+            <v-img
+              class="grid-img"
+              :height="height"
+              aspect-ratio="1"
+              style="border: 1px solid #E2E2E2"
+            ></v-img>
+          </nuxt-link>
           <div>
             <div v-if="wished">
               <v-icon
@@ -198,7 +209,7 @@ export default {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   white-space: nowrap;
-  width: 150px;
+  width: 155px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 14px;

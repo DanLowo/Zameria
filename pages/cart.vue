@@ -1,6 +1,5 @@
 <template>
   <div class="cart">
-    <NavBar></NavBar>
     <div v-if="cart" class="cart-items">
       <nuxt-link to="/wishlist">
         <h5 class="py-3 px-3 mt-1 ZameriaAsh black--text font-weight-light" align="center">

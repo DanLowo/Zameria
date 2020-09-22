@@ -1,5 +1,6 @@
 <template>
   <div class="navbar">
+    <main-subheader></main-subheader>
     <div>
       <div class="bor">
         <!-- Header with navigation icon, Zameria logo and Cart -->
@@ -30,10 +31,10 @@
               type="submit"
               depressed
               tile
-              class="red white--text"
+              class="black white--text"
               id="search-btn"
             >
-              <v-icon>mdi-magnify</v-icon>
+              <v-icon color="white">mdi-magnify</v-icon>
             </v-btn>
           </form>
         </div>
@@ -244,5 +245,13 @@ export default {
 .bor {
   // border-bottom: 1px solid rgb(224, 221, 221);
   box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
+}
+
+#search-btn {
+  position: absolute;
+  top: 92px;
+  height: 44px;
+  right: 8px;
+  z-index: 1;
 }
 </style>
