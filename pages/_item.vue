@@ -25,10 +25,12 @@
         <del class="grey--text">N20,000</del>
         <span class="ZameriaRed--text font-weight-bold">Save 50%</span>
       </p>
-      <p style="font-size: 12px">
+      <p style="font-size: 12px" id="alert">
         Est. Delivery :
         <span class="font-weight-bold">Wed, Nov 4 - Wed, Dec 9</span>
       </p>
+
+      <main-alert v-show="selectError" type="error" :message="selectErrorMessage"></main-alert>
 
       <div class="choice mb-5">
         <div class="color">
@@ -150,6 +152,7 @@
         outlined
         dark
         tile
+        @click="addToCart"
         style="border: 0.5px solid grey; width: 47%"
       >Add to cart</v-btn>
       <v-btn
@@ -158,6 +161,7 @@
         height="40"
         style="width: 47%"
         tile
+        @click="buyNow"
         color="ZameriaRed"
         dark
       >Buy it Now</v-btn>
@@ -173,8 +177,15 @@
             <main-comments></main-comments>
           </v-expansion-panel-content>
           <v-expansion-panel-content v-if="item.header === 'Shipping and return policies' ">
-            <p class="mb-2 mt-0"> <nuxt-link to="/faqs#Shipping & Delivery" style="text-decoration: none"> Shipping & Delivery</nuxt-link> </p>
-            <p class="mt-0 mb-0"> <nuxt-link to="/faqs#Returns & Refund" style="text-decoration: none"> Return and Refund</nuxt-link> </p>
+            <p class="mb-2 mt-0" style="font-size: 14px">
+              <nuxt-link
+                to="/faqs#Shipping & Delivery"
+                style="text-decoration: none"
+              >Shipping & Delivery</nuxt-link>
+            </p>
+            <p class="mt-0 mb-0" style="font-size: 14px">
+              <nuxt-link to="/faqs#Returns & Refund" style="text-decoration: none">Return and Refund</nuxt-link>
+            </p>
           </v-expansion-panel-content>
           <v-expansion-panel-content v-else>{{item.content}}</v-expansion-panel-content>
         </v-expansion-panel>
@@ -210,6 +221,51 @@ export default {
     });
     this.states = stateArr;
   },
+
+  methods: {
+    addToCart() {
+      if (this.selectedSize === "" && this.selectedColor === "") {
+        this.selectError = true;
+        this.selectErrorMessage = "Please select color and size";
+        let el = document.getElementById("alert");
+        el.scrollIntoView(true);
+      } else if (this.selectedSize === "") {
+        this.selectError = true;
+        this.selectErrorMessage = "Please select size";
+        let el = document.getElementById("alert");
+        el.scrollIntoView(true);
+      } else if (this.selectedColor === "") {
+        this.selectError = true;
+        this.selectErrorMessage = "Please select color";
+        let el = document.getElementById("alert");
+        el.scrollIntoView(true);
+      } else {
+        this.selectError = false;
+        this.selectErrorMessage = "";
+      }
+    },
+    buyNow() {
+      if (this.selectedSize === "" && this.selectedColor === "") {
+        this.selectError = true;
+        this.selectErrorMessage = "Please select color and size";
+        let el = document.getElementById("alert");
+        el.scrollIntoView(true);
+      } else if (this.selectedSize === "") {
+        this.selectError = true;
+        this.selectErrorMessage = "Please select size";
+        let el = document.getElementById("alert");
+        el.scrollIntoView(true);
+      } else if (this.selectedColor === "") {
+        this.selectError = true;
+        this.selectErrorMessage = "Please select color";
+        let el = document.getElementById("alert");
+        el.scrollIntoView(true);
+      } else {
+        this.selectError = false;
+        this.selectErrorMessage = "";
+      }
+    }
+  },
   data() {
     return {
       sizes: ["S", "M", "L"],
@@ -223,6 +279,8 @@ export default {
       cities: [],
       state: "",
       city: "",
+      selectError: false,
+      selectErrorMessage: "",
       accordion: [
         {
           header: "Product details",

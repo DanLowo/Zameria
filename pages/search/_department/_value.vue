@@ -1,16 +1,15 @@
 <template>
   <div class="search" style="margin-bottom: 70px">
     <main-navbar></main-navbar>
+    <div class="mt-1">
+      <h5 class="py-3 px-3 mt-1 ZameriaAsh black--text font-weight-light text-capitalize" align="center">
+        <u>{{path[0] + ' / ' + path[1] }}</u>
+      </h5>
+    </div>
     <div class="mx-2 mt-2 py-2">
       <div>
         <main-brands></main-brands>
       </div>
-
-      <h3 class="font-weight-light">Showing results for: '{{searchText}}'</h3>
-      <!-- <div class="filter py-2 px-3 mt-3 filter-sort">
-        <span class="filter-sort-text">Filter</span>
-        <v-icon>mdi-plus</v-icon>
-      </div>-->
 
       <div class="sort-by py-2 px-3 mt-3 filter-sort">
         <span class="filter-sort-text">Sort by</span>
@@ -58,7 +57,8 @@ export default {
   },
   data() {
     return {
-      dialog: false
+      dialog: false,
+      path: []
     };
   },
   computed: {
@@ -68,11 +68,29 @@ export default {
       return keys;
     }
   },
-  asyncData({ params, store }) {
-    let value = params.value;
+
+  fetch() {
+    let value = this.$route.params.value;
+    let department = this.$route.params.department;
+
     value = value.replace(/-/g, " ");
-    store.commit("actionss/setSearch", value);
+    department = department.replace(/-/g, " ");
+
+    this.path[0] = department;
+    this.path[1] = value;
   },
+
+  // asyncData({ params, store }) {
+  //   let value = params.value;
+  //   let department = params.department;
+  //   let category = params.category;
+
+  //   value = value.replace(/-/g, " ");
+  //   department = department.replace(/-/g, " ");
+  //   category = category.replace(/-/g, " ");
+  //   console.log(value);
+  //   store.commit("actionss/setSearch", value);
+  // },
 
   methods: {
     selectSort(type) {

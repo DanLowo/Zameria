@@ -96,7 +96,7 @@
 
               <!-- List all sub-categories inside Categories -->
               <div v-else>
-                <v-list-item v-for="obj in category" :key="obj.title" @click="ok">
+                <v-list-item v-for="obj in category" :key="obj.title" @click="ok" :to="obj.url">
                   <v-list-item-title>{{obj.title}}</v-list-item-title>
                 </v-list-item>
               </div>
@@ -105,7 +105,7 @@
             </v-list>
 
             <v-list v-else>
-              <v-list-item v-for="obj in subCategories" :key="obj.title" @click="ok">
+              <v-list-item v-for="obj in subCategories" :key="obj.title" @click="ok" :to="obj.url">
                 <v-list-item-title>{{obj.title}}</v-list-item-title>
               </v-list-item>
             </v-list>
@@ -168,7 +168,6 @@ export default {
     navHeader: function(newValue, oldValue) {
       this.oldNavHeader = oldValue;
       this.navArr.push(oldValue);
-      console.log(this.navArr, this.navArr.length);
       if (this.navHeader === "SHOP BY DEPARTMENT") {
         this.count = 0;
         this.navArr = [];
