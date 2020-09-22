@@ -56,12 +56,12 @@
         <v-btn
           type="submit"
           class="mt-5"
-          height="40"
+          height="43"
           depressed
           dark
           block
           tile
-          color="ZameriaRed"
+          color="black"
         >Save</v-btn>
       </v-form>
     </div>

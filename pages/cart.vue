@@ -70,7 +70,7 @@
       </div>
 
       <v-bottom-navigation fixed class="white--text" height="49">
-        <v-btn block height="49" color="ZameriaRed" class="white--text">
+        <v-btn block height="49" color="black" class="white--text">
           <span class="white--text text-uppercase" style="font-size: 14px">Checkout</span>
         </v-btn>
       </v-bottom-navigation>

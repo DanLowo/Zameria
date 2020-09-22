@@ -188,7 +188,7 @@ export default {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   white-space: nowrap;
-  width: 165px;
+  width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 14px;

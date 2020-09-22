@@ -5,56 +5,23 @@
       <v-toolbar-title style="font-size: 18px" class="mx-2">Change Password</v-toolbar-title>
     </v-app-bar>
 
-    <div style="margin-bottom: 40vh" class="mt-7 pt-4 mx-6">
-      <form @submit.prevent="submit">
-        <label for="currentPassword">
-          <b>Curernt Password</b>
-        </label>
-        <span @click="changePasswordFieldType(1)" :class="passwordFieldIcon1"></span>
-        <input
-          :type="passwordFieldType1"
-          required
-          v-model="currentPassword"
-          class="zameria-light-form"
-          placeholder="Current Password"
-          id="currentPassword"
-        />
+    <div style="margin-bottom: 40vh" class="mt-5 pt-4 mx-4">
+      <v-form>
+        <v-text-field label="Current Password" append-icon="mdi-eye" color="ZameriaLightRed" v-model="currentPassword"></v-text-field>
 
-        <label for="newPassword">
-          <b>New Password</b>
-        </label>
-        <span @click="changePasswordFieldType(2)" :class="passwordFieldIcon2"></span>
-        <input
-          :type="passwordFieldType2"
-          required
-          v-model="newPassword"
-          class="zameria-light-form"
-          placeholder="New Password"
-          id="newPassword"
-        />
+        <v-text-field label="New Password" append-icon="mdi-eye" color="ZameriaLightRed" v-model="newPassword"></v-text-field>
 
-        <label for="comfirmpassword">
-          <b>Comfirm Password</b>
-        </label>
-        <span @click="changePasswordFieldType(3)" :class="passwordFieldIcon3"></span>
-        <input
-          :type="passwordFieldType3"
-          required
-          v-model="comfirmPassword"
-          class="zameria-light-form"
-          placeholder="Password"
-          id="confirmPassword"
-        />
+        <v-text-field label="Confirm Password" append-icon="mdi-eye" color="ZameriaLightRed" v-model="comfirmPassword"></v-text-field>
 
-        <v-btn tile class="mt-2" height="43" type="submit" dark depressed color="ZameriaRed" block>Change Password</v-btn>
-      </form>
+        <v-btn type="submit" class="mt-5" height="43" depressed dark block tile color="black">Save</v-btn>
+      </v-form>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  layout: 'nonavbar',
+  layout: "nonavbar",
   data() {
     return {
       currentPassword: "",

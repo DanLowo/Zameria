@@ -25,7 +25,7 @@
 
         <v-checkbox label="Set as default address" class="okkk"></v-checkbox>
 
-        <v-btn type="submit" class="mt-5" height="40" depressed dark block tile color="ZameriaRed"> Save </v-btn>
+        <v-btn type="submit" class="mt-5" height="43" depressed dark block tile color="black"> Save </v-btn>
       </v-form>
     </div>
   </div>
