@@ -4,39 +4,89 @@
     <div>
       <div class="bor">
         <!-- Header with navigation icon, Zameria logo and Cart -->
-        <v-app-bar flat color="white">
-          <v-app-bar-nav-icon class="black--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
-          <v-spacer></v-spacer>
-          <nuxt-link class="mr-3" to="/">
-            <v-img :src="require('@/assets/images/logo.png')" width="150"></v-img>
-          </nuxt-link>
-          <v-spacer></v-spacer>
-          <nuxt-link to="/cart" style="text-decoration: none">
-            <v-icon color="black" style="font-size: 30px">mdi-cart-outline</v-icon>
-          </nuxt-link>
-        </v-app-bar>
+        <div class="normal" v-if="!searchView">
+          <v-app-bar flat color="white">
+            <v-app-bar-nav-icon class="black--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <nuxt-link class="mr-3" to="/">
+              <v-img :src="require('@/assets/images/logo.png')" width="130"></v-img>
+            </nuxt-link>
+            <v-spacer></v-spacer>
 
-        <!-- Search input field -->
-        <div class="px-0 pb-4 mx-2" align="center">
-          <form method="POST" @submit.prevent="search">
-            <input
-              type="text"
-              required
-              v-model="searchText"
-              style="background-color: white"
-              placeholder="Search for items or products"
-              class="custom-search-btn"
-            />
-            <v-btn
-              type="submit"
-              depressed
-              tile
-              class="black white--text"
-              id="search-btn"
-            >
-              <v-icon color="white">mdi-magnify</v-icon>
-            </v-btn>
-          </form>
+          <v-menu offset-y>
+            <template v-slot:activator="{on, attrs}">
+              <v-btn dense color="black" icon tile v-on="on" v-bind="attrs" class="px-0">
+                <v-icon style="font-size: 30px">mdi-account-outline</v-icon>
+              </v-btn>
+            </template>
+            <v-list dense v-if="!$store.state.auth.loggedIn">
+              <v-list-item>
+                <v-list-item-title>
+                  <nuxt-link to="/auth/login" style="color: black; text-decoration: none">Sign in</nuxt-link>
+                </v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title>
+                  <nuxt-link to="/auth/register" style="color: black; text-decoration: none">Register</nuxt-link>
+                </v-list-item-title>
+              </v-list-item>
+            </v-list>
+
+
+            <v-list dense v-else>
+              <v-list-item>
+                <v-list-item-title>
+                  <nuxt-link to="/account/profile" style="color: black; text-decoration: none">Profile</nuxt-link>
+                </v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title>
+                  <nuxt-link to="/wishlist" style="color: black; text-decoration: none">Wishlist</nuxt-link>
+                </v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+              <v-list-item-title>
+                  <nuxt-link to="/orders" style="color: black; text-decoration: none">My Orders</nuxt-link>
+                </v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title>
+                  <nuxt-link to="/account/address-book" style="color: black; text-decoration: none">Address Book</nuxt-link>
+                </v-list-item-title>
+              </v-list-item>
+
+              <v-list-item>
+                <v-list-item-title>
+                  Logout
+                </v-list-item-title>
+              </v-list-item>
+
+            </v-list>
+          </v-menu>
+
+            <v-icon
+              class="mr-3"
+              color="black"
+              style="font-size: 30px"
+              @click="searchView = true"
+            >mdi-magnify</v-icon>
+            <nuxt-link to="/cart" style="text-decoration: none">
+              <v-icon color="black" style="font-size: 30px">mdi-cart-outline</v-icon>
+            </nuxt-link>
+          </v-app-bar>
+        </div>
+
+        <div class="normal" v-else>
+          <v-app-bar flat color="white">
+            <form class="mt-3" @submit.prevent="search">
+              <input type="search" required v-model="searchText" placeholder="Search for items or products" class="custom-search" id="search" style="width: 78vw" />
+              <v-btn id="search-btn" type="submit" icon> <v-icon color="black">mdi-magnify</v-icon> </v-btn>
+            </form>
+            <v-btn type="submit" style="font-size: 13px" text color="black" class="px-0 ml-1" @click="searchView = false">Cancel</v-btn>
+          </v-app-bar>
         </div>
       </div>
     </div>
@@ -161,7 +211,8 @@ export default {
       inCategory: false,
       oldNavHeader: "",
       navArr: [],
-      count: 0
+      count: 0,
+      searchView: false
     };
   },
   watch: {
@@ -246,11 +297,4 @@ export default {
   box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
 }
 
-#search-btn {
-  position: absolute;
-  top: 92px;
-  height: 44px;
-  right: 8px;
-  z-index: 1;
-}
 </style>

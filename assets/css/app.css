@@ -30,13 +30,13 @@ label {
   font-family: "Zameria Regular";
 }
 
-#search-btn {
+/* #search-btn {
   position: absolute;
   top: 92px;
   height: 44px;
   right: 8px;
   z-index: 1;
-}
+} */
 
 #link {
   text-decoration: none;

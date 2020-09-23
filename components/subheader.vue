@@ -24,7 +24,7 @@
       </v-menu>
     </div>
     <div class="mt-1 mr-3">
-        <a href="tel:+23458987450" style="color: white; text-decoration: none; font-size: 13px"> <b>(+234) 58-987-450</b>  </a>
+        <a href="tel:+23458987450" style="color: white; text-decoration: none; font-size: 12px"> <b>(+234) 58-987-450</b>  </a>
     </div>
   </div>
 </template>
