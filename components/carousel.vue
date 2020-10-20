@@ -38,7 +38,7 @@ export default {
       slides: [
         "core-values.png",
         "stand-for-something.png",
-        "LovingDoodle.png"
+        "core-values.png",
       ],
       carouselPosition: 0,
       ZameriaAsh: "#E2E2E2",

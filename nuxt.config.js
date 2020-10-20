@@ -52,6 +52,13 @@ export default {
 
   auth: {
     strategies: {
+      local: {
+        endpoints: {
+          login: { url: "/auth/", method: "post", propertyName: "token" },
+          user: { url: "/auth/", method: "get", propertyName: "user" }
+        },
+        tokenType: ""
+      },
       google: {
         client_id: process.env.GOOGLE_OAUTH_CLIENT_ID || "",
         redirect_uri: process.env.OAUTH_REDIRECT_URL || ""
@@ -120,12 +127,15 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: "https://zameria.herokuapp.com/"
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    transplie: ["@nuxtjs/auth"],
     extend(config, ctx) {
       config.module.rules.push({
         enforce: "pre",

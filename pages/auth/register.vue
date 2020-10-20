@@ -2,7 +2,7 @@
   <div class="register">
     <div class="auth-header" align="center">
       <span class="close-icon">
-          <v-icon @click="$router.back()">mdi-close</v-icon>
+        <v-icon @click="$router.back()">mdi-close</v-icon>
       </span>
       <span class="fa fa-user-o mb-3" style="font-size: 40px"></span>
       <p class="font-weight-bold">REGISTER</p>
@@ -61,8 +61,27 @@
         <span
           v-show="passwordLengthValid"
           style="font-size: 13px"
-          class="fa fa-exclamation-circle"
+          class="fa fa-exclamation-circle red--text"
         >Your password needs to be at least 6 characters.</span>
+
+        <div class="mt-4"></div>
+        <label for="confirmPassword">
+          <b>Confirm Password</b>
+        </label>
+        <span @click="changePasswordFieldType1" :class="passwordFieldIcon1"></span>
+        <input
+          :type="passwordFieldType1"
+          required
+          v-model="confirmPassword"
+          class="zameria-light-form mb-1"
+          placeholder="Confirm Password"
+          id="confirmPassword"
+        />
+        <span
+          v-show="match"
+          style="font-size: 13px"
+          class="fa fa-exclamation-circle red--text"
+        >Passwords doesn't match...</span>
 
         <p style="font-size: 14px" class="font-weight-bold mt-7 mb-2">
           What are you mostly intrested in?
@@ -72,18 +91,13 @@
           style="font-size: 12px"
         >We'll use the information to make more personalized recommendations.</p>
 
-        <input
-          type="checkbox"
-          v-model="preference.women"
-          name="women"
-          id="women"
-        />
+        <input type="checkbox" v-model="preference.women" name="women" id="women" />
         <label for="women">Women's fashion</label>
         <br />
-        <input type="checkbox" v-model="preference.men" name="men" id="men"/>
+        <input type="checkbox" v-model="preference.men" name="men" id="men" />
         <label for="men">Men's fashion</label>
         <br />
-        <input type="checkbox" v-model="preference.kids" name="kids" id="kids"/>
+        <input type="checkbox" v-model="preference.kids" name="kids" id="kids" />
         <label for="kids">Kid's fashion</label>
 
         <v-divider class="mt-5 mb-5"></v-divider>
@@ -93,31 +107,46 @@
           for="emailList"
         >Yes, I wish to recieve emails about special offers, new products and exclusive promotions, I can cancel my subscription at any time. (optional)</label>
 
-        <br> <br>
+        <br />
+        <br />
         <input required type="checkbox" name="agreements" id="agreements" />
         <label for="agreements">
           Yes, I agree to the
-          <nuxt-link to="/agreements/terms-of-use">Terms and Conditions</nuxt-link> and Zameria's
+          <nuxt-link to="/agreements/terms-of-use">Terms and Conditions</nuxt-link>and Zameria's
           <nuxt-link to="/agreements/privacy-policy">Privacy Policy.</nuxt-link>
         </label>
 
-        <v-btn class="mt-7 text-capitalize" height="43" type="submit" dark depressed color="ZameriaRed" block>Register</v-btn>
-
+        <v-btn
+          class="mt-7 text-capitalize"
+          height="43"
+          type="submit"
+          dark
+          depressed
+          color="ZameriaRed"
+          block
+        >Register</v-btn>
       </form>
 
       <authStrategy align="center" title="Register"></authStrategy>
-
     </div>
-        <div align="center" style="height: 35vh" class="mt-10 mb-7 px-7 pt-9">
+    <div align="center" style="height: 35vh" class="mt-10 mb-7 px-7 pt-9">
       <p class="font-weight-bold">ALREADY A CUSTOMER?</p>
-      <v-btn tile color="black" dark depressed block to="/auth/login" height="43" class="mt-2 text-capitalize">Login here</v-btn>
+      <v-btn
+        tile
+        color="black"
+        dark
+        depressed
+        block
+        to="/auth/login"
+        height="43"
+        class="mt-2 text-capitalize"
+      >Login here</v-btn>
     </div>
   </div>
 </template>
 
 <script>
-
-import authStrategy from "@/components/authStrategy"
+import authStrategy from "@/components/authStrategy";
 
 export default {
   components: {
@@ -129,6 +158,7 @@ export default {
       lastName: "",
       email: "",
       password: "",
+      confirmPassword: "",
       preference: {
         men: false,
         women: false,
@@ -136,8 +166,11 @@ export default {
       },
       emailList: true,
       passwordLengthValid: false,
+      match: false,
       passwordFieldType: "password",
-      passwordFieldIcon: "fa fa-eye-slash input-icon"
+      passwordFieldType1: "password",
+      passwordFieldIcon: "fa fa-eye-slash input-icon",
+      passwordFieldIcon1: "fa fa-eye-slash input-icon"
     };
   },
 
@@ -147,6 +180,14 @@ export default {
         this.passwordLengthValid = true;
       } else {
         this.passwordLengthValid = false;
+      }
+    },
+
+    confirmPassword: function(){
+      if(this.password !== this.confirmPassword){
+        this.match = true
+      } else {
+        this.match = false
       }
     }
   },
@@ -161,15 +202,37 @@ export default {
         this.passwordFieldIcon = "fa fa-eye-slash input-icon";
       }
     },
-    
-    submit() {
-      let data = {
+    changePasswordFieldType1() {
+      if (this.passwordFieldType1 === "password") {
+        this.passwordFieldType1 = "text";
+        this.passwordFieldIcon1 = "fa fa-eye input-icon";
+      } else {
+        this.passwordFieldType1 = "password";
+        this.passwordFieldIcon1 = "fa fa-eye-slash input-icon";
+      }
+    },
+    async submit() {
+      let details = {
         email: this.email,
-        firstName: this.firstName,
-        lastName: this.lastName,
         password: this.password,
-        emailList: this.emailList,
-        preference: this.preference
+        user_type: "consumer",
+        consumer: {
+          firstName: this.firstName,
+          lastName: this.lastName
+        },
+        phone_no: ""
+        // emailList: this.emailList,
+        // preference: this.preference
+      };
+
+      try {
+        let { data } = await this.$axios.post(
+          "/accounts/signup/create_account",
+          details
+        );
+        console.log(data);
+      } catch (err) {
+        console.log("e");
       }
     }
   }

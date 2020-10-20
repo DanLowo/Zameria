@@ -14,7 +14,7 @@
         <nuxt-link to="/faqs#Returns & Refund" class="ZameriaGrey--text">Return & Refund Policies</nuxt-link>
       </h5>
       <div class="mx-3 mt-5 wishlist-empty" align="center">
-        <v-img :src="require('@/assets/images/LovingDoodle.png')" aspect-ratio="1.3"></v-img>
+        <v-img :src="require('@/assets/images/core-values.png')" aspect-ratio="1.3"></v-img>
         <div class="mx-10 mt-15">
           <p align="center" style="font-size: 14px">
             You currently do not have any items
