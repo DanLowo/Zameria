@@ -16,7 +16,8 @@ export default ctx => {
             ZameriaGrey: "#282828",
             ZameriaAsh: "#E2E2E2",
             ZameriaBlue: "#2196f3",
-            ZameriaAsh2: "#f7f7f7"
+            ZameriaAsh2: "#f7f7f7",
+            ZameriaBlack: "#3E4151"
           }
         }
       }

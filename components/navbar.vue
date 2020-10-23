@@ -6,7 +6,7 @@
         <!-- Header with navigation icon, Zameria logo and Cart -->
         <div class="normal" v-if="!searchView">
           <v-app-bar flat color="white">
-            <v-app-bar-nav-icon class="black--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon class="ZameriaBlack--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
             <nuxt-link class="mr-3 mb-1 ml-0 pl-0" to="/">
               <v-img :src="require('@/assets/images/logo1.jpg')" height="40px" width="200" style="margin-left: -15px"></v-img>
             </nuxt-link>
@@ -14,7 +14,7 @@
 
           <v-menu offset-y>
             <template v-slot:activator="{on, attrs}">
-              <v-btn dense color="black" icon tile v-on="on" v-bind="attrs" class="px-0">
+              <v-btn dense color="ZameriaBlack" icon tile v-on="on" v-bind="attrs" class="px-0">
                 <v-icon style="font-size: 30px">mdi-account-outline</v-icon>
               </v-btn>
             </template>
@@ -69,12 +69,12 @@
 
             <v-icon
               class="mr-3"
-              color="black"
+              color="ZameriaBlack"
               style="font-size: 30px"
               @click="searchView = true"
             >mdi-magnify</v-icon>
             <nuxt-link to="/cart" style="text-decoration: none">
-              <v-icon color="black" style="font-size: 30px">mdi-cart-outline</v-icon>
+              <v-icon color="ZameriaBlack" style="font-size: 30px">mdi-cart-outline</v-icon>
             </nuxt-link>
           </v-app-bar>
         </div>
