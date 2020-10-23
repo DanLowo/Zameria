@@ -7,33 +7,49 @@
     </div>
 
     <div class="section-title ZameriaBrown" align="center">
-      <nuxt-link id="link" to="/search/NEW-ARRIVALS">SHOP OUR NEW ARRIVALS >>></nuxt-link>
+      <nuxt-link id="link" to="/search/NEW-ARRIVALS"
+        >SHOP OUR NEW ARRIVALS >>></nuxt-link
+      >
     </div>
 
     <div class="special-deals mt-11">
-      <ProductGrid head="true" header="Special Deals" slide="true" image="watch.jpg"></ProductGrid>
+      <ProductGrid
+        head="true"
+        header="Special Deals"
+        slide="true"
+        image="watch.jpg"
+      ></ProductGrid>
     </div>
 
-    <div class="shop-by-departments mx-2 mt-9" id="shop">
-      <h3 align="center" class="mb-3">SHOP BY DEPARTMENTS</h3>
-      <v-row dense>
-        <v-col v-for="i in departments" cols="4" :key="i" sm="4" md="4" lg="4">
-          <v-img class="dept-img" aspect-ratio="1"></v-img>
-          <p align="center" class="nowrap-text pt-1">{{i}}</p>
-        </v-col>
-      </v-row>
+    <div class="slide-products mt-13 mx-2 mb-15">
+      <div
+        v-for="i in departments"
+        :key="i"
+        class="mr-6"
+        style="display: inline-block"
+        align="center"
+      >
+        <nuxt-link style="text-decoration: none" :to="{ name: 'item', params: { item: 'addidas-shoe-new' } }">
+          <v-avatar size="75" style="display: block; border: 1px solid grey">
+            <v-icon>mdi-cart</v-icon>
+          </v-avatar>
+        </nuxt-link>
+        {{ i }}
+      </div>
     </div>
 
     <div class="image-section mt-2">
       <v-img
-        style="border: 1px solid #E2E2E2"
+        style="border: 1px solid #e2e2e2"
         src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         alt="32"
         height="220"
       ></v-img>
       <div class="mx-2 mt-3" align="center">
         <h4>Women's Self-Care: Yoga & Recovery</h4>
-        <p class="mt-1 mb-1" style="font-size: 14px">Comfy essentials to help you relax and recharge</p>
+        <p class="mt-1 mb-1" style="font-size: 14px">
+          Comfy essentials to help you relax and recharge
+        </p>
         <nuxt-link to="/" style="font-size: 14px">
           <b>SHOP WOMEN SELF-CARE</b>
         </nuxt-link>
@@ -41,12 +57,22 @@
     </div>
 
     <div class="popular-items mt-11">
-      <ProductGrid head="true" header="Popular Items" slide="true" image="watch.jpg"></ProductGrid>
+      <ProductGrid
+        head="true"
+        header="Popular Items"
+        slide="true"
+        image="watch.jpg"
+      ></ProductGrid>
       <br />
     </div>
 
     <div class="recommended-for-you mt-7">
-      <ProductGrid head="true" header="Recommended for you" slide="true" image="watch.jpg"></ProductGrid>
+      <ProductGrid
+        head="true"
+        header="Recommended for you"
+        slide="true"
+        image="watch.jpg"
+      ></ProductGrid>
     </div>
 
     <div class="trending-brands mt-10 mx-2">
@@ -58,12 +84,23 @@
     </div>
 
     <div class="popular-items mt-11">
-      <ProductGrid head="true" header="Trending products" row="2" col="2" image="watch.jpg"></ProductGrid>
+      <ProductGrid
+        head="true"
+        header="Trending products"
+        row="2"
+        col="2"
+        image="watch.jpg"
+      ></ProductGrid>
       <br />
     </div>
 
     <div class="you-might-also-like mt-14">
-      <ProductGrid head="true" header="You might also like" slide="true" image="shoes.jpg"></ProductGrid>
+      <ProductGrid
+        head="true"
+        header="You might also like"
+        slide="true"
+        image="shoes.jpg"
+      ></ProductGrid>
     </div>
   </div>
 </template>
@@ -78,20 +115,20 @@ export default {
   components: {
     ProductGrid,
     Navbar,
-    Carousel
+    Carousel,
   },
   data() {
     return {
       emailSubscription: "",
       departmentObj: DepartmentObj,
-      departments: ["Women", "Men", "Girls", "Boy", "Toddler", "Baby"]
+      departments: ["Women", "Men", "Girls", "Boy", "Toddler", "Baby"],
     };
   },
   methods: {
     subscribe() {
       alert(this.emailSubscription);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -139,5 +176,23 @@ export default {
   color: white;
   font-size: 22px;
   font-family: "Zameria Bold Italic";
+}
+
+//slide
+
+.grid-img-slide {
+  border: 1px solid $ZameriaAsh;
+  height: 163.66px;
+  width: 116.95px;
+  // height: 150px;
+}
+
+.slide-products {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.slide-products::-webkit-scrollbar {
+  display: none;
 }
 </style>
