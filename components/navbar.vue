@@ -7,8 +7,8 @@
         <div class="normal" v-if="!searchView">
           <v-app-bar flat color="white">
             <v-app-bar-nav-icon class="black--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
-            <nuxt-link class="mr-3" to="/">
-              <v-img :src="require('@/assets/images/logo.png')" width="130"></v-img>
+            <nuxt-link class="mr-3 mb-1 ml-0 pl-0" to="/">
+              <v-img :src="require('@/assets/images/logo1.jpg')" height="40px" width="200" style="margin-left: -15px"></v-img>
             </nuxt-link>
             <v-spacer></v-spacer>
 
