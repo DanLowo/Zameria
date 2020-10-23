@@ -105,7 +105,7 @@
                 :key="obj.title"
                 @click="changeNavHeader(obj.title, 'Department')"
               >
-                <v-list-item-title>{{obj.title}}</v-list-item-title>
+                <v-list-item-title class="font-weight-bold">{{obj.title}}</v-list-item-title>
                 <v-list-item-icon>
                   <v-icon color="black">mdi-chevron-right</v-icon>
                 </v-list-item-icon>
@@ -127,27 +127,20 @@
                   :key="obj.title"
                   @click="changeNavHeader(obj.title, 'Category')"
                 >
-                  <v-list-item-title v-if="obj.title === 'Maternity'">
+                  <v-list-item-title v-if="obj.title === 'Maternity'" class="font-weight-bold">
                     <nuxt-link to="/ok" style="text-decoration: none; color: black">{{obj.title}}</nuxt-link>
                   </v-list-item-title>
-                  <v-list-item-title v-else>{{obj.title}}</v-list-item-title>
+                  <v-list-item-title v-else class="font-weight-bold">{{obj.title}}</v-list-item-title>
                   <v-list-item-icon v-if="obj.title !== 'Maternity'">
                     <v-icon color="black">mdi-chevron-right</v-icon>
                   </v-list-item-icon>
-                </v-list-item>
-
-                <v-list-item @click="ok">
-                  <v-list-item-title>New Arrivals</v-list-item-title>
-                </v-list-item>
-                <v-list-item @click="ok">
-                  <v-list-item-title>Sale</v-list-item-title>
                 </v-list-item>
               </div>
 
               <!-- List all sub-categories inside Categories -->
               <div v-else>
                 <v-list-item v-for="obj in category" :key="obj.title" @click="ok" :to="obj.url">
-                  <v-list-item-title>{{obj.title}}</v-list-item-title>
+                  <v-list-item-title class="font-weight-bold">{{obj.title}}</v-list-item-title>
                 </v-list-item>
               </div>
 
@@ -156,7 +149,7 @@
 
             <v-list v-else>
               <v-list-item v-for="obj in subCategories" :key="obj.title" @click="ok" :to="obj.url">
-                <v-list-item-title>{{obj.title}}</v-list-item-title>
+                <v-list-item-title class="font-weight-bold">{{obj.title}}</v-list-item-title>
               </v-list-item>
             </v-list>
           </div>
