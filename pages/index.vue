@@ -1,7 +1,14 @@
 <template>
   <div class="home" style="margin-bottom: 85px">
     <Navbar />
-    <div class="mt-3 bar"></div>
+    <div class="mt-1 bar"></div>
+
+    <div class="section-title ZameriaBrown mb-2" align="center">
+      <nuxt-link id="link" to="/search/NEW-SALES"
+        >SHOP NEW SALES >>></nuxt-link
+      >
+    </div>
+
     <div class="carousel-section">
       <Carousel circle="true"></Carousel>
     </div>
@@ -21,21 +28,14 @@
       ></ProductGrid>
     </div>
 
-    <div class="slide-products mt-13 mx-2 mb-15">
-      <div
-        v-for="i in departments"
-        :key="i"
-        class="mr-6"
-        style="display: inline-block"
-        align="center"
-      >
-        <nuxt-link style="text-decoration: none" :to="{ name: 'item', params: { item: 'addidas-shoe-new' } }">
-          <v-avatar size="75" style="display: block; border: 1px solid grey">
-            <v-icon>mdi-cart</v-icon>
-          </v-avatar>
-        </nuxt-link>
-        {{ i }}
-      </div>
+    <div class="shop-by-departments mx-2 mt-9" id="shop">
+      <h3 align="center" class="mb-3">SHOP BY DEPARTMENTS</h3>
+      <v-row dense>
+        <v-col v-for="i in departments" cols="4" :key="i" sm="4" md="4" lg="4">
+          <v-img class="dept-img" aspect-ratio="1"></v-img>
+          <p align="center" class="nowrap-text pt-1">{{i}}</p>
+        </v-col>
+      </v-row>
     </div>
 
     <div class="image-section mt-2">
@@ -75,11 +75,29 @@
       ></ProductGrid>
     </div>
 
-    <div class="trending-brands mt-10 mx-2">
+        <div class="image-section mt-13">
+      <v-img
+        style="border: 1px solid #e2e2e2"
+        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        alt="32"
+        height="220"
+      ></v-img>
+      <div class="mx-2 mt-3" align="center">
+        <h4>Women's Self-Care: Yoga & Recovery</h4>
+        <p class="mt-1 mb-1" style="font-size: 14px">
+          Comfy essentials to help you relax and recharge
+        </p>
+        <nuxt-link to="/" style="font-size: 14px">
+          <b>SHOP WOMEN SELF-CARE</b>
+        </nuxt-link>
+      </div>
+    </div>
+
+    <div class="trending-brands mt-13 mx-2">
       <main-brands></main-brands>
     </div>
 
-    <div class="image-section mt-10" v-for="i in 3" :key="i">
+    <div class="image-section mt-10" v-for="i in 4" :key="i">
       <main-image-section></main-image-section>
     </div>
 
@@ -87,8 +105,7 @@
       <ProductGrid
         head="true"
         header="Trending products"
-        row="2"
-        col="2"
+        slide="true"
         image="watch.jpg"
       ></ProductGrid>
       <br />
