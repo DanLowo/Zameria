@@ -9,7 +9,7 @@
     <div class="mx-2 mt-3" align="center">
       <h4>Women's Self-Care: Yoga & Recovery</h4>
       <p class="mt-1 mb-1" style="font-size: 14px">Comfy essentials to help you relax and recharge</p>
-      <nuxt-link to="/" style="font-size: 14px"> <b> SHOP WOMEN SELF-CARE </b> </nuxt-link>
+      <nuxt-link to="/" style="font-size: 14px" class="black--text"> <b> SHOP WOMEN SELF-CARE </b> </nuxt-link>
     </div>
   </div>
 </template>

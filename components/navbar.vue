@@ -182,6 +182,10 @@
             </v-list>
           </div>
         </div>
+
+        <div class="mt-5">
+          <main-footer></main-footer>
+        </div>
       </v-navigation-drawer>
     </div>
   </div>

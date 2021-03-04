@@ -50,7 +50,7 @@
         <p class="mt-1 mb-1" style="font-size: 14px">
           Comfy essentials to help you relax and recharge
         </p>
-        <nuxt-link to="/" style="font-size: 14px">
+        <nuxt-link to="/" style="font-size: 14px" class="black--text">
           <b>SHOP WOMEN SELF-CARE</b>
         </nuxt-link>
       </div>
@@ -87,7 +87,7 @@
         <p class="mt-1 mb-1" style="font-size: 14px">
           Comfy essentials to help you relax and recharge
         </p>
-        <nuxt-link to="/" style="font-size: 14px">
+        <nuxt-link to="/" style="font-size: 14px" class="black--text">
           <b>SHOP WOMEN SELF-CARE</b>
         </nuxt-link>
       </div>

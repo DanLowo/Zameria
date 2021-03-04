@@ -10,10 +10,31 @@
 }
 
 @font-face {
+  font-family: "Zameria Bold Italic";
+  src: local("Zameria Bold Italic"),
+    url(../fonts/OpenSans-BoldItalic.ttf) format("truetype");
+}
+
+
+
+
+
+@font-face {
+  font-family: "Light Font";
+  src: local("Light Font"),
+    url(../fonts/TYPOGRAPHY/Montserrat-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Regular Font";
+  src: local("Reular Font"), url(../fonts/TYPOGRAPHY/Montserrat-Regular.ttf) format("truetype");
+}
+/*
+@font-face {
   font-family: "Zameria Regular";
   src: local("Zameria Regular"),
     url(../fonts/OpenSans-Regular.ttf) format("truetype");
-}
+} */
 
 div,
 span,
@@ -27,7 +48,7 @@ h6,
 button,
 ::placeholder,
 label {
-  font-family: "Zameria Regular";
+  font-family: "Light Font";
 }
 
 /* #search-btn {
