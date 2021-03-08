@@ -98,12 +98,20 @@
           <div v-if="navHeader === 'SHOP BY DEPARTMENT' ">
             <!-- List all departments -->
             <v-list>
+
+              <v-list-item @click="changeNavHeader('Sale', 'Department')">
+                <v-list-item-title class="font-weight-bold red--text">Sale</v-list-item-title>
+                <v-list-item-icon>
+                  <v-icon color="ZameriaLightGray">mdi-chevron-right</v-icon>
+                </v-list-item-icon>
+              </v-list-item>
+
               <v-list-item
                 v-for="obj in departmentList"
                 :key="obj.title"
                 @click="changeNavHeader(obj.title, 'Department')"
               >
-                <v-list-item-title>{{obj.title}}</v-list-item-title>
+                <v-list-item-title class="font-weight-bold">{{obj.title}}</v-list-item-title>
                 <v-list-item-icon>
                   <v-icon color="ZameriaLightGray">mdi-chevron-right</v-icon>
                 </v-list-item-icon>

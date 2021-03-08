@@ -7,9 +7,9 @@
       </h5>
     </div>
     <div class="mx-2 mt-2 py-2">
-      <div>
+      <!-- <div>
         <main-brands></main-brands>
-      </div>
+      </div> -->
 
       <div class="sort-by py-2 px-3 mt-3 filter-sort">
         <span class="filter-sort-text">Sort by</span>
