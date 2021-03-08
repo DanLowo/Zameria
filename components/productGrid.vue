@@ -3,7 +3,7 @@
     <!-- Product grid for scrollable products -->
     <div v-if="slides" class="mx-2">
       <div v-show="heads" style="display: flex;">
-        <span class="font-weight-bold text-uppercase" style="flex-grow: 1; font-size: 14px">
+        <span class="font-weight-bold text-uppercase grid-header" style="flex-grow: 1; font-size: 14px">
           <b>{{ header }}</b>
         </span>
         <span
@@ -163,6 +163,10 @@ export default {
 
 <style lang="scss">
 @import "~/scss/custom.scss";
+
+.grid-header{
+  font-family: "SemiBold Font";
+}
 
 .grid-img-slide {
   border: 1px solid $ZameriaAsh;
