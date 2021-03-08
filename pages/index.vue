@@ -93,9 +93,9 @@
       </div>
     </div>
 
-    <div class="trending-brands mt-13 mx-2">
+    <!-- <div class="trending-brands mt-13 mx-2">
       <main-brands></main-brands>
-    </div>
+    </div> -->
 
     <div class="image-section mt-10" v-for="(i, k) in 2" :key="k">
       <main-image-section></main-image-section>
