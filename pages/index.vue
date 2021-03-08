@@ -32,8 +32,10 @@
       <h3 align="center" class="mb-3">SHOP BY DEPARTMENTS</h3>
       <v-row dense>
         <v-col v-for="i in departments" cols="4" :key="i" sm="4" md="4" lg="4">
+          <nuxt-link class="text-decoration-none black--text" :to=" '/search/' + i ">
           <v-img class="dept-img" aspect-ratio="1"></v-img>
           <p align="center" class="nowrap-text pt-1">{{i}}</p>
+          </nuxt-link>
         </v-col>
       </v-row>
     </div>
