@@ -20,9 +20,9 @@
     </v-carousel>
     <div align="center" v-if="circle === 'true' " class="carousel-circles">
       <v-icon
-        v-for="i in slides"
+        v-for="(i, k) in slides"
         :style=" [i === slides[carouselPosition] ? {'font-size': '9px'} : {'color': ZameriaAsh, 'font-size': '9px'}] "
-        :key="i"
+        :key="k"
         class="mr-1"
       >mdi-circle</v-icon>
     </div>
