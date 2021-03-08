@@ -96,7 +96,6 @@
       <v-navigation-drawer app v-model="drawer" width="87vw">
         <div>
           <div v-if="navHeader === 'SHOP BY DEPARTMENT' ">
-            <h5 class="py-4 pl-3 ZameriaAsh" style="font-size: 20px">Departments</h5>
             <!-- List all departments -->
             <v-list>
               <v-list-item
@@ -104,9 +103,9 @@
                 :key="obj.title"
                 @click="changeNavHeader(obj.title, 'Department')"
               >
-                <v-list-item-title class="font-weight-bold">{{obj.title}}</v-list-item-title>
+                <v-list-item-title>{{obj.title}}</v-list-item-title>
                 <v-list-item-icon>
-                  <v-icon color="black">mdi-chevron-right</v-icon>
+                  <v-icon color="ZameriaLightGray">mdi-chevron-right</v-icon>
                 </v-list-item-icon>
               </v-list-item>
             </v-list>
@@ -126,12 +125,12 @@
                   :key="obj.title"
                   @click="changeNavHeader(obj.title, 'Category')"
                 >
-                  <v-list-item-title v-if="obj.title === 'Maternity'" class="font-weight-bold">
+                  <v-list-item-title v-if="obj.title === 'Maternity'">
                     <nuxt-link to="/ok" style="text-decoration: none; color: black">{{obj.title}}</nuxt-link>
                   </v-list-item-title>
-                  <v-list-item-title v-else class="font-weight-bold">{{obj.title}}</v-list-item-title>
+                  <v-list-item-title v-else>{{obj.title}}</v-list-item-title>
                   <v-list-item-icon v-if="obj.title !== 'Maternity'">
-                    <v-icon color="black">mdi-chevron-right</v-icon>
+                    <v-icon color="ZameriaLightGray">mdi-chevron-right</v-icon>
                   </v-list-item-icon>
                 </v-list-item>
               </div>
@@ -139,7 +138,7 @@
               <!-- List all sub-categories inside Categories -->
               <div v-else>
                 <v-list-item v-for="obj in category" :key="obj.title" @click="ok" :to="obj.url">
-                  <v-list-item-title class="font-weight-bold">{{obj.title}}</v-list-item-title>
+                  <v-list-item-title>{{obj.title}}</v-list-item-title>
                 </v-list-item>
               </div>
 
@@ -148,7 +147,7 @@
 
             <v-list v-else>
               <v-list-item v-for="obj in subCategories" :key="obj.title" @click="ok" :to="obj.url">
-                <v-list-item-title class="font-weight-bold">{{obj.title}}</v-list-item-title>
+                <v-list-item-title>{{obj.title}}</v-list-item-title>
               </v-list-item>
             </v-list>
           </div>
@@ -156,8 +155,7 @@
 
         <!-- Account details below nav bar -->
 
-        <div>
-          <h4 class="py-3 px-4 ZameriaAsh">ACCOUNT</h4>
+        <div class="mt-5">
           <div>
             <v-list>
               <v-list-item @click="ok" to="/account/profile">
@@ -182,7 +180,7 @@
           </div>
         </div>
 
-        <div class="mt-5">
+        <div class="mt-2">
           <main-footer></main-footer>
         </div>
       </v-navigation-drawer>
@@ -281,6 +279,10 @@ export default {
 
 .v-app-bar__nav-icon .v-btn__content .v-icon {
   font-size: 30px;
+}
+
+.navbar .v-list-item__title{
+  font-size: 15px;
 }
 
 .v-toolbar__content {
