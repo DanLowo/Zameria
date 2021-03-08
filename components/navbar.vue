@@ -8,7 +8,7 @@
           <v-app-bar flat color="white">
             <v-app-bar-nav-icon class="ZameriaBlack--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
             <nuxt-link class="mr-3 mb-1 ml-0 pl-0" to="/">
-              <v-img :src="require('@/assets/images/logo1.jpg')" height="40px" width="200" style="margin-left: -15px"></v-img>
+              <v-img :src="require('@/assets/images/zameria.png')" contain height="20px" style="margin-left: -14px" width="150"></v-img>
             </nuxt-link>
             <v-spacer></v-spacer>
 
