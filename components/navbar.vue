@@ -95,9 +95,8 @@
     <div class="navigation idden-md-and-up">
       <v-navigation-drawer app v-model="drawer" width="87vw">
         <div>
-          <v-img :src="require('@/assets/images/fashion.jpg')" height="170px" />
           <div v-if="navHeader === 'SHOP BY DEPARTMENT' ">
-
+            <h5 class="py-4 pl-3 ZameriaAsh" style="font-size: 20px">Departments</h5>
             <!-- List all departments -->
             <v-list>
               <v-list-item
