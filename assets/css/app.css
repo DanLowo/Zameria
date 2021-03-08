@@ -26,8 +26,14 @@
 }
 
 @font-face {
+  font-family: "SemiBold Font";
+  src: local("SemiBold Font"),
+    url(../fonts/TYPOGRAPHY/Montserrat-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
   font-family: "Regular Font";
-  src: local("Reular Font"), url(../fonts/TYPOGRAPHY/Montserrat-Regular.ttf) format("truetype");
+  src: local("Regular Font"), url(../fonts/TYPOGRAPHY/Montserrat-Regular.ttf) format("truetype");
 }
 /*
 @font-face {

@@ -97,7 +97,7 @@
       <main-brands></main-brands>
     </div>
 
-    <div class="image-section mt-10" v-for="i in 4" :key="i">
+    <div class="image-section mt-10" v-for="(i, k) in 2" :key="k">
       <main-image-section></main-image-section>
     </div>
 
