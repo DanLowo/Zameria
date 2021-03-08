@@ -121,7 +121,7 @@
 
           <!-- List all categories inside Departments -->
           <div v-else>
-            <h5 class="py-4 pl-3 ZameriaAsh" style="font-size: 20px">
+            <h5 class="py-4 pl-3 ZameriaOffWhite" style="font-size: 17px">
               <v-icon @click="backNavHeader">mdi-chevron-left</v-icon>
               {{navHeader}}
             </h5>
