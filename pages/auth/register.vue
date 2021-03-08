@@ -34,6 +34,18 @@
           id="lastName"
         />
 
+        <label for="number">
+          <b>Phone Number</b>
+        </label>
+        <input
+          type="number"
+          required
+          v-model="phone_no"
+          class="zameria-light-form"
+          placeholder="Phone Number"
+          id="number"
+        />
+
         <label for="email">
           <b>Email address</b>
         </label>
@@ -158,6 +170,7 @@ export default {
       lastName: "",
       email: "",
       password: "",
+      phone_no: "",
       confirmPassword: "",
       preference: {
         men: false,
@@ -220,7 +233,7 @@ export default {
           firstName: this.firstName,
           lastName: this.lastName
         },
-        phone_no: ""
+        phone_no: this.phone_no
         // emailList: this.emailList,
         // preference: this.preference
       };

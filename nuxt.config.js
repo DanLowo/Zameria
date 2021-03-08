@@ -132,7 +132,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://zameria.herokuapp.com/"
+    baseURL: "https://api.herokuapp.com/"
   },
   /*
    ** Build configuration
