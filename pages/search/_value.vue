@@ -2,9 +2,9 @@
   <div class="search" style="margin-bottom: 70px">
     <main-navbar></main-navbar>
     <div class="mx-2 mt-2 py-2">
-      <div>
+      <!-- <div>
         <main-brands></main-brands>
-      </div>
+      </div> -->
 
       <h3 class="font-weight-light">Showing results for: '{{searchText}}'</h3>
       <!-- <div class="filter py-2 px-3 mt-3 filter-sort">
