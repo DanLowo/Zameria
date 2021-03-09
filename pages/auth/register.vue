@@ -230,8 +230,8 @@ export default {
         password: this.password,
         user_type: "consumer",
         consumer: {
-          firstName: this.firstName,
-          lastName: this.lastName
+          first_name: this.firstName,
+          last_name: this.lastName
         },
         phone_no: this.phone_no
         // emailList: this.emailList,
