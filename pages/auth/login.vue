@@ -79,11 +79,13 @@ export default {
       }
     },
 
-    submit() {
+    async submit() {
       let data = {
-        email : this.email,
+        email_or_username : this.email,
         password : this.password
       }
+
+      // await this.$auth.with('local', )
 
       console.log(data)
     }
