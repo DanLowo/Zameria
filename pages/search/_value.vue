@@ -5,8 +5,15 @@
       <!-- <div>
         <main-brands></main-brands>
       </div> -->
-
-      <h3 class="font-weight-light">Showing results for: '{{searchText}}'</h3>
+      <div v-if="isDepartment">
+      <v-img
+        style="border: 1px solid #e2e2e2"
+        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        alt="32"
+        height="220"
+      ></v-img>
+      </div>
+      <h3 v-else class="font-weight-light">Showing results for: '{{searchText}}'</h3>
       <!-- <div class="filter py-2 px-3 mt-3 filter-sort">
         <span class="filter-sort-text">Filter</span>
         <v-icon>mdi-plus</v-icon>
@@ -66,12 +73,23 @@ export default {
     sortKeys: function() {
       let keys = Object.keys(this.sorts);
       return keys;
+    },
+    isDepartment: function(){
+      if(this.$route.params.department){
+        return true
+      } else {
+        return false
+      }
     }
   },
-  asyncData({ params, store }) {
-    let value = params.value;
-    value = value.replace(/-/g, " ");
-    store.commit("actionss/setSearch", value);
+  fetch({ params, store }) {
+    if(params.department === 'department'){
+    }else{
+      this.isDepartment = false
+      let value = params.value;
+      value = value.replace(/-/g, " ");
+      store.commit("actionss/setSearch", value);
+    }
   },
 
   methods: {

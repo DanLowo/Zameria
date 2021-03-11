@@ -239,11 +239,19 @@ export default {
       };
 
       try {
-        let { data } = await this.$axios.post(
-          "/accounts/signup/create_account",
+        let create = await this.$axios.post(
+          "/accounts/signup/create_account/",
           details
         );
-        console.log(data);
+
+        let data = {
+          email_or_username : this.email,
+          password : this.password
+        }
+
+        let res = await this.$auth.loginWith("local", {
+          data: data,
+        });
       } catch (err) {
         console.log("e");
       }
