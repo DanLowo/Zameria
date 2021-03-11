@@ -30,8 +30,8 @@
             <span style="font-size: 15px">
               <b>N5,000</b>
             </span>
-            <div class="font-weight-light" style="font-size: 14px">
-              <span class="pr-1 grey--text">
+            <div style="font-size: 14px">
+              <span class="pr-1 grey--text font-weight-light">
                 <del>N8,500</del>
               </span>
               <span class="ZameriaLightRed--text" style="font-size: 13px">60%off</span>
@@ -63,31 +63,17 @@
             ></v-img>
           </nuxt-link>
           <div>
-            <div v-if="wished">
-              <v-icon
-                v-if="wished"
-                size="medium"
-                @click="addToWishList"
-                color="ZameriaRed"
-              >mdi-heart-multiple</v-icon>
-              <br />
-            </div>
-            <div v-else>
-              <v-icon size="medium" @click="addToWishList" color="grey">mdi-heart-multiple-outline</v-icon>
-              <br />
-            </div>
-
             <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
-              <p id="wrap-text-3-above-2">Reebok Nano Blue Original Sneakers</p>
+              <p align="center" class="font-weight-bold">Reebok Nano Blue Original Sneakers</p>
             </div>
             <div v-else class="mb-0 pb-0 font-weight-light">
-              <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
+              <p align="center" class="font-weight-bold">Reebok Nano Blue Original Sneakers</p>
             </div>
             <span style="font-size: 15px">
               <b>N5,000</b>
             </span>
-            <div class="font-weight-light" style="font-size: 14px">
-              <span class="pr-1">
+            <div style="font-size: 14px">
+              <span class="pr-1 font-weight-light">
                 <del>N8,500</del>
               </span>
               <span class="ZameriaLightRed--text" style="font-size: 13px">60%off</span>
@@ -187,7 +173,7 @@ export default {
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  white-space: nowrap;
+  white-space: normal;
   width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -199,7 +185,7 @@ export default {
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  white-space: nowrap;
+  white-space: normal;
   width: 155px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -211,7 +197,7 @@ export default {
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  white-space: nowrap;
+  white-space: normal;
   width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
