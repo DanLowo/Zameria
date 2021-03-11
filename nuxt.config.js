@@ -58,8 +58,8 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: "/accounts/login", method: "post", propertyName: "token" },
-          user: { url: "/accounts/login", method: "get", propertyName: "user" }
+          login: { url: "/accounts/login/", method: "post", propertyName: "token" },
+          user: { url: "/accounts/login/", method: "post", propertyName: "user_profile" }
         },
         tokenType: ""
       },
@@ -132,7 +132,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://api.herokuapp.com/"
+    baseURL: "https://api.zameria.com/"
   },
   /*
    ** Build configuration

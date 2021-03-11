@@ -85,9 +85,10 @@ export default {
         password : this.password
       }
 
-      // await this.$auth.with('local', )
+      let res = await this.$auth.loginWith("local", {
+        data: data,
+      });
 
-      console.log(data)
     }
   }
 };
