@@ -10,7 +10,7 @@ export default ctx => {
         themes: {
           light: {
             ZameriaRed: "#FF0000",
-            ZameriaLightRed: "#FF554D",
+            ZameriaLightRed: "#D9182B",
             ZameriaOrange: "#FF870C",
             ZameriaBrown: "#DAB777",
             ZameriaDividerGray: "#E4E6E7",
