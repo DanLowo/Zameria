@@ -2,6 +2,30 @@
   <div class="navbar">
     <main-subheader></main-subheader>
     <div>
+
+      <!-- Modal for search bar -->
+      <div>
+        <v-dialog class="black" v-model="searchModal" fullscreen>
+          <div class="white pb-6">
+            <form class="px-2 pt-2" style="display: flex">
+              <span style="flex-grow: 1">
+                <input v-model="searchText"  type="text" autofocus id="search-product-input" placeholder="Search for items or products" />
+              </span>
+              <span v-show="showClear">
+                <v-btn @click="searchText = '' " class="ZameriaLightGray--text mt-1 pr-2" text>Clear</v-btn>
+              </span>
+              <span>
+                <v-icon class="ZameriaLightGray--text mt-2" @click="searchModal = false">mdi-close</v-icon>
+              </span>
+            </form>
+          </div>
+          <v-card style="opacity: 0.9">
+
+          </v-card>
+        </v-dialog>
+      </div>
+
+
       <div class="bor">
         <!-- Header with navigation icon, Zameria logo and Cart -->
         <div class="normal" v-if="!searchView">
@@ -71,7 +95,7 @@
               class="mr-3"
               color="ZameriaBlack"
               style="font-size: 30px"
-              @click="searchView = true"
+              @click="searchModal = true"
             >mdi-magnify</v-icon>
             <nuxt-link to="/cart" style="text-decoration: none">
               <v-icon color="ZameriaBlack" style="font-size: 30px">mdi-cart-outline</v-icon>
@@ -79,6 +103,7 @@
           </v-app-bar>
         </div>
 
+        <!--
         <div class="normal" v-else>
           <v-app-bar flat color="white">
             <form class="mt-3" @submit.prevent="search">
@@ -88,6 +113,7 @@
             <v-btn type="submit" style="font-size: 13px" text color="black" class="px-0 ml-1" @click="searchView = false">Cancel</v-btn>
           </v-app-bar>
         </div>
+      -->
       </div>
     </div>
 
@@ -214,10 +240,19 @@ export default {
       oldNavHeader: "",
       navArr: [],
       count: 0,
-      searchView: false
+      searchView: false,
+      searchModal: false,
+      showClear: false
     };
   },
   watch: {
+    searchText: function(newValue){
+      if(newValue === ""){
+        this.showClear = false
+      } else {
+        this.showClear = true
+      }
+    },
     navHeader: function(newValue, oldValue) {
       this.oldNavHeader = oldValue;
       this.navArr.push(oldValue);
@@ -284,6 +319,12 @@ export default {
 
 <style lang="scss">
 @import "~/scss/custom.scss";
+
+#search-product-input{
+  padding: 10px;
+  width: 100%;
+  // border-bottom: 1px solid $ZameriaDividerGray;
+}
 
 .v-app-bar__nav-icon .v-btn__content .v-icon {
   font-size: 30px;
