@@ -21,10 +21,10 @@
           </nuxt-link>
           <div>
 
-            <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
+            <div align="center" v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
               <p id="wrap-text-3-above">Reebok Nano Blue Original Sneakers</p>
             </div>
-            <div v-else class="mb-0 pb-0 font-weight-light">
+            <div align="center" v-else class="mb-0 pb-0 font-weight-light">
               <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
             </div>
             <span style="font-size: 15px">
@@ -34,7 +34,7 @@
               <span class="pr-1 grey--text font-weight-light">
                 <del>N8,500</del>
               </span>
-              <span class="ZameriaLightRed--text" style="font-size: 13px">60%off</span>
+              <span class="ZameriaLightRed--text font-weight-bold" style="font-size: 13px">60%off</span>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@
             ></v-img>
           </nuxt-link>
           <div>
-            <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
+            <div v-if="grid !== 2 || grid !== 1" align="center" class="mb-0 pb-0 font-weight-light">
               <p align="center" class="font-weight-bold">Reebok Nano Blue Original Sneakers</p>
             </div>
             <div v-else class="mb-0 pb-0 font-weight-light">
