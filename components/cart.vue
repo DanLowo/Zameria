@@ -28,6 +28,8 @@
             <div class="quantity mt-5 mb-5" style="font-size: 14px">
               <span>Quantity:</span>
               <span>
+                <main-quantity></main-quantity>
+                <!--
                 <v-select
                   style="max-width: 80px; display: inline-block; border-radius: 0px;"
                   dense
@@ -38,7 +40,7 @@
                   :items="['1', '2', '3', '4', '5']"
                   color="ZameriaAsh"
                   :placeholder="orderNumber"
-                ></v-select>
+                ></v-select> -->
               </span>
             </div>
           </div>
