@@ -40,7 +40,7 @@
       </v-row>
     </div>
 
-    <div class="image-section mt-2">
+    <div class="image-section mt-5">
     <v-img
     style="border: 1px solid #e2e2e2"
     :src="require(`@/assets/images/fashion3.jpg`)"
@@ -77,7 +77,7 @@
       ></ProductGrid>
     </div>
 
-        <div class="image-section">
+        <div class="image-section mt-11">
       <v-img
         style="border: 1px solid #e2e2e2"
         :src="require(`@/assets/images/fashion1.jpg`)"
