@@ -33,7 +33,7 @@
       <v-row dense>
         <v-col v-for="(i, k) in departments" cols="4" :key="k" sm="4" md="4" lg="4">
 
-          <v-img  :src="require(`@/assets/images/${i.src}`)" @click="$router.push({name:'search-value', params:{value:`${i.name}`, department: 'department'}})" class="dept-img" aspect-ratio="1"></v-img>
+          <v-img  :src="require(`@/assets/images/${i.src}`)" @click="$router.push({name:'departments-name', params:{name:`${i.name}`}})" class="dept-img" aspect-ratio="1"></v-img>
           <p align="center" class="nowrap-text pt-1">{{i.name}}</p>
 
         </v-col>
