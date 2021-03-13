@@ -33,9 +33,9 @@ export default {
     return {
       slides: [
         "man.jpg",
-        "woman.jpeg",
-        "toddler.jpeg",
-        "baby.jpeg"
+        "woman.jpg",
+        "toodler.jpg",
+        "baby.jpg"
       ],
       carouselPosition: 0,
       ZameriaAsh: "#E2E2E2",
