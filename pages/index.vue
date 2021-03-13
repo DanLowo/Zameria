@@ -151,10 +151,10 @@ export default {
         },
         {
           name: "Girls",
-          src: "girl.jpeg"
+          src: "woman.jpeg"
         },
         {
-          name: "Boy",
+          name: "Boys",
           src: "man.jpg"
         },
         {
