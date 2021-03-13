@@ -19,7 +19,7 @@
               </span>
             </form>
           </div>
-          <v-card style="opacity: 0.9">
+          <v-card style="opacity: 0.8">
 
           </v-card>
         </v-dialog>
