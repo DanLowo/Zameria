@@ -1,15 +1,7 @@
 <template>
   <div class="search" style="margin-bottom: 70px">
     <main-navbar></main-navbar>
-    <div v-if="isDepartment">
-    <v-img
-      style="border: 1px solid #e2e2e2"
-      :src="require(`@/assets/images/${image}`)"
-      alt="32"
-      height="220"
-    ></v-img>
-    </div>
-    <h5 v-else class="py-3 px-3 mt-1 ZameriaAsh black--text font-weight-light text-capitalize" align="center">
+    <h5 class="py-3 px-3 mt-1 ZameriaAsh black--text font-weight-light text-capitalize" align="center">
       <u>{{ $route.params.value }}</u>
     </h5>
     <div class="mx-2 mt-2 py-2">
@@ -78,36 +70,12 @@ export default {
       let keys = Object.keys(this.sorts);
       return keys;
     },
-    isDepartment: function(){
-      if(this.$route.params.department){
-        switch(this.$route.params.value){
-          case 'Women':
-            return this.image = "woman.jpg"
-          case 'Men':
-            return this.image = "man.jpg"
-          case 'Girls':
-            return this.image = "girl.png"
-          case 'Boys':
-            return this.image = 'boy.jpg'
-          case 'Toddler':
-            return this.image = 'toodler.jpg'
-          case 'Baby':
-            return this.image = 'baby.jpg'
-        }
-        return true
-      } else {
-        return false
-      }
-    }
   },
   fetch({ params, store }) {
-    if(params.department === 'department'){
-    }else{
-      this.isDepartment = false
       let value = params.value;
       value = value.replace(/-/g, " ");
       store.commit("actionss/setSearch", value);
-    }
+
   },
 
   methods: {
