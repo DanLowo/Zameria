@@ -5,17 +5,13 @@
       interval="4000"
       :show-arrows="false"
       hide-delimiters
-      height="300"
+      height="320"
       v-model="carouselPosition"
     >
       <v-carousel-item v-for="(core, i) in slides" :key="i">
-        <v-sheet height="100%">
-          <v-row class="fill-height" align="center" justify="center">
-            <div class="display-3">
-              <v-img :src="require(`@/assets/images/${core}`)" aspect-ratio="4"></v-img>
+            <div>
+              <v-img :src="require(`@/assets/images/${core}`)" aspect-ratio="1"></v-img>
             </div>
-          </v-row>
-        </v-sheet>
       </v-carousel-item>
     </v-carousel>
     <div align="center" v-if="circle === 'true' " class="carousel-circles">
@@ -36,9 +32,10 @@ export default {
   data() {
     return {
       slides: [
-        "core-values.png",
-        "stand-for-something.png",
-        "core-values.png",
+        "man.jpg",
+        "woman.jpeg",
+        "toddler.jpeg",
+        "baby.jpeg"
       ],
       carouselPosition: 0,
       ZameriaAsh: "#E2E2E2",
