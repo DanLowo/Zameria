@@ -193,13 +193,13 @@
     </div>
 
     <div>
-      <main-product-grid head="true" header="Similar Products" slide="true" image="watch.jpg"></main-product-grid>
+      <main-product-grid head="true" header="Similar Products" slide="true" :images="imageList"></main-product-grid>
       <main-product-grid
         class="mt-8"
         head="true"
         header="Recommended Products"
         slide="true"
-        image="watch.jpg"
+        :images="imageList"
       ></main-product-grid>
     </div>
   </div>
@@ -293,7 +293,8 @@ export default {
         {
           header: "Product reviews"
         }
-      ]
+      ],
+      imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg']
     };
   },
   watch: {
