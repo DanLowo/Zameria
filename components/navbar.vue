@@ -7,7 +7,7 @@
       <div>
         <v-dialog class="black" v-model="searchModal" fullscreen>
           <div class="white pb-6">
-            <form class="px-2 pt-2" style="display: flex">
+            <form @submit.prevent="search" class="px-2 pt-2" style="display: flex">
               <span style="flex-grow: 1">
                 <input v-model="searchText"  type="text" autofocus id="search-product-input" placeholder="Search for items or products" />
               </span>

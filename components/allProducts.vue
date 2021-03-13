@@ -6,21 +6,7 @@
           <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}">
           <v-img class="grid-img" :height="height" aspect-ratio="1"></v-img>
           </nuxt-link>
-          <div>
-            <div v-if="wished">
-              <v-icon
-                v-if="wished"
-                size="medium"
-                @click="addToWishList"
-                color="ZameriaRed"
-              >mdi-heart-multiple</v-icon>
-              <br />
-            </div>
-            <div v-else>
-              <v-icon size="medium" @click="addToWishList" color="grey">mdi-heart-multiple-outline</v-icon>
-              <br />
-            </div>
-
+          <div align="center">
             <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
               <p id="wrap-text-3-above-2">Reebok Nano Blue Original Sneakers</p>
             </div>
@@ -187,7 +173,7 @@ export default {
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  white-space: nowrap;
+  white-space: normal;
   width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;

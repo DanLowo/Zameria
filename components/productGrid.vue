@@ -15,16 +15,16 @@
         </span>
       </div>
       <div class="slide-products mt-3">
-        <div v-for="i in 8" :key="i" class="mr-2" style="display: inline-block">
+        <div v-for="(i, k) in images" :key="k" class="mr-2" style="display: inline-block">
           <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}">
-            <v-img class="grid-img-slide" aspect-ratio="1"></v-img>
+            <v-img class="grid-img-slide" aspect-ratio="1"  :src="require(`@/assets/images/${i}`)" ></v-img>
           </nuxt-link>
           <div>
 
-            <div align="center" v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
+            <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
               <p id="wrap-text-3-above">Reebok Nano Blue Original Sneakers</p>
             </div>
-            <div align="center" v-else class="mb-0 pb-0 font-weight-light">
+            <div v-else class="mb-0 pb-0 font-weight-light">
               <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
             </div>
             <span style="font-size: 15px">
@@ -64,10 +64,10 @@
           </nuxt-link>
           <div>
             <div v-if="grid !== 2 || grid !== 1" align="center" class="mb-0 pb-0 font-weight-light">
-              <p align="center" class="font-weight-bold">Reebok Nano Blue Original Sneakers</p>
+              <p class="font-weight-bold">Reebok Nano Blue Original Sneakers</p>
             </div>
             <div v-else class="mb-0 pb-0 font-weight-light">
-              <p align="center" class="font-weight-bold">Reebok Nano Blue Original Sneakers</p>
+              <p class="font-weight-bold">Reebok Nano Blue Original Sneakers</p>
             </div>
             <span style="font-size: 15px">
               <b>N5,000</b>
@@ -88,7 +88,7 @@
 <script>
 export default {
   // name: "product-grid",
-  props: ["header", "products", "image", "row", "col", "head", "slide"],
+  props: ["header", "products", "images", "row", "col", "head", "slide"],
   data() {
     return {
       grid: 1,
