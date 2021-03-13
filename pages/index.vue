@@ -24,17 +24,17 @@
         head="true"
         header="Special Deals"
         slide="true"
-        image="watch.jpg"
+        :images="imageList"
       ></ProductGrid>
     </div>
 
     <div class="shop-by-departments mx-2 mt-9" id="shop">
       <h3 align="center" class="mb-3">SHOP BY DEPARTMENTS</h3>
       <v-row dense>
-        <v-col v-for="i in departments" cols="4" :key="i" sm="4" md="4" lg="4">
-        
-          <v-img @click="$router.push({name:'search-value', params:{value:`${i}`, department: 'department'}})" class="dept-img" aspect-ratio="1"></v-img>
-          <p align="center" class="nowrap-text pt-1">{{i}}</p>
+        <v-col v-for="(i, k) in departments" cols="4" :key="k" sm="4" md="4" lg="4">
+
+          <v-img  :src="require(`@/assets/images/${i.src}`)" @click="$router.push({name:'search-value', params:{value:`${i.name}`, department: 'department'}})" class="dept-img" aspect-ratio="1"></v-img>
+          <p align="center" class="nowrap-text pt-1">{{i.name}}</p>
 
         </v-col>
       </v-row>
@@ -63,7 +63,7 @@
         head="true"
         header="Popular Items"
         slide="true"
-        image="watch.jpg"
+        :images="imageList"
       ></ProductGrid>
       <br />
     </div>
@@ -73,7 +73,7 @@
         head="true"
         header="Recommended for you"
         slide="true"
-        image="watch.jpg"
+        :images="imageList"
       ></ProductGrid>
     </div>
 
@@ -108,7 +108,7 @@
         head="true"
         header="Trending products"
         slide="true"
-        image="watch.jpg"
+        :images="imageList"
       ></ProductGrid>
       <br />
     </div>
@@ -118,7 +118,7 @@
         head="true"
         header="You might also like"
         slide="true"
-        image="shoes.jpg"
+        :images="imageList"
       ></ProductGrid>
     </div>
   </div>
@@ -140,7 +140,33 @@ export default {
     return {
       emailSubscription: "",
       departmentObj: DepartmentObj,
-      departments: ["Women", "Men", "Girls", "Boy", "Toddler", "Baby"],
+      departments: [
+        {
+          name: "Women",
+          src: "woman.jpeg"
+        },
+        {
+          name: "Men",
+          src: "man.jpg"
+        },
+        {
+          name: "Girls",
+          src: "girl.jpeg"
+        },
+        {
+          name: "Boy",
+          src: "man.jpg"
+        },
+        {
+          name: "Toddler",
+          src: "toddler.jpeg"
+        },
+        {
+          name: "Baby",
+          src: "baby.jpeg"
+        }
+      ],
+      imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg']
     };
   },
   methods: {
