@@ -1,19 +1,21 @@
 <template>
   <div class="search" style="margin-bottom: 70px">
     <main-navbar></main-navbar>
+    <div v-if="isDepartment">
+    <v-img
+      style="border: 1px solid #e2e2e2"
+      :src="require(`@/assets/images/${image}`)"
+      alt="32"
+      height="220"
+    ></v-img>
+    </div>
+    <h5 v-else class="py-3 px-3 mt-1 ZameriaAsh black--text font-weight-light text-capitalize" align="center">
+      <u>{{ $route.params.value }}</u>
+    </h5>
     <div class="mx-2 mt-2 py-2">
       <!-- <div>
         <main-brands></main-brands>
       </div> -->
-      <div v-if="isDepartment">
-      <v-img
-        style="border: 1px solid #e2e2e2"
-        :src="require(`@/assets/images/${image}`)"
-        alt="32"
-        height="220"
-      ></v-img>
-      </div>
-      <h3 v-else class="font-weight-light">Showing results for: '{{searchText}}'</h3>
       <!-- <div class="filter py-2 px-3 mt-3 filter-sort">
         <span class="filter-sort-text">Filter</span>
         <v-icon>mdi-plus</v-icon>
