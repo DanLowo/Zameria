@@ -13,11 +13,11 @@
       <Carousel circle="true"></Carousel>
     </div>
 
-    <!-- <div class="section-title ZameriaBrown" align="center">
+    <div class="section-title ZameriaBrown" align="center">
       <nuxt-link id="link" to="/search/NEW-ARRIVALS"
         >SHOP OUR NEW ARRIVALS >>></nuxt-link
       >
-    </div> -->
+    </div>
 
     <div class="special-deals mt-11">
       <ProductGrid
