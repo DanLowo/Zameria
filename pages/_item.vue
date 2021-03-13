@@ -7,7 +7,7 @@
           <v-icon size="30" :color="colorIcon">mdi-heart-outline</v-icon>
         </v-btn>
       </div>
-      <main-carousel circle="false"></main-carousel>
+      <main-carousel circle="true"></main-carousel>
     </div>
     <div class="my-2 mx-3 mt-5">
       <h3>Adidas Men's Front Original Trefoil Street Graphic Front Pocket</h3>
