@@ -41,21 +41,21 @@
     </div>
 
     <div class="image-section mt-2">
-      <v-img
-        style="border: 1px solid #e2e2e2"
-        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-        alt="32"
-        height="220"
-      ></v-img>
-      <div class="mx-2 mt-3" align="center">
-        <h4>Women's Self-Care: Yoga & Recovery</h4>
-        <p class="mt-1 mb-1" style="font-size: 14px">
-          Comfy essentials to help you relax and recharge
-        </p>
-        <nuxt-link to="/" style="font-size: 14px" class="black--text">
-          <b>SHOP WOMEN SELF-CARE</b>
-        </nuxt-link>
-      </div>
+    <v-img
+    style="border: 1px solid #e2e2e2"
+    :src="require(`@/assets/images/fashion3.jpg`)"
+    alt="32"
+    height="220"
+    ></v-img>
+    <div class="mx-2 mt-3" align="center">
+    <h4>Women's Self-Care: Yoga & Recovery</h4>
+    <p class="mt-1 mb-1" style="font-size: 14px">
+      Comfy essentials to help you relax and recharge
+    </p>
+    <nuxt-link to="/" style="font-size: 14px" class="black--text">
+      <b>SHOP WOMEN SELF-CARE</b>
+    </nuxt-link>
+    </div>
     </div>
 
     <div class="popular-items mt-11">
@@ -77,10 +77,10 @@
       ></ProductGrid>
     </div>
 
-        <div class="image-section mt-13">
+        <div class="image-section">
       <v-img
         style="border: 1px solid #e2e2e2"
-        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        :src="require(`@/assets/images/fashion1.jpg`)"
         alt="32"
         height="220"
       ></v-img>
@@ -99,9 +99,41 @@
       <main-brands></main-brands>
     </div> -->
 
-    <div class="image-section mt-10" v-for="(i, k) in 2" :key="k">
-      <main-image-section></main-image-section>
-    </div>
+    <div class="image-section mt-13">
+  <v-img
+    style="border: 1px solid #e2e2e2"
+    :src="require(`@/assets/images/fashion2.jpg`)"
+    alt="32"
+    height="220"
+  ></v-img>
+  <div class="mx-2 mt-3" align="center">
+    <h4>Women's Self-Care: Yoga & Recovery</h4>
+    <p class="mt-1 mb-1" style="font-size: 14px">
+      Comfy essentials to help you relax and recharge
+    </p>
+    <nuxt-link to="/" style="font-size: 14px" class="black--text">
+      <b>SHOP WOMEN SELF-CARE</b>
+    </nuxt-link>
+  </div>
+</div>
+
+<div class="image-section mt-13">
+  <v-img
+    style="border: 1px solid #e2e2e2"
+    :src="require(`@/assets/images/fashion.jpg`)"
+    alt="32"
+    height="220"
+  ></v-img>
+  <div class="mx-2 mt-3" align="center">
+    <h4>Women's Self-Care: Yoga & Recovery</h4>
+    <p class="mt-1 mb-1" style="font-size: 14px">
+      Comfy essentials to help you relax and recharge
+    </p>
+    <nuxt-link to="/" style="font-size: 14px" class="black--text">
+      <b>SHOP WOMEN SELF-CARE</b>
+    </nuxt-link>
+  </div>
+</div>
 
     <div class="popular-items mt-11">
       <ProductGrid
@@ -143,7 +175,7 @@ export default {
       departments: [
         {
           name: "Women",
-          src: "woman.jpeg"
+          src: "woman.jpg"
         },
         {
           name: "Men",
@@ -151,19 +183,19 @@ export default {
         },
         {
           name: "Girls",
-          src: "woman.jpeg"
+          src: "girl.jpg"
         },
         {
           name: "Boys",
-          src: "man.jpg"
+          src: "boy.jpg"
         },
         {
           name: "Toddler",
-          src: "toddler.jpeg"
+          src: "toodler.jpg"
         },
         {
           name: "Baby",
-          src: "baby.jpeg"
+          src: "baby.jpg"
         }
       ],
       imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg']
