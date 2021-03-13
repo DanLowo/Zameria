@@ -8,7 +8,7 @@
       <div v-if="isDepartment">
       <v-img
         style="border: 1px solid #e2e2e2"
-        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        :src="require(`@/assets/images/${image}`)"
         alt="32"
         height="220"
       ></v-img>
@@ -66,6 +66,7 @@ export default {
   data() {
     return {
       dialog: false,
+      image: "",
       imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg']
     };
   },
@@ -77,6 +78,20 @@ export default {
     },
     isDepartment: function(){
       if(this.$route.params.department){
+        switch(this.$route.params.value){
+          case 'Women':
+            return this.image = "woman.jpg"
+          case 'Men':
+            return this.image = "man.jpg"
+          case 'Girls':
+            return this.image = "girl.jpg"
+          case 'Boys':
+            return this.image = 'boy.jpg'
+          case 'Toddler':
+            return this.image = 'toodler.jpg'
+          case 'Baby':
+            return this.image = 'baby.jpg'
+        }
         return true
       } else {
         return false
