@@ -16,11 +16,11 @@
             <span style="font-size: 15px">
               <b>N5,000</b>
             </span>
-            <div class="font-weight-light" style="font-size: 14px">
+            <div class="font-weight-light" style="font-size: 12px">
               <span class="pr-1">
                 <del>N8,500</del>
               </span>
-              <span class="ZameriaLightRed--text" style="font-size: 13px">60%off</span>
+              <span class="ZameriaLightRed--text" style="font-size: 12px">60%off</span>
             </div>
           </div>
         </v-col>
