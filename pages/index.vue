@@ -3,21 +3,21 @@
     <Navbar />
     <div class="mt-1 bar"></div>
 
-    <div class="section-title ZameriaBrown mb-2" align="center">
+    <!-- <div class="section-title ZameriaBrown mb-2" align="center">
       <nuxt-link id="link" to="/search/NEW-SALES"
         >SHOP NEW SALES >>></nuxt-link
       >
-    </div>
+    </div> -->
 
     <div class="carousel-section">
       <Carousel circle="true"></Carousel>
     </div>
 
-    <div class="section-title ZameriaBrown" align="center">
+    <!-- <div class="section-title ZameriaBrown" align="center">
       <nuxt-link id="link" to="/search/NEW-ARRIVALS"
         >SHOP OUR NEW ARRIVALS >>></nuxt-link
       >
-    </div>
+    </div> -->
 
     <div class="special-deals mt-11">
       <ProductGrid
