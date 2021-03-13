@@ -34,6 +34,7 @@ export default {
       slides: [
         "man.jpg",
         "woman.jpg",
+        "girl.png",
         "toodler.jpg",
         "baby.jpg"
       ],

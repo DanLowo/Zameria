@@ -84,7 +84,7 @@ export default {
           case 'Men':
             return this.image = "man.jpg"
           case 'Girls':
-            return this.image = "girl.jpg"
+            return this.image = "girl.png"
           case 'Boys':
             return this.image = 'boy.jpg'
           case 'Toddler':

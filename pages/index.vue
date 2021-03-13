@@ -183,7 +183,7 @@ export default {
         },
         {
           name: "Girls",
-          src: "girl.jpg"
+          src: "girl.png"
         },
         {
           name: "Boys",
