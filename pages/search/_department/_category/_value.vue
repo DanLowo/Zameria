@@ -40,7 +40,7 @@
     </div>
 
     <div class="you-might-also-like mt-15">
-      <ProductGrid head="true" header="You might also like" slide="true" image="shoes.jpg"></ProductGrid>
+      <ProductGrid head="true" header="You might also like" slide="true" :images="imageList"></ProductGrid>
     </div>
   </div>
 </template>
@@ -58,7 +58,8 @@ export default {
   data() {
     return {
       dialog: false,
-      path: []
+      path: [],
+      imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg']
     };
   },
   computed: {
