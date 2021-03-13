@@ -376,47 +376,47 @@
     "Girls": [
         {
             "title": "Tops",
-            "url": "/search/girls/pajamas"
-        },
-        {
-            "title": "Bottoms",
-            "url": "/search/girls/sets"
-        },
-        {
-            "title": "Dresses",
             "url": "/search/girls/tops"
         },
         {
+            "title": "Bottoms",
+            "url": "/search/girls/bottoms"
+        },
+        {
+            "title": "Dresses",
+            "url": "/search/girls/dresses"
+        },
+        {
             "title": "Sets",
-            "url": "/search/girls/shoes"
+            "url": "/search/girls/sets"
         },
         {
             "title": "Jackets",
-            "url": "/search/girls/swimmers"
+            "url": "/search/girls/jackets"
         },
         {
             "title": "Footwear",
-            "url": "/search/girls/sweater-&-hoodies"
+            "url": "/search/girls/footwears"
         },
         {
             "title": "Accessories",
-            "url": "/search/girls/shorts-&-skirts"
+            "url": "/search/girls/accessories"
         },
         {
             "title": "Pajamas",
-            "url": "/search/girls/jackets-&-outwear"
+            "url": "/search/girls/pajamas"
         },
         {
             "title": "Innerwear",
-            "url": "/search/girls/leggins-&-pants"
+            "url": "/search/girls/innerwear"
         },
         {
             "title": "Swimwear",
-            "url": "/search/girls/dresses-&-socks"
+            "url": "/search/girls/swimwear"
         },
         {
             "title": "Bags",
-            "url": "/search/girls/underwear-&-socks"
+            "url": "/search/girls/bags"
         }
     ],
 
@@ -545,7 +545,7 @@
             "url": "/search/baby/swimwear"
         }
     ],
-   
+
     "New Arrivals" : [
         {
             "title": "Women",
