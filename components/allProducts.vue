@@ -1,10 +1,10 @@
 <template>
   <div class="all-products-with-next">
     <div id="products">
-      <v-row class="mt-8" v-for="n in rows" :key="n" dense>
+      <v-row class="mt-8" v-for="(n, k) in imageList" :key="k" dense>
         <v-col v-for="i in grid" :key="i" :sm="cols" :md="cols" :lg="cols">
           <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}">
-          <v-img class="grid-img" :height="height" aspect-ratio="1"></v-img>
+          <v-img class="grid-img" :src="require(`@/assets/images/${n}`)" :height="height" aspect-ratio="1"></v-img>
           </nuxt-link>
           <div align="center">
             <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
@@ -73,7 +73,11 @@ export default {
       page: 1,
       currentRow: this.row,
       nextDisabled: false,
-      backDisabled: true
+      backDisabled: true,
+      imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg',
+      "shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg',
+      "shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp'
+    ]
     };
   },
   watch: {
