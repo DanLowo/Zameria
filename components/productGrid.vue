@@ -27,14 +27,14 @@
             <div v-else class="mb-0 pb-0 font-weight-light">
               <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
             </div>
-            <span style="font-size: 15px">
+            <span style="font-size: 15px" class="font-weight-bold">
               <b>N5,000</b>
             </span>
             <div style="font-size: 13px">
-              <span class="pr-1 grey--text font-weight-light">
+              <span class="pr-1 grey--text font-weight-bold">
                 <del>N8,500</del>
               </span>
-              <span class="ZameriaLightRed--text font-weight-bold" style="font-size: 12px">60%off</span>
+              <span class="ZameriaRed--text font-weight-bold" style="font-size: 12px">60%off</span>
             </div>
           </div>
         </div>
