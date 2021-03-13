@@ -24,16 +24,20 @@
         </p>
         <div class="mt-4">
           <div style="display: flex">
-            <span class="summary-title">Items</span>
+            <span class="summary-title">Price</span>
             <span class="summary-value">N12,000</span>
           </div>
           <div style="display: flex" class="mt-3">
             <span class="summary-title">Discount</span>
-            <span class="summary-value green--text">N12,000</span>
+            <span class="summary-value green--text">N2,000</span>
+          </div>
+          <div style="display: flex" class="mt-3">
+            <span class="summary-title">Shipping Fee</span>
+            <span class="summary-value">N800</span>
           </div>
           <div style="display: flex" class="mt-3">
             <span class="summary-title"> <b> Grand Total </b> </span>
-            <span class="summary-value"> <b> N12,000 </b> </span>
+            <span class="summary-value"> <b> N10,800 </b> </span>
           </div>
         </div>
       </div>
