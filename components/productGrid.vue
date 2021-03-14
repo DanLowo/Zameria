@@ -27,7 +27,7 @@
             <div v-else class="mb-0 pb-0 font-weight-light">
               <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
             </div>
-            <span style="font-size: 17px" class="font-weight-bold">
+            <span style="font-size: 18px" class="font-weight-bold">
               <b>N5,000</b>
             </span>
             <div style="font-size: 13px">
