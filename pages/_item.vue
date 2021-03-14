@@ -195,7 +195,7 @@
     <div>
       <main-product-grid head="true" header="Similar Products" slide="true" :images="imageList"></main-product-grid>
       <main-product-grid
-        class="mt-8"
+        class="mt-10"
         head="true"
         header="Recommended Products"
         slide="true"
@@ -366,8 +366,8 @@ export default {
 
 .wishlist-icon {
   position: absolute;
-  right: 15px;
-  top: 170px;
+  right: 10px;
+  top: 115px;
   color: white;
   z-index: 999;
 }
