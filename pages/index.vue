@@ -31,7 +31,7 @@
     <div class="shop-by-departments mx-2 mt-9" id="shop">
       <h3 align="center" class="mb-3">SHOP BY DEPARTMENTS</h3>
       <v-row dense>
-        <v-col v-for="(i, k) in departments" cols="4" :key="k" sm="4" md="4" lg="4">
+        <v-col v-for="(i, k) in departments" cols="6" :key="k" sm="6" md="6" lg="4">
 
           <v-img  :src="require(`@/assets/images/${i.src}`)" @click="$router.push({name:'departments-name', params:{name:`${i.name}`}})" class="dept-img" aspect-ratio="1"></v-img>
           <p align="center" class="nowrap-text pt-1">{{i.name}}</p>
