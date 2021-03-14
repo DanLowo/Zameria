@@ -45,7 +45,7 @@
     style="border: 1px solid #e2e2e2"
     :src="require(`@/assets/images/fashion3.jpg`)"
     alt="32"
-    height="220"
+    height="250"
     ></v-img>
     <div class="mx-2 mt-3" align="center">
     <h4>Women's Self-Care: Yoga & Recovery</h4>
@@ -82,7 +82,7 @@
         style="border: 1px solid #e2e2e2"
         :src="require(`@/assets/images/fashion1.jpg`)"
         alt="32"
-        height="220"
+        height="250"
       ></v-img>
       <div class="mx-2 mt-3" align="center">
         <h4>Women's Self-Care: Yoga & Recovery</h4>
@@ -104,7 +104,7 @@
     style="border: 1px solid #e2e2e2"
     :src="require(`@/assets/images/fashion2.jpg`)"
     alt="32"
-    height="220"
+    height="250"
   ></v-img>
   <div class="mx-2 mt-3" align="center">
     <h4>Women's Self-Care: Yoga & Recovery</h4>
@@ -122,7 +122,7 @@
     style="border: 1px solid #e2e2e2"
     :src="require(`@/assets/images/fashion.jpg`)"
     alt="32"
-    height="220"
+    height="250"
   ></v-img>
   <div class="mx-2 mt-3" align="center">
     <h4>Women's Self-Care: Yoga & Recovery</h4>
@@ -145,7 +145,7 @@
       <br />
     </div>
 
-    <div class="you-might-also-like mt-14">
+    <div class="you-might-also-like mt-7">
       <ProductGrid
         head="true"
         header="You might also like"
