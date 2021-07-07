@@ -57,9 +57,12 @@ export default {
   auth: {
     strategies: {
       local: {
+        user: {
+          autoFetch: false
+        },
         endpoints: {
           login: { url: "/accounts/login/", method: "post", propertyName: "token" },
-          user: { url: "/accounts/login/", method: "post", propertyName: "user_profile" }
+          user: false
         },
         tokenType: ""
       },
