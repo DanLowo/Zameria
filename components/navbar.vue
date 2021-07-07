@@ -82,7 +82,7 @@
                 </v-list-item-title>
               </v-list-item>
 
-              <v-list-item>
+              <v-list-item @click="logout()">
                 <v-list-item-title>
                   Logout
                 </v-list-item-title>
@@ -312,7 +312,10 @@ export default {
         this.navHeader = arr[arrLength];
       }
     },
-    ok() {}
+    ok() {},
+    async logout() {
+      await this.$auth.logout()
+    }
   }
 };
 </script>
