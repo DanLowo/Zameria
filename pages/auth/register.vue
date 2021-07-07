@@ -190,7 +190,7 @@ export default {
       passwordFieldType1: "password",
       passwordFieldIcon: "fa fa-eye-slash input-icon",
       passwordFieldIcon1: "fa fa-eye-slash input-icon",
-      registered: true
+      registered: false
     };
   },
 
