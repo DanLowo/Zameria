@@ -1,7 +1,9 @@
 <template>
   <div class="login">
     <div class="auth-header" align="center">
-       <span class="close-icon"> <v-icon @click="$router.back()">mdi-close</v-icon> </span>
+      <span class="close-icon">
+        <v-icon @click="$router.back()">mdi-close</v-icon>
+      </span>
       <span class="fa fa-user-o mb-3" style="font-size: 40px"></span>
       <p class="font-weight-bold">LOG IN</p>
     </div>
@@ -33,9 +35,16 @@
           id="password"
         />
 
-        <v-btn class="mt-2 text-capitalize" height="43" type="submit" dark depressed color="ZameriaRed" block>Login</v-btn>
+        <v-btn
+          class="mt-2 text-capitalize"
+          height="43"
+          type="submit"
+          dark
+          depressed
+          color="ZameriaRed"
+          block
+        >Login</v-btn>
       </form>
-
 
       <authStrategy align="center" title="Login"></authStrategy>
 
@@ -46,14 +55,22 @@
 
     <div align="center" style="height: 35vh" class="mt-9 px-7 pt-9">
       <p class="font-weight-bold">NEW CUSTOMER?</p>
-      <v-btn tile depressed block to="/auth/register" height="43" class="mt-2 text-capitalize" dark color="black">Register here</v-btn>
+      <v-btn
+        tile
+        depressed
+        block
+        to="/auth/register"
+        height="43"
+        class="mt-2 text-capitalize"
+        dark
+        color="black"
+      >Register here</v-btn>
     </div>
   </div>
 </template>
 
 <script>
-
-import authStrategy from "@/components/authStrategy"
+import authStrategy from "@/components/authStrategy";
 
 export default {
   components: {
@@ -80,15 +97,27 @@ export default {
     },
 
     async submit() {
-      let data = {
-        email_or_username : this.email,
-        password : this.password
-      }
+      let details = {
+        email: this.email,
+        password: this.password
+      };
 
-      let res = await this.$auth.loginWith("local", {
-        data: data,
-      });
-
+      this.$auth
+        .loginWith("local", {
+          data: details
+        })
+        .then(res => {
+          let data = res.data
+          let userDetails = {
+            email: data.email,
+            username: data.username,
+            phone_no: data.phone_no,
+            user_type: data.user_type,
+            first_name: data.consumer.first_name,
+            last_name: data.consumer.last_name
+          };
+          this.$auth.setUser(userDetails);
+        }).catch(err => console.log(err))
     }
   }
 };
