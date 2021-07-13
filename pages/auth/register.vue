@@ -2,13 +2,14 @@
   <div>
     <div class="auth-header" align="center">
       <span class="close-icon">
-        <v-icon @click="$router.back()">mdi-close</v-icon>
+        <v-icon @click="$router.push('/')">mdi-close</v-icon>
       </span>
       <span class="fa fa-user-o mb-3" style="font-size: 40px"></span>
       <p class="font-weight-bold">REGISTER</p>
     </div>
     <div class="register" v-show="!registered">
       <div class="mt-14 mx-6">
+        <Alert v-show="alert.show" :message="alert.message" :type="alert.type" />
         <form @submit.prevent="submit">
           <label for="firstName">
             <b>First name</b>
@@ -156,19 +157,21 @@
       </div>
     </div>
 
-    <div v-show="registered" id="verify-account" align="center">
-      <h1>ACCOUNT CREATED</h1>
-      <p>Please check you email to verify your account</p>
+    <div v-show="registered" id="verify-account" align="center" class="mt-7 mx-3">
+      <h2>ACCOUNT CREATED</h2>
+      <p>Please check you email to <br/> verify your account</p>
     </div>
   </div>
 </template>
 
 <script>
 import authStrategy from "@/components/authStrategy";
+import Alert from "@/components/alert";
 
 export default {
   components: {
-    authStrategy
+    authStrategy,
+    Alert
   },
   data() {
     return {
@@ -190,7 +193,12 @@ export default {
       passwordFieldType1: "password",
       passwordFieldIcon: "fa fa-eye-slash input-icon",
       passwordFieldIcon1: "fa fa-eye-slash input-icon",
-      registered: false
+      registered: false,
+      alert: {
+        show: false,
+        type: "error",
+        message: ""
+      }
     };
   },
 
@@ -232,6 +240,12 @@ export default {
       }
     },
     async submit() {
+      this.alert = {
+        show: false,
+        type: "error",
+        message: ""
+      };
+
       let details = {
         email: this.email,
         password: this.password,
@@ -253,7 +267,15 @@ export default {
         console.log(data);
         this.registered = true;
       } catch (err) {
-        console.log(err);
+        if (err.response.data.email) {
+          console.log(err.response.data.email[0]);
+          this.alert = {
+            show: true,
+            type: "error",
+            message: err.response.data.email[0]
+          };
+          window.scrollTo(0, 0);
+        }
       }
     }
   }
