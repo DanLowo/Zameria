@@ -9,6 +9,7 @@
     </div>
 
     <div class="mt-14 mx-6">
+      <Alert v-show="alert.show" :message="alert.message" :type="alert.type" />
       <form @submit.prevent="submit">
         <label for="email">
           <b>Email address</b>
@@ -71,17 +72,24 @@
 
 <script>
 import authStrategy from "@/components/authStrategy";
+import Alert from "@/components/alert";
 
 export default {
   components: {
-    authStrategy
+    authStrategy,
+    Alert
   },
   data() {
     return {
       email: "",
       password: "",
       passwordFieldType: "password",
-      passwordFieldIcon: "fa fa-eye-slash input-icon"
+      passwordFieldIcon: "fa fa-eye-slash input-icon",
+      alert: {
+        show: false,
+        type: "error",
+        message: ""
+      }
     };
   },
 
@@ -97,6 +105,11 @@ export default {
     },
 
     async submit() {
+      this.alert = {
+        show: false,
+        type: "error",
+        message: ""
+      };
       let details = {
         email: this.email,
         password: this.password
@@ -107,7 +120,7 @@ export default {
           data: details
         })
         .then(res => {
-          let data = res.data
+          let data = res.data;
           let userDetails = {
             email: data.email,
             username: data.username,
@@ -117,7 +130,14 @@ export default {
             last_name: data.consumer.last_name
           };
           this.$auth.setUser(userDetails);
-        }).catch(err => console.log(err))
+        })
+        .catch(err => {
+          this.alert = {
+            show: true,
+            type: "error",
+            message: "Invalid Credentials"
+          };
+        });
     }
   }
 };
