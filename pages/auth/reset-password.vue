@@ -107,6 +107,7 @@ export default {
     return {
       email: "",
       authCode: "",
+      password: '',
       viewForm: 'email',
       alert: {
         show: false,
