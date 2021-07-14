@@ -19,7 +19,8 @@
     "@nuxtjs/vuetify": "^1.11.2",
     "mammoth": "^1.4.11",
     "nuxt": "^2.13.0",
-    "raw-loader": "^4.0.1"
+    "raw-loader": "^4.0.1",
+    "vue-google-oauth2": "^1.5.8"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
