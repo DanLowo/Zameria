@@ -33,23 +33,44 @@ export default {
   props: ["title"],
   methods: {
     async authStrategy(strategy) {
-      if (strategy === "google") {
-        const googleUser = await this.$gAuth.signIn();
-        console.log(googleUser.getId());
-        let {It, Ve, xS, gJ} = googleUser.getBasicProfile()
 
-        let userDetails = {
-          id: xS,
-          email: It,
-          username: Ve,
-          picture: gJ,
-          // phone_no: data.phone_no,
-          // user_type: data.user_type,
-          // first_name: data.consumer.first_name,
-          // last_name: data.consumer.last_name
-        };
-        this.$auth.setUser(userDetails);
-        this.$router.push('/')
+      let googleAuth = this.$gAuth;
+      let authStore = this.$auth;
+      let router = this.$router;
+      let authCode;
+
+      // call this function after getting authCode
+      async function signInUser() {
+        try {
+          const googleUser = await googleAuth.signIn();
+          let { It, Ve, xS, gJ } = googleUser.getBasicProfile();
+
+          let userDetails = {
+            id: xS,
+            email: It,
+            username: Ve,
+            picture: gJ,
+            authCode
+          };
+
+          authStore.setUser(userDetails);
+          router.push("/");
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
+      if (strategy === "google") {
+        try {
+          const code = await this.$gAuth.getAuthCode();
+          authCode = code;
+
+          setTimeout(function() {
+            signInUser();
+          }, 500);
+        } catch (error) {
+          console.log(err)
+        }
       }
     }
   }
