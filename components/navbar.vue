@@ -2,14 +2,19 @@
   <div class="navbar">
     <main-subheader></main-subheader>
     <div>
-
       <!-- Modal for search bar -->
       <div>
         <v-dialog class="black" v-model="searchModal" fullscreen>
           <div class="white pb-6">
             <form @submit.prevent="search" class="px-2 pt-2" style="display: flex">
               <span style="flex-grow: 1">
-                <input v-model="searchText"  type="text" autofocus id="search-product-input" placeholder="Search for items or products" />
+                <input
+                  v-model="searchText"
+                  type="text"
+                  autofocus
+                  id="search-product-input"
+                  placeholder="Search for items or products"
+                />
               </span>
               <span v-show="showClear">
                 <v-btn @click="searchText = '' " class="ZameriaLightGray--text mt-1 pr-2" text>Clear</v-btn>
@@ -19,77 +24,88 @@
               </span>
             </form>
           </div>
-          <v-card style="opacity: 0.8">
-
-          </v-card>
+          <v-card style="opacity: 0.8"></v-card>
         </v-dialog>
       </div>
-
 
       <div class="bor">
         <!-- Header with navigation icon, Zameria logo and Cart -->
         <div class="normal" v-if="!searchView">
           <v-app-bar flat color="white">
-            <v-app-bar-nav-icon class="ZameriaBlack--text font-weight-black" @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon
+              class="ZameriaBlack--text font-weight-black"
+              @click="drawer = !drawer"
+            ></v-app-bar-nav-icon>
             <nuxt-link class="mr-3 mb-1 ml-0 pl-0" to="/">
-              <v-img :src="require('@/assets/images/zameria.png')" contain height="20px" style="margin-left: -14px" width="150"></v-img>
+              <v-img
+                :src="require('@/assets/images/zameria.png')"
+                contain
+                height="20px"
+                style="margin-left: -14px"
+                width="150"
+              ></v-img>
             </nuxt-link>
             <v-spacer></v-spacer>
 
-          <v-menu offset-y>
-            <template v-slot:activator="{on, attrs}">
-              <v-btn dense color="ZameriaBlack" icon tile v-on="on" v-bind="attrs" class="px-0">
-                <v-icon style="font-size: 30px">mdi-account-outline</v-icon>
-              </v-btn>
-            </template>
-            <v-list dense v-if="!$store.state.auth.loggedIn">
-              <v-list-item>
-                <v-list-item-title>
-                  <nuxt-link to="/auth/login" style="color: black; text-decoration: none">Sign in</nuxt-link>
-                </v-list-item-title>
-              </v-list-item>
+            <v-menu offset-y>
+              <template v-slot:activator="{on, attrs}">
+                <v-btn dense color="ZameriaBlack" icon tile v-on="on" v-bind="attrs" class="px-0">
+                  <v-icon style="font-size: 30px">mdi-account-outline</v-icon>
+                </v-btn>
+              </template>
+              <v-list dense v-if="!$store.state.auth.loggedIn">
+                <v-list-item>
+                  <v-list-item-title>
+                    <nuxt-link to="/auth/login" style="color: black; text-decoration: none">Sign in</nuxt-link>
+                  </v-list-item-title>
+                </v-list-item>
 
-              <v-list-item>
-                <v-list-item-title>
-                  <nuxt-link to="/auth/register" style="color: black; text-decoration: none">Register</nuxt-link>
-                </v-list-item-title>
-              </v-list-item>
-            </v-list>
+                <v-list-item>
+                  <v-list-item-title>
+                    <nuxt-link
+                      to="/auth/register"
+                      style="color: black; text-decoration: none"
+                    >Register</nuxt-link>
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
 
+              <v-list dense v-else>
+                <v-list-item>
+                  <v-list-item-title>
+                    <nuxt-link
+                      to="/account/profile"
+                      style="color: black; text-decoration: none"
+                    >Profile</nuxt-link>
+                  </v-list-item-title>
+                </v-list-item>
 
-            <v-list dense v-else>
-              <v-list-item>
-                <v-list-item-title>
-                  <nuxt-link to="/account/profile" style="color: black; text-decoration: none">Profile</nuxt-link>
-                </v-list-item-title>
-              </v-list-item>
+                <v-list-item>
+                  <v-list-item-title>
+                    <nuxt-link to="/wishlist" style="color: black; text-decoration: none">Wishlist</nuxt-link>
+                  </v-list-item-title>
+                </v-list-item>
 
-              <v-list-item>
-                <v-list-item-title>
-                  <nuxt-link to="/wishlist" style="color: black; text-decoration: none">Wishlist</nuxt-link>
-                </v-list-item-title>
-              </v-list-item>
+                <v-list-item>
+                  <v-list-item-title>
+                    <nuxt-link to="/orders" style="color: black; text-decoration: none">My Orders</nuxt-link>
+                  </v-list-item-title>
+                </v-list-item>
 
-              <v-list-item>
-              <v-list-item-title>
-                  <nuxt-link to="/orders" style="color: black; text-decoration: none">My Orders</nuxt-link>
-                </v-list-item-title>
-              </v-list-item>
+                <v-list-item>
+                  <v-list-item-title>
+                    <nuxt-link
+                      to="/account/address-book"
+                      style="color: black; text-decoration: none"
+                    >Address Book</nuxt-link>
+                  </v-list-item-title>
+                </v-list-item>
 
-              <v-list-item>
-                <v-list-item-title>
-                  <nuxt-link to="/account/address-book" style="color: black; text-decoration: none">Address Book</nuxt-link>
-                </v-list-item-title>
-              </v-list-item>
-
-              <v-list-item @click="logout()">
-                <v-list-item-title>
-                  Logout
-                </v-list-item-title>
-              </v-list-item>
-
-            </v-list>
-          </v-menu>
+                <v-list-item @click="logout()">
+                  <v-list-item-title>Logout</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
 
             <v-icon
               class="mr-3"
@@ -113,7 +129,7 @@
             <v-btn type="submit" style="font-size: 13px" text color="black" class="px-0 ml-1" @click="searchView = false">Cancel</v-btn>
           </v-app-bar>
         </div>
-      -->
+        -->
       </div>
     </div>
 
@@ -124,7 +140,6 @@
           <div v-if="navHeader === 'SHOP BY DEPARTMENT' ">
             <!-- List all departments -->
             <v-list>
-
               <v-list-item @click="changeNavHeader('Sale', 'Department')">
                 <v-list-item-title class="font-weight-bold red--text">Sale</v-list-item-title>
                 <v-list-item-icon>
@@ -190,7 +205,7 @@
         <!-- Account details below nav bar -->
 
         <div class="mt-5">
-          <div>
+          <div v-show="$store.state.auth.loggedIn">
             <v-list>
               <v-list-item @click="ok" to="/account/profile">
                 <v-list-item-title>Profile</v-list-item-title>
@@ -207,11 +222,16 @@
               <v-list-item @click="ok" to="/auth/change-password">
                 <v-list-item-title>Change Password</v-list-item-title>
               </v-list-item>
-              <v-list-item @click="ok" to="/auth/login">
-                <v-list-item-title>Register / Sign in</v-list-item-title>
-              </v-list-item>
             </v-list>
           </div>
+          <v-list>
+            <v-list-item v-if="!$store.state.auth.loggedIn" @click="ok" to="/auth/login">
+              <v-list-item-title>Register / Sign in</v-list-item-title>
+            </v-list-item>
+            <v-list-item v-else @click="logout">
+              <v-list-item-title>Logout</v-list-item-title>
+            </v-list-item>
+          </v-list>
         </div>
 
         <div class="mt-2">
@@ -246,11 +266,11 @@ export default {
     };
   },
   watch: {
-    searchText: function(newValue){
-      if(newValue === ""){
-        this.showClear = false
+    searchText: function(newValue) {
+      if (newValue === "") {
+        this.showClear = false;
       } else {
-        this.showClear = true
+        this.showClear = true;
       }
     },
     navHeader: function(newValue, oldValue) {
@@ -314,7 +334,7 @@ export default {
     },
     ok() {},
     async logout() {
-      await this.$auth.logout()
+      await this.$auth.logout();
     }
   }
 };
@@ -323,7 +343,7 @@ export default {
 <style lang="scss">
 @import "~/scss/custom.scss";
 
-#search-product-input{
+#search-product-input {
   padding: 10px;
   width: 100%;
   // border-bottom: 1px solid $ZameriaDividerGray;
@@ -333,7 +353,7 @@ export default {
   font-size: 30px;
 }
 
-.navbar .v-list-item__title{
+.navbar .v-list-item__title {
   font-size: 15px;
 }
 
@@ -346,5 +366,4 @@ export default {
   // border-bottom: 1px solid rgb(224, 221, 221);
   box-shadow: 0px 1px 2px 1px rgb(224, 221, 221);
 }
-
 </style>
