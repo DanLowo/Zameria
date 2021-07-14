@@ -31,11 +31,25 @@
 export default {
   name: "authStrategy",
   props: ["title"],
-  methods:{
-    async authStrategy(strategy){
-      if(strategy === 'google'){
-        let ok = await this.$auth.loginWith("google")
-        console.log(ok)
+  methods: {
+    async authStrategy(strategy) {
+      if (strategy === "google") {
+        const googleUser = await this.$gAuth.signIn();
+        console.log(googleUser.getId());
+        let {It, Ve, xS, gJ} = googleUser.getBasicProfile()
+
+        let userDetails = {
+          id: xS,
+          email: It,
+          username: Ve,
+          picture: gJ,
+          // phone_no: data.phone_no,
+          // user_type: data.user_type,
+          // first_name: data.consumer.first_name,
+          // last_name: data.consumer.last_name
+        };
+        this.$auth.setUser(userDetails);
+        this.$router.push('/')
       }
     }
   }
