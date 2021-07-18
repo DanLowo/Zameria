@@ -1,5 +1,5 @@
 <template>
-  <div class="oauth-login mt-5">
+  <div class="oauth-login mb-5">
     <p style="font-size: 15px">{{title}} with:</p>
     <v-btn
       small
@@ -7,11 +7,11 @@
       color="ZameriaAsh"
       class="mr-5"
       fab
-      @click="authStrategy('google')"
+      @click="type=='register' ? googleAuthRegister() : googleAuthSignIn()"
     >
       <span style="font-size: 20px" class="fa fa-google"></span>
     </v-btn>
-    <v-btn
+    <!-- <v-btn
       small
       style="color: #3b5998;  box-shadow: 0px 0px 0px 0px grey"
       color="ZameriaAsh"
@@ -23,55 +23,57 @@
     </v-btn>
     <v-btn small fab style="color: #c8232c;  box-shadow: 0px 0px 0px 0px grey" color="ZameriaAsh">
       <span style="font-size: 20px" class="fa fa-pinterest-p"></span>
-    </v-btn>
+    </v-btn> -->
   </div>
 </template>
 
 <script>
+import firebase from "firebase";
 export default {
   name: "authStrategy",
-  props: ["title"],
+  props: ["title", "type"],
   methods: {
-    async authStrategy(strategy) {
-
-      let googleAuth = this.$gAuth;
-      let authStore = this.$auth;
-      let router = this.$router;
-      let authCode;
-
-      // call this function after getting authCode
-      async function signInUser() {
-        try {
-          const googleUser = await googleAuth.signIn();
-          let { It, Ve, xS, gJ } = googleUser.getBasicProfile();
-
-          let userDetails = {
-            id: xS,
-            email: It,
-            username: Ve,
-            picture: gJ,
-            authCode
-          };
-
-          authStore.setUser(userDetails);
-          router.push("/");
-        } catch (error) {
-          console.log(error)
-        }
+    async googleAuthRegister() {
+      let axios = this.$axios;
+      try {
+        let provider = new firebase.auth.GoogleAuthProvider();
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then(async result => {
+            let {
+              user: { displayName, email, Aa }
+            } = result;
+            let userDetails = {
+              email: email,
+              user_type: "consumer",
+              consumer: {
+                first_name: "",
+                last_name: ""
+              },
+              username: displayName,
+              google_auth: Aa
+            };
+            try {
+              let { data } = await axios.post(
+                "/accounts/signup/create_account/",
+                userDetails
+              );
+              console.log(data);
+              await this.$store.commit('actionss/setRegistered')
+            } catch (err) {
+              console.log(err);
+            }
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      } catch (error) {
+        console.log(err);
       }
-
-      if (strategy === "google") {
-        try {
-          const code = await this.$gAuth.getAuthCode();
-          authCode = code;
-
-          setTimeout(function() {
-            signInUser();
-          }, 500);
-        } catch (error) {
-          console.log(err)
-        }
-      }
+    },
+    async googleAuthSignIn() {
+      console.log('kkdkd')
     }
   }
 };
