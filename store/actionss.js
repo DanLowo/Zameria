@@ -11,7 +11,8 @@ export const state = () => ({
   states: [],
   cities: [],
   faqsList: [],
-  reviewModal: false
+  reviewModal: false,
+  authRegistered: false
 });
 
 export const mutations = {
@@ -44,5 +45,8 @@ export const mutations = {
   },
   setReviewModal(state, data) {
     state.reviewModal = !state.reviewModal;
+  },
+  setRegistered(state){
+    state.authRegistered = !state.authRegistered
   }
 };
