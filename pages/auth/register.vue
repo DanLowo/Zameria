@@ -8,7 +8,8 @@
       <p class="font-weight-bold">REGISTER</p>
     </div>
     <div class="register" v-show="!registered">
-      <div class="mt-14 mx-6">
+      <div class="mt-7 mx-6">
+        <authStrategy align="center" title="Register" type="register" :registered="registered"></authStrategy>
         <Alert v-show="alert.show" :message="alert.message" :type="alert.type" />
         <form @submit.prevent="submit">
           <label for="firstName">
@@ -140,7 +141,6 @@
           >Register</v-btn>
         </form>
 
-        <authStrategy align="center" title="Register"></authStrategy>
       </div>
       <div align="center" style="height: 35vh" class="mt-10 mb-7 px-7 pt-9">
         <p class="font-weight-bold">ALREADY A CUSTOMER?</p>
@@ -173,6 +173,11 @@ export default {
     authStrategy,
     Alert
   },
+  computed: {
+    registered() {
+      return this.$store.state.actionss.authRegistered
+    }
+  },
   data() {
     return {
       firstName: "",
@@ -193,7 +198,6 @@ export default {
       passwordFieldType1: "password",
       passwordFieldIcon: "fa fa-eye-slash input-icon",
       passwordFieldIcon1: "fa fa-eye-slash input-icon",
-      registered: false,
       alert: {
         show: false,
         type: "error",
@@ -264,8 +268,7 @@ export default {
           "/accounts/signup/create_account/",
           details
         );
-        console.log(data);
-        this.registered = true;
+        await this.$store.commit('actionss/setRegistered')
       } catch (err) {
         if (err.response.data.email) {
           console.log(err.response.data.email[0]);
