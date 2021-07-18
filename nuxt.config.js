@@ -88,7 +88,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ["@/plugins/vuetify.js", {src: "@/plugins/google-auth.js", ssr:false}],
+  plugins: ["@/plugins/vuetify.js", {src: "@/plugins/firebase.js", ssr:false}],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
