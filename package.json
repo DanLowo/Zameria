@@ -17,10 +17,10 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
+    "firebase": "^8.7.1",
     "mammoth": "^1.4.11",
     "nuxt": "^2.13.0",
-    "raw-loader": "^4.0.1",
-    "vue-google-oauth2": "^1.5.8"
+    "raw-loader": "^4.0.1"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
