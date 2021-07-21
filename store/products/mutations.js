@@ -4,5 +4,8 @@ export default {
         state.allProducts.noOfProducts = count
         state.allProducts.next = next
         state.allProducts.previous = previous
+    },
+    setProduct(state, product){
+        state.product = product
     }
 }

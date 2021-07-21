@@ -4,5 +4,6 @@ export default () => ({
         noOfProducts: null,
         next: null,
         previous: null
-    }
+    },
+    product: {}
 })
