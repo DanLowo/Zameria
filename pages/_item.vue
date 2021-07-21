@@ -143,7 +143,7 @@
         </div>
       </form>
     </div>
-
+    <main-alert v-show="cart.state" :type="cart.type" class="mx-3" :message="cart.message"></main-alert>
     <div class="ZameriaAsh2 px-4 py-5 mt-3" align="center">
       <v-btn
         class="my-2 ZameriaRed--text"
@@ -211,13 +211,13 @@ import LgaJson from "@/assets/docs/lgas.json";
 
 export default {
   async asyncData({ params, store }) {
-    await store.commit('products/setProduct', params.item)
+    await store.commit("products/setProduct", params.item);
     // let name = params.item.replace(/-/g, " ");
   },
 
   computed: {
     product() {
-      return this.$store.state.products.product
+      return this.$store.state.products.product;
     }
   },
 
@@ -230,17 +230,40 @@ export default {
   },
 
   methods: {
-    addToCart() {
+    async addToCart() {
+      this.cart = {
+        state: false,
+        type: "success",
+        message: ""
+      };
       if (this.selectedSize === "" || this.selectedColor === "") {
         this.selectError = true;
         this.selectErrorMessage = "Please select color & size";
         let el = document.getElementById("alert");
         el.scrollIntoView(true);
       } else {
-        this.selectError = false
-        this.selectErrorMessage = ""
-        let {id} = this.product
-        console.log(id)
+        this.selectError = false;
+        this.selectErrorMessage = "";
+        let { id } = this.product;
+        let dataDetails = {
+          product: id,
+          quantity: this.orderNumber
+        };
+        try {
+          await this.$store.dispatch("cart/addCart", dataDetails);
+          this.cart = {
+            state: true,
+            message: "Added to cart",
+            type: "success"
+          };
+        } catch (err) {
+          this.cart = {
+            state: true,
+            message: "Somthing went wrong, try again",
+            type: "error"
+          };
+          console.log(err);
+        }
       }
     },
     buyNow() {
@@ -280,6 +303,11 @@ export default {
       city: "",
       selectError: false,
       selectErrorMessage: "",
+      cart: {
+        state: false,
+        type: "success",
+        message: ""
+      },
       accordion: [
         {
           header: "Product details",
@@ -293,7 +321,16 @@ export default {
           header: "Product reviews"
         }
       ],
-      imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg']
+      imageList: [
+        "shoe.jpeg",
+        "shoe2.jpg",
+        "watch.jpg",
+        "shoes.webp",
+        "shoe.jpeg",
+        "shoe2.jpg",
+        "watch.jpg",
+        "shoes3.jpg"
+      ]
     };
   },
   watch: {
