@@ -7,7 +7,13 @@
 <script>
 
 export default {
-
+  async fetch(){
+    try {
+      await this.$store.dispatch('products/getProducts')
+    } catch (err) {
+      console.log(err)
+    }
+  },
 };
 </script>
 <style lang="scss">
