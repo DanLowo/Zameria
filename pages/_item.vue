@@ -10,14 +10,14 @@
       <main-carousel circle="true"></main-carousel>
     </div>
     <div class="my-2 mx-3 mt-5">
-      <h3>Adidas Men's Front Original Trefoil Street Graphic Front Pocket</h3>
+      <h3>{{product.name}}</h3>
       <p class="mt-1 mr-2 mb-2" style="font-size: 14px">FAST SHIPPING & DELIVERY and EASY RETURNS</p>
       <span style="font-size: 13px">
         <b>Seller:</b>
         <nuxt-link to="/store/Toffytesam" style="text-decoration: none;">{{'Toffytesam'}}</nuxt-link>
       </span>
       <h2 class="price-and-shipping mt-2">
-        N12,000
+        N{{product.price}}
         <!-- <sub style="font-size: 13px" class="font-weight-regular">+N500 shipping</sub> -->
       </h2>
       <p style="font-size: 14px" class="discount mt-1">
@@ -212,6 +212,12 @@ import LgaJson from "@/assets/docs/lgas.json";
 export default {
   async asyncData({ params }) {
     let name = params.item.replace(/-/g, " ");
+  },
+
+  computed: {
+    product() {
+      return this.$store.state.products.product
+    }
   },
 
   async fetch() {
