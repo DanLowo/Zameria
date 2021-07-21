@@ -210,8 +210,9 @@ import StateJson from "@/assets/docs/states.json";
 import LgaJson from "@/assets/docs/lgas.json";
 
 export default {
-  async asyncData({ params }) {
-    let name = params.item.replace(/-/g, " ");
+  async asyncData({ params, store }) {
+    await store.commit('products/setProduct', params.item)
+    // let name = params.item.replace(/-/g, " ");
   },
 
   computed: {
@@ -230,24 +231,16 @@ export default {
 
   methods: {
     addToCart() {
-      if (this.selectedSize === "" && this.selectedColor === "") {
+      if (this.selectedSize === "" || this.selectedColor === "") {
         this.selectError = true;
-        this.selectErrorMessage = "Please select color and size";
-        let el = document.getElementById("alert");
-        el.scrollIntoView(true);
-      } else if (this.selectedSize === "") {
-        this.selectError = true;
-        this.selectErrorMessage = "Please select size";
-        let el = document.getElementById("alert");
-        el.scrollIntoView(true);
-      } else if (this.selectedColor === "") {
-        this.selectError = true;
-        this.selectErrorMessage = "Please select color";
+        this.selectErrorMessage = "Please select color & size";
         let el = document.getElementById("alert");
         el.scrollIntoView(true);
       } else {
-        this.selectError = false;
-        this.selectErrorMessage = "";
+        this.selectError = false
+        this.selectErrorMessage = ""
+        let {id} = this.product
+        console.log(id)
       }
     },
     buyNow() {
