@@ -5,7 +5,11 @@ export default {
         state.allProducts.next = next
         state.allProducts.previous = previous
     },
-    setProduct(state, product){
-        state.product = product
+    setProduct(state, id){
+        let allProducts = [
+            ...state.allProducts.products
+        ]
+        const getProduct = allProducts.find(product => product.id == id)
+        state.product = getProduct   
     }
 }
