@@ -35,6 +35,8 @@ export default {
   methods: {
     async googleAuthRegister() {
       let axios = this.$axios;
+      let auth = this.$auth;
+      let router = this.$router;
       try {
         let provider = new firebase.auth.GoogleAuthProvider();
         firebase
@@ -60,7 +62,9 @@ export default {
                 userDetails
               );
               console.log(data);
-              await this.$store.commit('actionss/setRegistered')
+              auth.strategy.token.set(data.token)
+              auth.setUser(data);
+              router.push('/')
             } catch (err) {
               console.log(err);
             }
@@ -73,7 +77,41 @@ export default {
       }
     },
     async googleAuthSignIn() {
-      console.log('kkdkd')
+      let axios = this.$axios;
+      let auth = this.$auth;
+      let router = this.$router;
+      try {
+        let provider = new firebase.auth.GoogleAuthProvider();
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then(async result => {
+            let {
+              user: { email, Aa }
+            } = result;
+            let userDetails = {
+              email: email,
+              google_auth: Aa
+            };
+            try {
+              let { data } = await axios.post(
+                "/accounts/login/",
+                userDetails
+              );
+              console.log(data);
+              auth.strategy.token.set(data.token)
+              auth.setUser(data);
+              router.push('/')
+            } catch (err) {
+              console.log(err);
+            }
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      } catch (error) {
+        console.log(err);
+      }
     }
   }
 };

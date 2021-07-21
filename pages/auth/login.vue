@@ -9,6 +9,7 @@
     </div>
 
     <div class="mt-14 mx-6">
+      <authStrategy align="center" title="Register" type="login"></authStrategy>
       <Alert v-show="alert.show" :message="alert.message" :type="alert.type" />
       <form @submit.prevent="submit">
         <label for="email">

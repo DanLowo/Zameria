@@ -119,7 +119,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
-    "@nuxtjs/auth",
+    "@nuxtjs/auth-next",
     // Doc: https://github.com/nuxt-community/style-resources-module
     "@nuxtjs/style-resources"
   ],
@@ -142,7 +142,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    transplie: ["@nuxtjs/auth"],
+    // transplie: ["@nuxtjs/auth-next"],
     extend(config, ctx) {
       config.module.rules.push({
         enforce: "pre",
