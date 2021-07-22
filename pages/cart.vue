@@ -1,12 +1,11 @@
 <template>
   <div class="cart">
-    <div v-if="cart" class="cart-items">
-      <nuxt-link to="/wishlist">
+    <div v-if="cartItems.length !== 0" class="cart-items">
+      <nuxt-link to="/cart">
         <h5 class="py-3 px-3 mt-1 ZameriaAsh black--text font-weight-light" align="center">
-          <u>Account / Wishlist</u>
+          <u>Account / Cart</u>
         </h5>
       </nuxt-link>
-
       <div class="mt-3 Wishlist-available">
         <p style="display: flex" class="mx-2">
           <span style="flex-grow: 1; font-size: 14px">
@@ -15,7 +14,7 @@
           <span style="font-size: 13px">Order Total: N45,350</span>
         </p>
         <v-divider></v-divider>
-        <cart v-for="i in 3" :key="i"></cart>
+        <cart v-for="(item, k) in cartItems" :key="k" :productData="item"></cart>
       </div>
 
       <div class="mt-8 mx-2 mr-3">
@@ -36,8 +35,12 @@
             <span class="summary-value">N800</span>
           </div>
           <div style="display: flex" class="mt-3">
-            <span class="summary-title"> <b> Grand Total </b> </span>
-            <span class="summary-value"> <b> N10,800 </b> </span>
+            <span class="summary-title">
+              <b>Grand Total</b>
+            </span>
+            <span class="summary-value">
+              <b>N10,800</b>
+            </span>
           </div>
         </div>
       </div>
@@ -78,7 +81,6 @@
           <span class="white--text text-uppercase" style="font-size: 14px">Checkout</span>
         </v-btn>
       </v-bottom-navigation>
-
     </div>
 
     <div v-else class="mb-14">
@@ -115,11 +117,25 @@ export default {
   components: {
     cart
   },
+  async asyncData({ store }) {
+    try {
+      await store.dispatch("products/getProducts");
+      await store.dispatch("cart/getCart");
+      let allProducts = store.state.products.allProducts.products;
+      await store.commit("cart/getCartItems", allProducts);
+    } catch (err) {}
+  },
+  computed: {
+    cartItems() {
+      return this.$store.state.cart.items
+    }
+  },
   data() {
     return {
       cart: true
     };
-  }
+  },
+  methods: {}
 };
 </script>
 

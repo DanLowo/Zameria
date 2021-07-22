@@ -57,6 +57,9 @@ export default {
   auth: {
     strategies: {
       local: {
+        token: {
+          type: "Token"
+        },
         user: {
           autoFetch: false
         },
@@ -64,7 +67,7 @@ export default {
           login: { url: "/accounts/login/", method: "post", propertyName: "token" },
           user: false
         },
-        tokenType: ""
+        // tokenType: "Token"
       },
       google: {
         client_id: process.env.GOOGLE_OAUTH_CLIENT_ID || "",

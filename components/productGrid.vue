@@ -16,7 +16,8 @@
       </div>
       <div class="slide-products mt-3">
         <div v-for="(product, k) in allProducts" :key="k" class="mr-2" style="display: inline-block" @click="setProductToView(product)">
-          <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}">
+          <!-- <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}"> -->
+          <nuxt-link :to="{ name: 'item', params: {item: product.id}}">
             <v-img class="grid-img-slide" aspect-ratio="1"  :src="require(`@/assets/images/${images[0]}`)" ></v-img>
           </nuxt-link>
           <div>
@@ -148,8 +149,8 @@ export default {
       this.$store.commit("actionss/setSearch", header);
       this.$router.push(`/search/${header}`);
     },
-    setProductToView(product){
-      this.$store.commit('products/setProduct', product)
+    async setProductToView(product){
+      await this.$store.commit('products/setProduct', product.id)
     }
   }
 };

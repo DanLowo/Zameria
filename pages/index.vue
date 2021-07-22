@@ -168,13 +168,6 @@ export default {
     Navbar,
     Carousel,
   },
-  async asyncData({store}){
-    try {
-      await store.dispatch('products/getProducts')
-    } catch (err) {
-      console.log(err)
-    }
-  },
 
   data() {
     return {
