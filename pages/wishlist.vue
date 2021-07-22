@@ -1,11 +1,11 @@
 <template>
   <div class="wishlist">
-    <div v-if="!wishListEmpty" class="wishlist-items mb-14">
+    <div v-if="wishlistItems.length !== 0" class="wishlist-items mb-14">
       <h5 class="py-3 px-3 mt-1 ZameriaAsh font-weight-light" align="center">
         <u>Account / Wishlist</u>
       </h5>
       <div class="mx-2 Wishlist-available">
-        <WishList v-for="i in 3" :key="i"></WishList>
+        <WishList v-for="(item, k) in wishlistItems" :key="k" :productData="item" />
       </div>
     </div>
 
@@ -42,6 +42,19 @@ export default {
   layout: 'nofooter',
   components: {
     WishList
+  },
+  async asyncData({ store }) {
+    try {
+      await store.dispatch("products/getProducts");
+      await store.dispatch("wishlist/getWishlist");
+      let allProducts = store.state.products.allProducts.products;
+      await store.commit("wishlist/getWishlistItems", allProducts);
+    } catch (err) {}
+  },
+  computed: {
+    wishlistItems() {
+      return this.$store.state.wishlist.items
+    }
   },
   data() {
     return {

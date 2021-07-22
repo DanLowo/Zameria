@@ -1,9 +1,10 @@
 <template>
   <div class="item" style="margin-bottom: 120px">
     <main-navbar></main-navbar>
+    <main-alert v-show="wishlist.state" :type="wishlist.type" class="mx-3" :message="wishlist.message"></main-alert>
     <div class="mt-2">
       <div class="wishlist-icon">
-        <v-btn color="white" @click="colorIcon = 'red' " fab small>
+        <v-btn color="white" @click="addToWishlist" fab small>
           <v-icon size="30" :color="colorIcon">mdi-heart-outline</v-icon>
         </v-btn>
       </div>
@@ -266,6 +267,33 @@ export default {
         }
       }
     },
+    async addToWishlist() {
+      this.wishlist = {
+        state: false,
+        type: "success",
+        message: ""
+      };
+      let { id } = this.product;
+      let dataDetails = {
+        product: id,
+      };
+      try {
+        await this.$store.dispatch("wishlist/addWishlist", dataDetails);
+        this.wishlist = {
+          state: true,
+          message: "Added to wishlist",
+          type: "success"
+        };
+        this.colorIcon = 'red'
+      } catch (err) {
+        this.wishlist = {
+          state: true,
+          message: "Somthing went wrong, try again",
+          type: "error"
+        };
+        console.log(err);
+      }
+    },
     buyNow() {
       if (this.selectedSize === "" && this.selectedColor === "") {
         this.selectError = true;
@@ -304,6 +332,11 @@ export default {
       selectError: false,
       selectErrorMessage: "",
       cart: {
+        state: false,
+        type: "success",
+        message: ""
+      },
+      wishlist: {
         state: false,
         type: "success",
         message: ""

@@ -13,6 +13,7 @@ export default {
     try {
       await this.$store.dispatch('products/getProducts')
       await this.$store.dispatch('cart/getCart')
+      await this.$store.dispatch("wishlist/getWishlist");
     } catch (err) {
       console.log(err)
     }
