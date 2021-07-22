@@ -28,7 +28,7 @@ export default {
         state.items = originWishlist
     },
     removeWishlistItem(state, id) {
-        let cartWishlist = [...state.wishlistItems]
+        let wishlistItems = [...state.wishlistItems]
         let items = [...state.items]
 
         let newWishlistItems = wishlistItems.filter(item => item.id !== id);
