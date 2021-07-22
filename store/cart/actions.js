@@ -20,4 +20,15 @@ export default {
         console.log(err);
       });
   },
+  async removeCartItem({ commit }, id) {
+    await this.$axios
+      .delete(`https://api.zameria.com/market_place/cart/${id}`)
+      .then(res => {
+          console.log(res)
+        commit("removeCartItem", id);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
 };

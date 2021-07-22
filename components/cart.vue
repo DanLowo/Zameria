@@ -11,11 +11,11 @@
         <v-col cols="9" class="mb-0 pb-0">
           <div>
             <div style="font-size: 14px" class="mb-1 name-of-product">
-              <b>Nicholas Edison Heel Pedro Maroon Shoe</b>
+              <b>{{product.name}}</b>
             </div>
             <div style="font-size: 13px; color: red" class="discount">
               <span>
-                <b>N12,000</b>
+                <b>N{{product.price}}</b>
               </span>
               <span class="grey--text ml-2">
                 <del>N20,000</del>
@@ -28,7 +28,24 @@
             <div class="quantity mt-5 mb-5" style="font-size: 14px">
               <span>Quantity:</span>
               <span>
-                <main-quantity></main-quantity>
+                <!-- <main-quantity></main-quantity> -->
+                <span class="quantity mx-1">
+                  <span>
+                    <v-icon
+                      @click="count('minus')"
+                      :class="{counterIsOne: counter===1, counterIsNotOne: counter !== 1}"
+                      style="border-radius: 12px"
+                    >mdi-minus</v-icon>
+                  </span>
+                  <span class="font-weight-bold px-2">{{counter}}</span>
+                  <span>
+                    <v-icon
+                      @click="count('add')"
+                      :class="{counterIsMax: counter===maxCount, counterIsNotMax: counter !== maxCount}"
+                      style="border-radius: 12px"
+                    >mdi-plus</v-icon>
+                  </span>
+                </span>
                 <!--
                 <v-select
                   style="max-width: 80px; display: inline-block; border-radius: 0px;"
@@ -40,7 +57,7 @@
                   :items="['1', '2', '3', '4', '5']"
                   color="ZameriaAsh"
                   :placeholder="orderNumber"
-                ></v-select> -->
+                ></v-select>-->
               </span>
             </div>
           </div>
@@ -54,7 +71,7 @@
           </v-btn>
         </span>
         <span>
-          <v-btn text style="font-size: 9px; " class="mr-0 pr-0 blue--text">
+          <v-btn text style="font-size: 9px; " class="mr-0 pr-0 blue--text" @click="removeProductFromCart">
             <v-icon small>mdi-close</v-icon>
             <b>Remove</b>
           </v-btn>
@@ -68,9 +85,20 @@
 <script>
 export default {
   name: "cart",
+  props: ["productData"],
+  computed: {
+    product() {
+      return this.productData.product;
+    },
+    productQuantity() {
+      let { details: {quantity} } = this.productData;
+      return Number(quantity);
+    }
+  },
   data() {
     return {
-      orderNumber: "1",
+      counter: this.productData.details.quantity,
+      maxCount: 30,
       disable: false
     };
   },
@@ -80,6 +108,26 @@ export default {
         this.disable = true;
       } else {
         this.disable = false;
+      }
+    }
+  },
+  methods: {
+    count(type) {
+      if (type === "minus") {
+        if (this.counter > 1) {
+          this.counter -= 1;
+        }
+      } else {
+        if (this.counter < this.maxCount) {
+          this.counter += 1;
+        }
+      }
+    },
+    async removeProductFromCart() {
+      try {
+        await this.$store.dispatch('cart/removeCartItem', this.productData.details.id)
+      } catch (err) {
+        console.log(err)
       }
     }
   }
@@ -98,7 +146,7 @@ export default {
 .quantity .v-input__icon {
   margin-top: -5px;
 }
-.quantity .v-input__icon--append{
+.quantity .v-input__icon--append {
   margin-top: -5px;
 }
 </style>
