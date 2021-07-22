@@ -66,7 +66,7 @@
       <v-divider class="mx-2"></v-divider>
       <div style="display: flex" class="blue--text mx-2">
         <span style="flex-grow: 1;" class="mr-0 pr-0">
-          <v-btn text style="font-size: 9px" class="ml-0 pl-0 blue--text">
+          <v-btn text style="font-size: 9px" class="ml-0 pl-0 blue--text" @click="moveToWishlist">
             <b>Move to Wishlist</b>
           </v-btn>
         </span>
@@ -128,6 +128,20 @@ export default {
         await this.$store.dispatch('cart/removeCartItem', this.productData.details.id)
       } catch (err) {
         console.log(err)
+      }
+    },
+    async moveToWishlist() {
+      try {
+        let dataDetails = {
+          product: this.product.id
+        };
+        await this.$store.dispatch("wishlist/addWishlist", dataDetails);
+        await this.$store.dispatch(
+          "cart/removeCartItem",
+          this.productData.details.id
+        );
+      } catch (err) {
+        console.log(err);
       }
     }
   }
