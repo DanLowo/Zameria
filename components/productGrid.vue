@@ -15,24 +15,25 @@
         </span>
       </div>
       <div class="slide-products mt-3">
-        <div v-for="(i, k) in images" :key="k" class="mr-2" style="display: inline-block">
-          <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}">
-            <v-img class="grid-img-slide" aspect-ratio="1"  :src="require(`@/assets/images/${i}`)" ></v-img>
+        <div v-for="(product, k) in allProducts" :key="k" class="mr-2" style="display: inline-block" @click="setProductToView(product)">
+          <!-- <nuxt-link :to="{ name: 'item', params: {item: 'addidas-shoe-new'}}"> -->
+          <nuxt-link :to="{ name: 'item', params: {item: product.id}}">
+            <v-img class="grid-img-slide" aspect-ratio="1"  :src="require(`@/assets/images/${images[0]}`)" ></v-img>
           </nuxt-link>
           <div>
 
             <div v-if="grid !== 2 || grid !== 1" class="mb-0 pb-0 font-weight-light">
-              <p id="wrap-text-3-above">Reebok Nano Blue Original Sneakers</p>
+              <p id="wrap-text-3-above">{{product.name}}</p>
             </div>
             <div v-else class="mb-0 pb-0 font-weight-light">
-              <p class="wrap-text">Reebok Nano Blue Original Sneakers</p>
+              <p class="wrap-text">{{product.name}}</p>
             </div>
             <span style="font-size: 18px" class="font-weight-bold">
-              <b>N5,000</b>
+              <b>N{{product.price}}</b>
             </span>
             <div style="font-size: 13px">
               <span class="pr-1 grey--text font-weight-bold">
-                <del>N8,500</del>
+                <del>N20,000</del>
               </span>
               <span class="ZameriaRed--text font-weight-bold" style="font-size: 12px">60%off</span>
             </div>
@@ -41,6 +42,8 @@
       </div>
     </div>
 
+
+    <!-- gird display -->
     <div v-else class="productGrid mx-2">
       <div v-show="heads" style="display: flex">
         <span class="text-uppercase" style="flex-grow: 1; font-size: 14px">
@@ -88,7 +91,7 @@
 <script>
 export default {
   // name: "product-grid",
-  props: ["header", "products", "images", "row", "col", "head", "slide"],
+  props: ["header", "images", "row", "col", "head", "slide"],
   data() {
     return {
       grid: 1,
@@ -96,6 +99,9 @@ export default {
     };
   },
   computed: {
+    allProducts() {
+      return this.$store.state.products.allProducts.products
+    },
     rows: function() {
       let r = Number(this.row);
       return r;
@@ -142,6 +148,9 @@ export default {
     sendRoute(header) {
       this.$store.commit("actionss/setSearch", header);
       this.$router.push(`/search/${header}`);
+    },
+    async setProductToView(product){
+      await this.$store.commit('products/setProduct', product.id)
     }
   }
 };

@@ -12,7 +12,7 @@
     <div class="carousel-section">
       <Carousel circle="true"></Carousel>
     </div>
-
+    
     <div class="section-title ZameriaBrown" align="center">
       <nuxt-link id="link" to="/search/NEW-ARRIVALS"
         >SHOP OUR NEW ARRIVALS >>></nuxt-link
@@ -168,6 +168,7 @@ export default {
     Navbar,
     Carousel,
   },
+
   data() {
     return {
       emailSubscription: "",

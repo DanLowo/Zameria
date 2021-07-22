@@ -10,14 +10,14 @@
       <main-carousel circle="true"></main-carousel>
     </div>
     <div class="my-2 mx-3 mt-5">
-      <h3>Adidas Men's Front Original Trefoil Street Graphic Front Pocket</h3>
+      <h3>{{product.name}}</h3>
       <p class="mt-1 mr-2 mb-2" style="font-size: 14px">FAST SHIPPING & DELIVERY and EASY RETURNS</p>
       <span style="font-size: 13px">
         <b>Seller:</b>
         <nuxt-link to="/store/Toffytesam" style="text-decoration: none;">{{'Toffytesam'}}</nuxt-link>
       </span>
       <h2 class="price-and-shipping mt-2">
-        N12,000
+        N{{product.price}}
         <!-- <sub style="font-size: 13px" class="font-weight-regular">+N500 shipping</sub> -->
       </h2>
       <p style="font-size: 14px" class="discount mt-1">
@@ -143,7 +143,7 @@
         </div>
       </form>
     </div>
-
+    <main-alert v-show="cart.state" :type="cart.type" class="mx-3" :message="cart.message"></main-alert>
     <div class="ZameriaAsh2 px-4 py-5 mt-3" align="center">
       <v-btn
         class="my-2 ZameriaRed--text"
@@ -210,8 +210,15 @@ import StateJson from "@/assets/docs/states.json";
 import LgaJson from "@/assets/docs/lgas.json";
 
 export default {
-  async asyncData({ params }) {
-    let name = params.item.replace(/-/g, " ");
+  async asyncData({ params, store }) {
+    await store.commit("products/setProduct", params.item);
+    // let name = params.item.replace(/-/g, " ");
+  },
+
+  computed: {
+    product() {
+      return this.$store.state.products.product;
+    }
   },
 
   async fetch() {
@@ -223,25 +230,40 @@ export default {
   },
 
   methods: {
-    addToCart() {
-      if (this.selectedSize === "" && this.selectedColor === "") {
+    async addToCart() {
+      this.cart = {
+        state: false,
+        type: "success",
+        message: ""
+      };
+      if (this.selectedSize === "" || this.selectedColor === "") {
         this.selectError = true;
-        this.selectErrorMessage = "Please select color and size";
-        let el = document.getElementById("alert");
-        el.scrollIntoView(true);
-      } else if (this.selectedSize === "") {
-        this.selectError = true;
-        this.selectErrorMessage = "Please select size";
-        let el = document.getElementById("alert");
-        el.scrollIntoView(true);
-      } else if (this.selectedColor === "") {
-        this.selectError = true;
-        this.selectErrorMessage = "Please select color";
+        this.selectErrorMessage = "Please select color & size";
         let el = document.getElementById("alert");
         el.scrollIntoView(true);
       } else {
         this.selectError = false;
         this.selectErrorMessage = "";
+        let { id } = this.product;
+        let dataDetails = {
+          product: id,
+          quantity: this.orderNumber
+        };
+        try {
+          await this.$store.dispatch("cart/addCart", dataDetails);
+          this.cart = {
+            state: true,
+            message: "Added to cart",
+            type: "success"
+          };
+        } catch (err) {
+          this.cart = {
+            state: true,
+            message: "Somthing went wrong, try again",
+            type: "error"
+          };
+          console.log(err);
+        }
       }
     },
     buyNow() {
@@ -281,6 +303,11 @@ export default {
       city: "",
       selectError: false,
       selectErrorMessage: "",
+      cart: {
+        state: false,
+        type: "success",
+        message: ""
+      },
       accordion: [
         {
           header: "Product details",
@@ -294,7 +321,16 @@ export default {
           header: "Product reviews"
         }
       ],
-      imageList: ["shoe.jpeg", "shoe2.jpg", "watch.jpg", 'shoes.webp', "shoe.jpeg", "shoe2.jpg",'watch.jpg', 'shoes3.jpg']
+      imageList: [
+        "shoe.jpeg",
+        "shoe2.jpg",
+        "watch.jpg",
+        "shoes.webp",
+        "shoe.jpeg",
+        "shoe2.jpg",
+        "watch.jpg",
+        "shoes3.jpg"
+      ]
     };
   },
   watch: {
