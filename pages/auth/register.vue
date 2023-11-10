@@ -60,18 +60,30 @@
             id="email"
           />
 
-          <label for="password">
-            <b>Password</b>
+          <label for="h_email">
+            <b>House address</b>
           </label>
-          <span @click="changePasswordFieldType" :class="passwordFieldIcon"></span>
           <input
-            :type="passwordFieldType"
+            type="text"
             required
-            v-model="password"
-            class="zameria-light-form mt-0 mb-1"
-            placeholder="Password"
-            id="password"
+            v-model="address"
+            class="zameria-light-form"
+            placeholder="House address"
+            id="address"
           />
+
+<!--          <label for="password">-->
+<!--            <b>Password</b>-->
+<!--          </label>-->
+<!--          <span @click="changePasswordFieldType" :class="passwordFieldIcon"></span>-->
+<!--          <input-->
+<!--            :type="passwordFieldType"-->
+<!--            required-->
+<!--            v-model="password"-->
+<!--            class="zameria-light-form mt-0 mb-1"-->
+<!--            placeholder="Password"-->
+<!--            id="password"-->
+<!--          />-->
           <span
             v-show="passwordLengthValid"
             style="font-size: 13px"
@@ -79,18 +91,18 @@
           >Your password needs to be at least 6 characters.</span>
 
           <div class="mt-4"></div>
-          <label for="confirmPassword">
-            <b>Confirm Password</b>
-          </label>
-          <span @click="changePasswordFieldType1" :class="passwordFieldIcon1"></span>
-          <input
-            :type="passwordFieldType1"
-            required
-            v-model="confirmPassword"
-            class="zameria-light-form mb-1"
-            placeholder="Confirm Password"
-            id="confirmPassword"
-          />
+<!--          <label for="confirmPassword">-->
+<!--            <b>Confirm Password</b>-->
+<!--          </label>-->
+<!--          <span @click="changePasswordFieldType1" :class="passwordFieldIcon1"></span>-->
+<!--          <input-->
+<!--            :type="passwordFieldType1"-->
+<!--            required-->
+<!--            v-model="confirmPassword"-->
+<!--            class="zameria-light-form mb-1"-->
+<!--            placeholder="Confirm Password"-->
+<!--            id="confirmPassword"-->
+<!--          />-->
           <span
             v-show="match"
             style="font-size: 13px"
@@ -168,6 +180,7 @@
 import authStrategy from "@/components/authStrategy";
 import Alert from "@/components/alert";
 
+
 export default {
   components: {
     authStrategy,
@@ -185,6 +198,7 @@ export default {
       email: "",
       password: "",
       phone_no: "",
+      address: "",
       confirmPassword: "",
       preference: {
         men: false,
@@ -251,34 +265,37 @@ export default {
       };
 
       let details = {
-        email: this.email,
+        emailAddress: this.email,
         password: this.password,
         user_type: "consumer",
-        consumer: {
-          first_name: this.firstName,
-          last_name: this.lastName
-        },
-        phone_no: this.phone_no
+        firstName: this.firstName,
+        lastName: this.lastName,
+        phoneNumber: this.phone_no,
+        address: this.address
         // emailList: this.emailList,
         // preference: this.preference
       };
 
       try {
         let { data } = await this.$axios.post(
-          "/accounts/signup/create_account/",
+          "/final_year_project/register_user",
           details
         );
-        await this.$store.commit('actionss/setRegistered')
+        console.log(data.data.registrationOptions)
+        const authAttr = await window.SimpleWebAuthnBrowser.startRegistration(data.data.registrationOptions)
+        console.log(authAttr)
+        // await this.$store.commit('actionss/setRegistered')
       } catch (err) {
-        if (err.response.data.email) {
-          console.log(err.response.data.email[0]);
-          this.alert = {
-            show: true,
-            type: "error",
-            message: err.response.data.email[0]
-          };
-          window.scrollTo(0, 0);
-        }
+        console.log(err)
+        // if (err.response.data.email) {
+        //   console.log(err.response.data.email[0]);
+        //   this.alert = {
+        //     show: true,
+        //     type: "error",
+        //     message: err.response.data.email[0]
+        //   };
+        //   window.scrollTo(0, 0);
+        // }
       }
     }
   }

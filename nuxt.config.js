@@ -2,7 +2,8 @@ require("dotenv").config();
 
 export default {
   server: {
-    host: "0.0.0.0"
+    host: "0.0.0.0",
+    port: 5009
   },
   /*
    ** Nuxt rendering mode
@@ -33,11 +34,11 @@ export default {
         content: "#ffffff"
       }
     ],
-    // script: [
-    //    {
-    //     src: "https://res.cloudinary.com/danlowo/raw/upload/v1600327487/vuetify_ktciwo.js"
-    //   }
-    // ],
+    script: [
+       {
+        src: "https://unpkg.com/@simplewebauthn/browser/dist/bundle/index.umd.min.js"
+      }
+    ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
@@ -138,7 +139,9 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://api.zameria.com/"
+    baseURL: "https://8879-190-2-155-230.ngrok-free.app/api/", //"https://zameria.com:5008/api/",
+    proxyHeaders: false,
+    credentials: false
   },
   /*
    ** Build configuration
@@ -151,6 +154,12 @@ export default {
         enforce: "pre",
         test: /\.txt$/,
         loader: "raw-loader",
+        exclude: /(node_modules)/
+      });
+      config.module.rules.push({
+        enforce: "pre",
+        test: /\.tsx?$/,
+        loader: "ts-loader",
         exclude: /(node_modules)/
       });
     }
