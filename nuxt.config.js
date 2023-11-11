@@ -139,7 +139,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://8879-190-2-155-230.ngrok-free.app/api/", //"https://zameria.com:5008/api/",
+    baseURL: "https://9110-190-2-155-230.ngrok-free.app/api/", //"https://zameria.com:5008/api/",
     proxyHeaders: false,
     credentials: false
   },
