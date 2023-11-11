@@ -3,7 +3,7 @@ require("dotenv").config();
 export default {
   server: {
     host: "0.0.0.0",
-    port: 5009
+    // port: 5009
   },
   /*
    ** Nuxt rendering mode
